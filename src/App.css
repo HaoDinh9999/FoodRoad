@@ -1,0 +1,92 @@
+:root {
+  --main-bg: #ffffff;
+  --second-bg: #fafafb;
+  --txt-color: #252e48;
+  --txt-white: #fff;
+  --main-color: #349eff;
+  --second-color: #62b4ff;
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  --main-bg-light: #ffffff;
+  --second-bg-light: #fafafb;
+  --txt-color-light: #455560;
+  --box-shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  --main-bg-dark: #242424;
+  --second-bg-dark: #242222;
+  --txt-color-dark: #bbbbbb;
+  --box-shadow-dark: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+
+  --main-color-blue: #349eff;
+  --second-color-blue: #62b4ff;
+
+  --main-color-red: #fb0b12;
+  --second-color-red: #ff4a6b;
+
+  --main-color-cyan: #10d4d2;
+  --second-color-cyan: #2ae9e6;
+
+  --main-color-green: #019707;
+  --second-color-green: #4caf50;
+
+  --main-color-orange: #d68102;
+  --second-color-orange: #fca11a;
+
+  --sidebar-width: 300px;
+  --border-radius: 15px;
+  --topnav-height: 110px;
+  --transition-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.home,
+.about,
+.tours,
+.sign-in,
+.sign-up {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.about {
+  background-image: url('/images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--main-bg);
+  font-size: 100px;
+}
+
+.tours {
+  background-image: url('/images/img-1.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: var(--main-bg);
+  font-size: 100px;
+}
+
+.sign-up {
+  background-image: url('/images/img-9.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--main-bg);
+  font-size: 100px;
+}
+.sign-in {
+  background-image: url('/images/img-8.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:var(--main-bg);
+  font-size: 100px;
+}
