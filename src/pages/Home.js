@@ -1,15 +1,20 @@
 import React from 'react';
 import '../App.css';
-import Cards from '../components/card/Cards';
-import HeroSection from '../components/herosection/HeroSection';
 import Footer from '../components/footer/Footer';
-
+import HeroSection from '../components/layoutHome/herosection/HeroSection';
+import AllOurServices from '../components/layoutHome/ourservice/AllOurServices';
+import AllSales from '../components/layoutHome/sale/AllSales';
+import AllCardTours from '../components/layoutHome/cardtour/AllCardTours';
+import AllNewsReview from '../components/layoutHome/newsreview/AllNewsReview';
 function Home() {
   return (
     <>
-      <HeroSection />
-      <Cards />
-      <Footer />
+      <HeroSection ></HeroSection>
+      <AllOurServices></AllOurServices>
+      <AllSales></AllSales>
+      <AllCardTours></AllCardTours>
+      <AllNewsReview></AllNewsReview>
+      <Footer></Footer>
     </>
   );
 }
