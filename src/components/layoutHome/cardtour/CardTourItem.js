@@ -15,7 +15,7 @@ import { UilAnchor } from '@iconscout/react-unicons'
 const CardTourItem = (props) => {
   return (
     <Box
-    margin ="10px 20px 5px 10px"
+    margin ="10px 00px 5px 0px"
     sx={{
         width: 360,
         height: 300,
@@ -97,15 +97,15 @@ const CardTourItem = (props) => {
             padding="0px 5px 0px 5px"
 
             >
-            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px" marginTop="-5px" color="#ff0007" >
+            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px" marginTop="-5px" color="#f26600" marginLeft="5px" >
             Bun bo Hue
             </Typography>
-            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="35px" color="#ff6868" marginTop="2px">
+            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="35px" color="#f26600" marginTop="2px" marginRight="5px">
                 $25
             </Typography>    
             </Box>        
             <Box 
-
+            marginLeft="4px"
             display="flex"
             alignItems="center"
             >
