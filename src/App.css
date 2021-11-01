@@ -57,7 +57,6 @@
 }
 
 .about {
-  background-image: url("/images/img-2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,7 +65,6 @@
 }
 
 .tours {
-  background-image: url("/images/img-1.jpg");
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -75,7 +73,6 @@
 }
 
 .sign-up {
-  background-image: url("/images/img-9.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,7 +80,6 @@
   font-size: 100px;
 }
 .sign-in {
-  background-image: url("/images/img-8.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
