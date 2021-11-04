@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
+import DetailTour from "./pages/DetailTour";
 function App() {
   return (
     <>
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/faqs">
             <FAQS/>
+          </Route>
+          <Route path="/tour/detailtour">
+            <DetailTour/>
           </Route>
         </Switch>
       </Router>

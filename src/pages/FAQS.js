@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 import Footer from '../components/footer/Footer';
 const  FAQS =() => {
   return(
-    < >
+    <Grid >
     <FAQImage> </FAQImage>
     <Container fixed sx={{ margin: "40px auto" }}>
     <Grid container sm={12} >
@@ -24,7 +24,7 @@ const  FAQS =() => {
     </Container>
     <Footer></Footer>
     
-    </>
+    </Grid>
   );
 }
 export default FAQS;
