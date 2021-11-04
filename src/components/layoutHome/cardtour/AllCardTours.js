@@ -10,6 +10,8 @@ import Slider from "react-slick";
 import LeftArrow from "../../../assets/img/left-arrow.svg"
 import RightArrow from "../../../assets/img/right-arrow.svg"
 import { UilAccessibleIconAlt } from '@iconscout/react-unicons'
+import "./sliders.css";
+import Container from "@mui/material/Container";
 
 const AllCardTours = () => {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -59,26 +61,27 @@ const AllCardTours = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    className: 'sliders',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: true,
         }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2
         }
       },
@@ -93,7 +96,8 @@ const AllCardTours = () => {
 
   };
   return (
-    <Box marginLeft="-3px">
+    <Container fixed>
+<Box marginLeft="0px" padding="0px 0px 0px 5px" >
       <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
         Trending Tours
         </Typography>
@@ -109,7 +113,7 @@ const AllCardTours = () => {
     </Slider>
     <Box height="50px"></Box>
     <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
-        New Tours
+        Favourite Foods
         </Typography>
     <Slider  {...settings}>
       <CardTourItem url='/images/Food1.jpg'></CardTourItem>
@@ -122,6 +126,8 @@ const AllCardTours = () => {
       <CardTourItem url='/images/Food4.jpg'></CardTourItem>
     </Slider>
     </Box>
+    </Container>
+    
   );
 };
 
