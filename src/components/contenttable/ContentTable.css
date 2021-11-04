@@ -1,0 +1,79 @@
+ 
+  .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: double;
+  }
+  
+  .icon{
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  table.content-table{
+    position: relative;
+    left: 140px;
+    text-align: left;
+    color: #000000;
+    font-size: large;
+    font-family: 'PT Sans', sans-serif;
+    width: auto;
+    height: auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    border:rgb(0, 0, 0) solid 2px;
+  }
+  
+  th {
+    height: 2cm;
+    width: 7cm;
+    text-align: center;
+  }
+  
+  td {
+    text-align: left;
+    color: #000000;
+    height: 2cm;
+    width: 7cm;
+    vertical-align: top;
+    border-radius: 10px;
+  }
+  
+  .icon{
+    position: inherit;
+    color:brown;
+    size: 1cm;
+  }
+  
+  .title{
+    color: #000000;
+    background-color: #ffa500;
+    font-size: xx-large;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 50px;
+  }
+  
+  h3.about-h3{
+    color: rgb(233, 92, 92);
+  }
+  
+  h4.about-h4{
+    color: rgb(95, 95, 218);
+  }
+  
+  img.about-img{
+    border-radius: 50%;
+  }
+  
+  .about-div{
+    text-align: center;
+  }

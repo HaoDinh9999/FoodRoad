@@ -47,6 +47,7 @@
 .home,
 .about,
 .tours,
+.contact,
 .sign-in,
 .sign-up {
   display: flex;
@@ -58,11 +59,31 @@
 
 .about {
   background-image: url('/images/img-2.jpg');
-  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   color: var(--main-bg);
-  font-size: 100px;
+  height: 100%;
+  display: block;
+}
+
+.about-title1{
+  width: 500px;
+  margin-left: 33%;
+  text-align: center;
+  border: #ffffff solid 2px;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000;
+}
+
+.about-title2{
+  width: 600px;
+  margin-left: 28%;
+  text-align: center;
+  border: #ffffff solid 2px;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000;
+}
+
+.about-footer{
+  font-size: large;
 }
 
 .tours {
@@ -72,6 +93,12 @@
   background-repeat: no-repeat;
   color: var(--main-bg);
   font-size: 100px;
+}
+
+.contact-img{
+  width: 100%;
+  position: relative;
+  text-align: center;
 }
 
 .sign-up {

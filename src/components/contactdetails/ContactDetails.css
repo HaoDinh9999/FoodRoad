@@ -1,0 +1,54 @@
+.container-contact{
+    position: relative;
+    text-align: left;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.contact-table{
+    text-align: left;
+    width: 1200px;
+    font-size: large;
+    line-height: 30px;
+}
+
+td.contact-table{
+  width: 1000px;
+}
+
+.contact-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: double;
+    font-family: 'PT Sans', sans-serif;
+    font-size: xx-large;
+    color: #ffffff;
+    text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000
+  }
+
+  .form-control{
+    width: 500px;
+  }
+
+  .text-subject{
+    width: 500px;
+  }
+
+  .textbox{
+      margin-left: 10px;
+  }
+
+  .btn-send{
+    color: #ffffff;
+    background-color: rgb(209, 18, 18);
+    width: 78px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .text-lean{
+    font-style: oblique;    
+    font-family: 'roboto';
+}
