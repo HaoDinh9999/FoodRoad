@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import LeftArrow from "../../../assets/img/left-arrow.svg"
 import RightArrow from "../../../assets/img/right-arrow.svg"
-import { UilAccessibleIconAlt } from '@iconscout/react-unicons'
+// import { UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import "./sliders.css"
 const AllCardTours = () => {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
