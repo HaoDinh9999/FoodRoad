@@ -24,9 +24,9 @@ const containerStyle = {
 const Itinerary = ()=>{
     
     return(
-        <Box padding="60px 200px 20px 200px">
-            <Grid container sm={12}>
-                <Grid  item sm={4}  >
+        <Box marginTop="50px">
+            <Grid container sm={12} xs={12}>
+                <Grid  item sm={4}  xs={12}>
                 <Box display="flex">
                 <Box>
                 <IconButton  aria-label="delete"  sx={{ marginRight:"10px",color:"#000000",borderRadius:8,border:2,height:"50px",width:"50px"}} >
@@ -120,7 +120,6 @@ const Itinerary = ()=>{
                 </IconButton>
                 <li style={{ marginLeft:"20px"}}></li>
                 <li style={{ marginLeft:"20px"}}></li>
-                <li style={{ marginLeft:"20px"}}></li>
 
                 </Box>
                 <Box>
@@ -137,28 +136,7 @@ const Itinerary = ()=>{
                 
                 </Box>
                 {/*66666666666*/}
-                <Box display="flex">
-                <Box >
-                <IconButton  aria-label="delete"  sx={{ marginRight:"10px",color:"#fff",backgroundColor:"#000",fontSize:"17px",borderRadius:8,border:2,height:"50px",width:"50px"}} >
-                     5
-                </IconButton>
-                <li style={{ marginLeft:"20px"}}></li>
-                <li style={{ marginLeft:"20px"}}></li>
-                </Box>
-                
-                <Box>
-                <Typography  variant="h6" component="h2"  sx={{fontSize:"18px",fontWeight: 'medium',}}> 
-                Saigon Food Tour
-                </Typography> 
-                <Typography   variant="h6" component="h2"  sx={{fontSize:"18px",fontWeight: 'light'}}> 
-                Stop: 15 minutes
-                </Typography>
-                <Link href="#" color="#636363" fontSize="18px">
-                See details & photo
-                </Link>
-                </Box>
-                
-                </Box>
+               
 
                 <Box display="flex" alignItems="center">
                 <IconButton  aria-label="delete"  sx={{ marginRight:"10px",color:"#000000",borderRadius:8,border:2,height:"50px",width:"50px"}} >
@@ -171,7 +149,7 @@ const Itinerary = ()=>{
                 </Box>
                 
                 </Grid>
-                <Grid item sm={8}    >
+                <Grid item sm={8}  xs={12}  >
                 <Map 
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyClpHM2sDk1TbMKkjX_rd8AboU4RdolLtA'}&callback=initMap`}
             loadingElement={<div style={{ height: `100%` }} />}

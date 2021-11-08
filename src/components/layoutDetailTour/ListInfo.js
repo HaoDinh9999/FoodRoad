@@ -14,7 +14,7 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 
 const  ListInfo =() => {
     return(
-      <Box padding="60px 200px 20px 200px">
+      <Box marginTop="50px">
         <h2>About</h2>
         <Grid container >
             <Grid item sm={8}>
