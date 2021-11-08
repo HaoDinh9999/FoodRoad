@@ -11,43 +11,60 @@ import { Grid } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { padding, width } from '@mui/system';
+import { height, padding, width } from '@mui/system';
 import Container from "@mui/material/Container";
 import CardTourItem from '../layoutHome/cardtour/CardTourItem';
 const  FAQRight =()=> {
     return (
+    <>
     <Grid  container sm={12}  >
       <Stack spacing={1} 
-      padding="30px 40px"
+      padding="0px 40px"
       sx={{ 
         width:"360px",
+        height:"380px",
         boxShadow: 3,
-        borderRadius: 2
+        borderRadius: 2,
+        backgroundColor:"#fc8129"
       }}
       >
-          <Typography  display="flex"  justifyContent="center" fontWeight="bold" sx={{ fontFamily: 'Monospace',fontStyle: 'italic',fontSize:'20px' }} >
+          <Typography  marginTop="18px" display="flex"  justifyContent="center" fontWeight="bold" sx={{ fontFamily: 'Monospace',fontStyle: 'italic',fontSize:'20px' }} >
           Not found your question?
           </Typography>
-          <Typography  display="flex"  justifyContent="center" fontWeight="regular" color="#b3b3b3" >
+          <Typography  display="flex"  justifyContent="center" fontWeight="regular" color="#fff" >
           Fill in form
           </Typography>
           <TextField
-            autoFocus
-            margin="dense"
+             sx={{ 
+              boxShadow: 3,
+              borderRadius: 2,
+              backgroundColor:"#fff"
+            }}
+            margin="normal"
             id="subject"
             label="Name"
             type="text"
             variant="outlined"
           />
           <TextField
-            margin="dense"
+           sx={{ 
+            boxShadow: 3,
+            borderRadius: 2,
+            backgroundColor:"#fff"
+          }}
+            margin="normal"
             id="point"
             label="Email"
             type="text"
             variant="outlined"
           />
-           <TextField       
-            margin="dense"
+           <TextField   
+            sx={{ 
+              boxShadow: 3,
+              borderRadius: 2,
+              backgroundColor:"#fff"
+            }}    
+            margin="normal"
             id="point"
             label=""
             type="text"
@@ -65,6 +82,7 @@ const  FAQRight =()=> {
         </Grid>
 
       </Grid>
+      </>
     )
 }
 
