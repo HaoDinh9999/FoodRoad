@@ -15,9 +15,9 @@ import { UilAnchor } from '@iconscout/react-unicons'
 const CardTourItem = (props) => {
   return (
     <Box
-    margin ="10px 00px 5px 0px"
+    margin ="10px 0px 5px 5px"
     sx={{
-        width: 360,
+        width: 365,
         height: 300,
         borderRadius: 10,
         boxShadow: 3,

@@ -2,30 +2,56 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Typewriter from 'typewriter-effect';
 
 const  FAQImage =() => {
   return (
-  <Box
-  
-    sx={{
-      //  backgroundImage: `url(${"videos/video-dinner.mp4"})`,        
-      }}
-    >
-
-       <CardMedia
-
-        component="video"
+    <Box >
+    <div style={{ position: "relative",justifyContent:"center",alignItems:"center" }}>
+      <CardMedia 
+      
+      style={{ 
+        objectFit: "cover",
+        height: "70vh",
+        }}   
+      component="video"
         src="/videos/video-dinner.mp4"
         alt="green iguana"
         autoPlay loop muted
-        position= 'relative'
-
-      >
-       <Typography position="absolute" justifyContent="center" fontWeight="regular" fontSize="30px" color="#4caec4">DRIVING</Typography>
-
-      </CardMedia>
-
+      /> 
+            <Typography style={{position: "absolute", color: "#fff",top: "20%",left: "50%",transform: "translateX(-50%)",fontSize:"80px"}}>
+                 FAQS
+            </Typography>
+            <Typography style={{position: "absolute", color: "#fff",top: "40%",left: "50%",transform: "translateX(-50%)",fontSize:"30px"}}>
+              
+              <Typewriter   
+              options={{
+              strings: [' Spreading Happiness', ' Connecting People'," Creating Memories","Find your question"," The support team is eager to answer "],
+              autoStart: true,
+              loop: true,
+              }}
+              onInit={(typewriter) => {
+              typewriter.typeString()
+                .callFunction(() => {
+              console.log('String typed out!');
+                })
+              .pauseFor(1000)
+              .deleteAll()
+              .callFunction(() => {
+              console.log('All strings were deleted');
+              })
+            .start();
+          }}
+          />  
+            </Typography>
+           
+  </div>
   </Box>
+
+
+       
+
+
   );
 }
 export default FAQImage;
