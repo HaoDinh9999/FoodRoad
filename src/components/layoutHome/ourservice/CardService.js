@@ -9,7 +9,14 @@ import { UilMessage } from '@iconscout/react-unicons'
 
 const CardService =(props) => {
     return (
-       <Grid paddingLeft="30px" paddingRight="20px">
+       <Grid paddingLeft="30px" paddingRight="20px" 
+       sx={{
+        '&:hover': {
+          transform: "translateY(-10px)",
+          backgroundImage: "#981",
+       },
+       }}
+       >
        <Box
         sx={{
           display:"flex",

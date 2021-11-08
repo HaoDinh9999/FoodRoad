@@ -14,8 +14,14 @@ import Button from '@mui/material/Button';
 import { padding, width } from '@mui/system';
 import Container from "@mui/material/Container";
 const CardNews = (props) => {
+
   return (
-    <Grid width="103%" marginTop="60px"  flexDirection="row" display="flex"  sx={{ border: 1,borderColor: 'grey.300',borderRadius: 2,backgroundColor:props.color1  }}>
+    <Grid width="103%" marginTop="60px"  flexDirection="row" display="flex"  
+    sx={{  
+      '&:hover': {
+      transform: "translateY(-10px)",
+      },
+      border: 1,borderColor: 'grey.300',borderRadius: 2,backgroundColor:props.color1  }}>
     <Box
       sx={{
         height: 313,
