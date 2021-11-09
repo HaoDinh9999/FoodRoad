@@ -10,12 +10,9 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
-<<<<<<< HEAD
 import Booking from "./pages/Booking";
 import Footer from "./components/footer/Footer";
-=======
 import DetailTour from "./pages/DetailTour";
->>>>>>> 947c75e2b129271df2eb50287995ee369f5470b4
 function App() {
   return (
     <>
@@ -37,7 +34,7 @@ function App() {
             <FAQS />
           </Route>
           <Route path="/tour/detailtour">
-            <DetailTour/>
+            <DetailTour />
           </Route>
         </Switch>
         <Footer></Footer>
