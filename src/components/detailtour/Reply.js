@@ -1,0 +1,33 @@
+import React from 'react';
+import { Grid, Typography, Link, Avatar } from "@mui/material"
+const Reply = () => {
+    return (
+        <div>
+            <Grid container sx={{ ml: 5, pl: 2, pt: 2, pb: 0, mb: 1, borderLeft: "1px solid", height: "100px" }} justifyContent="space-between">
+                <Grid item>
+                    <Grid container>
+                        <Grid item sx={{ mr: 1 }}>
+                            <Avatar src="./images/card_comment/ava.jpg" />
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subtitle2" sx={{ fontSize: "14px" }}> Nick</Typography>
+                            <Typography sx={{ fontSize: "14px" }}> Portland, Oregon . 45 contributions</Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <Grid container>
+                        <Grid item>
+                            <Typography sx={{ fontSize: "14px" }}>
+                                Hi we are coming to Saigon on 18/1 arriving from mui ne by bus, we are not sure if we will arrive in time at 6 pm. Is it 6-10 pm the tour? Do you offer a food tour from 7 pm to 10pm? There is 7 adults and 2 kids.please let us know ASAP? And price for 3 hr tour?
+                                <Link sx={{ fontSize: "15px", fontWeight: "bold" }}> Read More</Link>
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </div>
+    );
+}
+
+export default Reply;
