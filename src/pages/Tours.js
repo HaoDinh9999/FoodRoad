@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-
+import DetailtourReview from '../components/detailtour/DetailTourReview';
 export default function Tours() {
-  return <h1 className='tours'>Tours</h1>;
+  return <DetailtourReview />;
 }

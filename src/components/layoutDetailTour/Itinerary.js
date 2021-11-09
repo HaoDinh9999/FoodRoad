@@ -39,7 +39,7 @@ const Itinerary = ()=>{
         setText(newValue);
       };
     return(
-        <Box marginTop="50px">
+        <Box marginTop="50px" marginBottom="70px">
             <Grid container sm={12} xs={12}>
                 <Grid  item sm={4}  xs={12}>
                 <Box display="flex">
