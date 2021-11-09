@@ -7,8 +7,6 @@ import Checkbox from '@mui/material/Checkbox';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { blue, pink } from "@mui/material/colors"
 import Popover from '@mui/material/Popover';
-import ava from "./card_comment/ava.jpg"
-import { Box } from '@mui/system';
 
 const images = [
     {
@@ -18,32 +16,6 @@ const images = [
         img: "/images/card_comment/image2.jpg"
     },
 ]
-// const PopoverPopupState = () => {
-//     return (
-//         <PopupState variant="popover" popupId="demo-popup-popover">
-//             {(popupState) => (
-//                 <div>
-//                     <IconButton>
-//                         <MoreVertOutlinedIcon {...bindTrigger(popupState)} />
-//                     </IconButton>
-//                     <Popover
-//                         {...bindPopover(popupState)}
-//                         anchorOrigin={{
-//                             vertical: 'bottom',
-//                             horizontal: 'center',
-//                         }}
-//                         transformOrigin={{
-//                             vertical: 'top',
-//                             horizontal: 'center',
-//                         }}
-//                     >
-//                         <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-//                     </Popover>
-//                 </div>
-//             )}
-//         </PopupState>
-//     );
-// }
 const BasicPopover = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -91,8 +63,10 @@ const Commentcard = () => {
                             <Avatar src="/images/card_comment/ava.jpg" />
                         </Grid>
                         <Grid item>
-                            Nick
-                            <Typography> Portland, Oregon . 45 contributions</Typography>
+                            <Typography variant="h6" component="h2" sx={{ fontSize: "18px", fontWeight: 'medium' }}>
+                                Nick
+                            </Typography>
+                            <Typography variant="h6" component="h2" sx={{ fontSize: "16px", fontWeight: 'medium' }}> Portland, Oregon . 45 contributions</Typography>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -128,11 +102,11 @@ const Commentcard = () => {
                                 <FavoriteIcon sx={{ color: pink[600] }} />
                                 <FavoriteIcon sx={{ color: pink[600] }} />
                             </Stack>
-                            <Typography variant="subtitle2"> What a blast in Saigon!</Typography>
-                            <Typography> May 2020</Typography>
+                            <Typography variant="subtitle2" component="h2" sx={{ fontSize: "18px", fontWeight: 'medium' }}> What a blast in Saigon!</Typography>
+                            <Typography variant="h6" component="h2" sx={{ fontSize: "16px", fontWeight: 'medium' }}> May 2020</Typography>
                         </Grid>
                         <Grid item>
-                            <Typography >
+                            <Typography variant="h6" component="h2" sx={{ fontSize: "18px", fontWeight: 'light' }} >
                                 Danny and Sophia picked up Kelly and I at our hotel in District 1. They gave us a quick briefing on the scooters and off we went. What looks like chaos from the street is actually pretty organized when you’re on the back of a scooter. With Danny and Sophia driving we always felt safe the whole evening. They took us places we would have never gone on our own. From Vietnamese pancakes to noodle soup to barbecue, each food stop was just outstanding. And Danny and Sophia took time at each stop to explain to us what we were having, and how it was prepared. In fact they can tailor your tour to your food tastes which is outstanding. In our two weeks in Vietnam this was one of our most fun tours. If you ...
                                 <Link sx={{ fontSize: "20px", fontWeight: "bold", cursor: "pointer" }} > Read More</Link>
                             </Typography>

@@ -50,8 +50,12 @@ export default function DetailTourReview() {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="Review" {...a11yProps(0)} />
-                    <Tab label="Q&A" {...a11yProps(1)} />
+                    <Tab label={<Typography variant="h6" component="h2" sx={{ "ml": "10px", fontSize: "20px", fontWeight: 'medium' }}>
+                        Review
+                    </Typography>} {...a11yProps(0)} />
+                    <Tab label={<Typography variant="h6" component="h2" sx={{ "ml": "10px", fontSize: "20px", fontWeight: 'medium' }}>
+                        Q&A
+                    </Typography>} {...a11yProps(1)} />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
