@@ -8,14 +8,24 @@ import Footer from '../components/footer/Footer';
 import HeroSectionTour from '../components/layoutDetailTour/HeroSectionTour';
 import ListInfo from '../components/layoutDetailTour/ListInfo';
 import Itinerary from '../components/layoutDetailTour/Itinerary';
-const  DetailTour =() => {
-  return(
-    <Grid  >
-    <HeroSectionTour></HeroSectionTour>
-    <ListInfo></ListInfo>
-    <Itinerary></Itinerary>
-    <Footer></Footer>
+import CardTourCarousel from '../components/detailtour/CardTourCarousel';
+import DetailTourReview from '../components/detailtour/DetailTourReview';
+import Contribute from '../components/detailtour/Contribute';
+const DetailTour = () => {
+  return (
+    <Grid marginTop="30px">
+      <Container fixed >
+        <HeroSectionTour></HeroSectionTour>
+        <ListInfo></ListInfo>
+        <Itinerary></Itinerary>
+        <Contribute />
+        <DetailTourReview></DetailTourReview>
+      </Container>
+      <CardTourCarousel></CardTourCarousel>
+      <Footer></Footer>
     </Grid>
+
+
   );
 }
 export default DetailTour;

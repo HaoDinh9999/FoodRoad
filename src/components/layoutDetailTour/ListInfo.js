@@ -14,7 +14,7 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 
 const  ListInfo =() => {
     return(
-      <Box padding="60px 200px 20px 200px">
+      <Box marginTop="50px">
         <h2>About</h2>
         <Grid container >
             <Grid item sm={8}>
@@ -89,7 +89,7 @@ const  ListInfo =() => {
             Learn about food customs, as you sit on plastic chairs, eating Vietnamese pancakes (banh xeo), spring rolls, and more. See historic residential buildings and learn the art of hand-poured coffee in a secret coffee shop. Tour narrow lanes, sample Vietnamese “pizza,” and try different sweet soup desserts before your guide drops you back at your hotel.
             </Typography>  
             </Grid>
-            <Button  sx={{color:"#000",backgroundColor:"#fff",borderRadius:10,padding:"15px 40px",marginTop:"30px",border:2}}>
+            <Button  sx={{color:"#000",backgroundColor:"#fff",borderRadius:10,padding:"10px 40px",marginTop:"30px",border:2}}>
               View more information
             </Button>
         </Grid>
@@ -169,7 +169,7 @@ const  ListInfo =() => {
             <li></li>This tour/activity will have a maximum of 30 travelers
 
             </Typography> 
-            <Button  sx={{color:"#000",backgroundColor:"#fff",borderRadius:10,padding:"15px 40px",marginTop:"30px",border:2}}>
+            <Button  sx={{color:"#000",backgroundColor:"#fff",borderRadius:10,padding:"10px 40px",marginTop:"30px",border:2}}>
               View details
             </Button>
             </Grid>
