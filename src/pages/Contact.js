@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import Footer from '../components/footer/Footer';
 import ContactDetails from '../components/contactdetails/ContactDetails';
+import ButtonScrollTop from '../components/buttonscrolltop/ButtonScrollTop';
 
 function Contact() {
     return(
@@ -19,6 +20,7 @@ function Contact() {
             <ContactDetails />
         </div>
         <Footer />
+        <ButtonScrollTop />
         </>
     );
 }

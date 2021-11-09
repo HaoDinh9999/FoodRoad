@@ -140,6 +140,7 @@ class ContactDetails extends Component {
                                         placeholder="Name"
                                         onChange={this.handleChange.bind(this, "name")}
                                         value={this.state.fields["name"]}
+                                        style={{marginTop:"16px"}}
                                     />
                                     <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
                                     <input
@@ -161,6 +162,7 @@ class ContactDetails extends Component {
                                         size="69"
                                         placeholder='Subject'
                                         onChange={this.handleChange.bind(this, "subject")}
+                                        style={{marginTop:"16px"}}
                                     />
                                     <br />
                                     <textarea
@@ -170,14 +172,16 @@ class ContactDetails extends Component {
                                         id="message"
                                         name="data[Contact][content]"
                                         placeholer="Message"
+                                        style={{marginTop:"16px"}}
                                     />
                                     <Recaptcha
                                         sitekey="6LdBYQwdAAAAABNyaYKSXfle0eYGVlqM95dl2ZQ_"
                                         render="explicit"
                                         onloadCallback={this.recaptchaLoaded}
                                         verifyCallback={this.verifyCallback}
+                                        style={{marginTop:"16px"}}
                                     />
-                                    <button onClick={""} type='submit' class='btn-send' id='btn send'>
+                                    <button onClick={""} type='submit' class='btn-send' id='btn send' style={{marginTop:"16px"}}>
                                         <FaPaperPlane />
                                         SEND
                                     </button>
