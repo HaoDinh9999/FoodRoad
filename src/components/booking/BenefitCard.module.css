@@ -1,0 +1,12 @@
+.benefit-icon {
+  color: rgb(197, 78, 78);
+  font-size: 4rem;
+  margin-right: 32px;
+}
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.benefit-content {
+  color: #666;
+}
