@@ -11,7 +11,7 @@ import Itinerary from '../components/layoutDetailTour/Itinerary';
 import CardTourPro from '../components/layoutDetailTour/CardTourPro';
 const  DetailTour =() => {
   return(
-    <Grid marginTop="30px">
+    <Grid marginTop="20px">
     <Container  fixed >
     <HeroSectionTour></HeroSectionTour>
     <ListInfo></ListInfo>

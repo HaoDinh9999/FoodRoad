@@ -14,6 +14,10 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import Popover from '@mui/material/Popover';
 import MinimizeOutlinedIcon from '@mui/icons-material/MinimizeOutlined';
 import AddSharpIcon from '@mui/icons-material/AddSharp';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import HomeIcon from '@mui/icons-material/Home';
+
 const  HeroSectionTour =() => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -24,13 +28,41 @@ const  HeroSectionTour =() => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const breadcrumbs = [
+    <Link underline="hover" key="1" color="inherit" href="/" >
+      FoodRoad
+    </Link>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/tours"
+    >
+      Tours
+    </Link>,
+    <Typography key="3" color="text.primary">
+      TourScooterAtNight
+    </Typography>,
+  ];
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
   return(
     <Box  margin="">
       <Grid  container sm={12} xs={12} display="flex" >
+        <Grid item sm={6} xs={12} display="flex" alignItems="center" marginBottom="20px">
+        <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+        <Breadcrumbs
+        separator={<NavigateNextIcon fontSize="small" />}
+        aria-label="breadcrumb"
+        >
+        {breadcrumbs}
+        </Breadcrumbs>
+        </Grid>
+        <Grid item sm={6} xs={12} display="flex" justifyContent="flex-end" >
+        <Typography  variant="h6" component="h2"  sx={{fontSize:"small",color:"inherit"}}>Saigon Food Tour on Scooter at Night provided by Saigon Food Tour     
+        </Typography>
+        </Grid>
         <Grid item sm={10} xs={12}>
         <Typography  variant="h6" component="h2" style={{ fontSize:"40px",fontWeight:"bold"}}>Saigon Food Tour on Scooter at Night
         </Typography> 
