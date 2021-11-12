@@ -13,7 +13,6 @@ const CardService =(props) => {
        sx={{
         '&:hover': {
           transform: "translateY(-10px)",
-          backgroundImage: "#981",
        },
        }}
        >
