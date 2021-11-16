@@ -12,7 +12,7 @@ import RightArrow from "../../../assets/img/right-arrow.svg"
 import { UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import "./sliders.css";
 import Container from "@mui/material/Container";
-
+import CardTourPro from "../../layoutDetailTour/CardTourPro"
 const AllCardTours = () => {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -61,7 +61,7 @@ const AllCardTours = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -102,14 +102,12 @@ const AllCardTours = () => {
         Trending Tours
         </Typography>
     <Slider  {...settings}>
-      <CardTourItem url='/images/Food1.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food2.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food3.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food4.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food1.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food2.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food3.jpg'></CardTourItem>
-      <CardTourItem url='/images/Food4.jpg'></CardTourItem>
+      <CardTourPro/>
+      <CardTourPro/>
+      <CardTourPro/>
+      <CardTourPro/>
+      <CardTourPro/>
+
     </Slider>
     <Box height="50px"></Box>
     <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
