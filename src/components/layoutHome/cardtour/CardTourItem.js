@@ -12,113 +12,77 @@ import Image from '../../../assets/img/Food1.jpg'
 import { UilMapMarkerInfo } from '@iconscout/react-unicons'
 import { UilEye } from '@iconscout/react-unicons'
 import { UilAnchor } from '@iconscout/react-unicons'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Link from '@mui/material/Link';
+
 const CardTourItem = (props) => {
   return (
     <Box
-    margin ="10px 0px 5px 5px"
-    sx={{
-        width: 365,
-        height: 300,
-        borderRadius: 10,
-        boxShadow: 3,
-        backgroundImage:`url(${props.url})`,
-        backgroundSize: ' cover',
-        backgroundColor: '#f99',
-        backgroundPosition: 'center',
-
-        '&:hover': {
-          backgroundColor: '#ff6868',
-          opacity: [0.9, 0.8, 0.7],
-        },
-      }}
+    maxWidth="280px"
     >
-        <Grid
-            display="flex"
-            justifyContent="space-between"
-            sm={12}
-    
-    >
-        <Grid item sm={2.4}
-        margin="10px 0px 0px 10px"
-        width="20%"
-        height="14%"
-         sx={{
-            borderRadius:10,
-            boxShadow: 3,
-            backgroundColor: '#ffe000',
-           
-          }}
-        >
-         <IconButton   
-        width="100%" 
-        height="100%"  
-        aria-label="rating">
-            <UilFavorite color="#FFF"/>
-            <h5 fontWeight='bold' style={{color:"#ffffff"}}>4.5</h5>
-        </IconButton>
-        </Grid>
-        <Grid item sm={8.3}></Grid>
-        <Grid item sm={1.3}
-        margin="10px 15px 0px 0px"
-        height="14%"
-         sx={{
+        <Grid container sm={12}
+          sx={{
+            height:300,
             borderRadius: 2,
             boxShadow: 3,
-            backgroundColor: '#FFF',
-           
+            backgroundImage:`url(${props.url})`,
+            backgroundSize: ' cover',
+            backgroundColor: '#f99',
+            backgroundPosition: 'center',
+    
+            '&:hover': {
+              backgroundColor: '#ff6868',
+              opacity: [0.9, 0.8, 0.7],
+            },
           }}
         >
-        <IconButton  
-        aria-label="rating">
-            <UilBookmarkFull color="#000000"/>
-        </IconButton>
+             <Grid item sm={12} display="flex" justifyContent="flex-end"
+          
+            >
+           <IconButton  aria-label="delete"  sx={{ margin:"5px 5px 0px 0px" , color:"#000000",backgroundColor:"#fff",borderRadius:8,height:"50px",width:"50px"}} >
+                    <FavoriteBorderIcon  sx={{ color:"#00000",fontSize:"35px"}}  />
+                     
+                </IconButton>
         </Grid>
-        
-      
         </Grid>
-        
         <Box
-        marginTop="190px"
-           sx={{ 
-            borderBottomLeftRadius:20,
-            borderBottomRightRadius:20,
-            boxShadow: 3 ,
-            borderBottom: 1 ,
-            borderColor: 'red'
-           }}
-            width="100%"
-            height="20%"
             backgroundColor="#fff"
         >
-            <Box
-            display="flex"
-            justifyContent="space-between"
-            marginBottom="-40px"
-            padding="0px 5px 0px 5px"
+            <Box display="flex" justifyContent="space-between">
+              <Box>
+                <Link href="#" underline="hover" fontWeight="bold" fontSize="20px"  color="#f2b203">
+                {'Bun bo Hue'}
+                </Link>
+                <Box 
+                display="flex"
+                alignItems="center"
+                >
+                <IconButton  aria-label="delete"  sx={{ marginRight:"2px",backgroundColor:"#00aa6c",borderRadius:8,height:"5px",width:"5px"}} >
+                </IconButton>
+                <IconButton  aria-label="delete"  sx={{ marginRight:"2px",backgroundColor:"#00aa6c",borderRadius:8,height:"5px",width:"5px"}} >
+                </IconButton>
+                <IconButton  aria-label="delete"  sx={{ marginRight:"2px",backgroundColor:"#00aa6c",borderRadius:8,height:"5px",width:"5px"}} >
+                </IconButton>
+                <IconButton  aria-label="delete"  sx={{ marginRight:"2px",backgroundColor:"#00aa6c",borderRadius:8,height:"5px",width:"5px"}} >
+                </IconButton>
+                <IconButton  aria-label="delete"  sx={{ marginRight:"10px",backgroundColor:"#00aa6c",borderRadius:8,height:"5px",width:"5px"}} >
+                </IconButton>
 
-            >
-            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px" marginTop="-5px" color="#f26600" marginLeft="5px" >
-            Bun bo Hue
-            </Typography>
-            <Typography variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="35px" color="#f26600" marginTop="2px" marginRight="5px">
-                $25
-            </Typography>    
-            </Box>        
-            <Box 
-            marginLeft="4px"
-            display="flex"
-            alignItems="center"
-            >
-            <UilMapMarkerInfo color="#f3a46b"/>   
-            <Typography variant="h6" gutterBottom component="div" fontWeight="medium" fontSize="10px" color="#555555" margin="1px 5px 0px 0px" >
-                623 Do Xuan Hop, quan 9, HCM
-            </Typography>   
-            <UilEye color="#f3a46b"/>   
-            <Typography  variant="h6" gutterBottom component="div" fontWeight="medium" fontSize="10px" color="#555555" margin="1px 5px 0px 0px" >
+                <Typography  variant="h6" gutterBottom component="div" fontWeight="regular" fontSize="13px" color="#555555" margin="1px 0px 0px 0px" >
                 1280 views
+                </Typography> 
+           
+                </Box>
+              </Box>
+         
+            <Typography  variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="35px"  color="#f2b203" marginRight="15px" >
+               25$
             </Typography> 
-    
             </Box>
+           
+           
+
+
         </Box>
            
     </Box>
