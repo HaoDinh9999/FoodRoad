@@ -1,0 +1,60 @@
+
+.card{
+    width: 345;
+    margin: 'auto';
+    /* border: 5px solid red; */
+    margin-bottom: 25px;
+    border-radius: 50px;
+    /* transition: transform ease 300ms; */
+}
+.card :hover{
+    /* transform: translate(0, -10px); */
+}
+.media{
+    object-fit: fill;
+}
+
+.book-now-btn {
+    position: relative;
+    top:0px;
+    left: 150px;
+}
+.border-btm{
+    padding-bottom: 0px;
+    border-bottom: 0.5 solid gray;
+    border-top: 0.5 solid gray;
+}
+.price-txt{
+    color: red;
+}
+.favourite-icon{
+    transition: transform 0.15s ease-in-out,
+}
+.favourite-icon :hover{
+    color: red;
+    transform: scale3d(1.05, 1.05, 1)
+}
+.share-icon{
+    transition: transform 0.15s ease-in-out,
+}
+.share-icon :hover{
+    color: blue;
+    transform: scale3d(1.05, 1.05, 1)
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    z-index: 10;
+  }
+  
