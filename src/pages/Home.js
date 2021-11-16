@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.css";
-import Footer from "../components/footer/Footer";
 import HeroSection from "../components/layoutHome/herosection/HeroSection";
 import AllOurServices from "../components/layoutHome/ourservice/AllOurServices";
 import AllSales from "../components/layoutHome/sale/AllSales";
@@ -14,7 +13,6 @@ function Home() {
       <AllSales></AllSales>
       <AllCardTours></AllCardTours>
       <AllNewsReview></AllNewsReview>
-      <Footer></Footer>
     </>
   );
 }
