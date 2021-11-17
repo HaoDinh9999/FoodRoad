@@ -16,7 +16,7 @@ import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
 import Booking from "./pages/Booking";
-import Footer from "./components/footer/Footer3";
+import Footer from "./components/footer/Footer2";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
