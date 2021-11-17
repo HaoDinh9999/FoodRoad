@@ -42,7 +42,12 @@ const CardNews = (props) => {
     <Typography  variant="h6" component="h2" style={{color:props.fontcolor1,fontSize:"16px",fontWeight:"light"}}>OUR NEWS </Typography> 
     <Typography  variant="h6" component="h2" style={{color:props.title1 ,fontSize:"26px",fontWeight:"bold"}}>TRAVEL EVENTS </Typography> 
     <Typography sx={{marginTop:"15px",lineHeight: 2 }} width="230px" variant="h6" component="h2" style={{color:props.fontcolor1,fontSize:"16px",fontWeight:"light"}}>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. </Typography> 
-    <Button   sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",marginTop:"20px",backgroundColor: props.colorbutton,color:props.color1,  textTransform: 'none' }} variant="contained" 
+    <Button   sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",marginTop:"20px",backgroundColor: props.colorbutton,color:props.color1,  textTransform: 'none',
+    '&:hover': {
+      backgroundColor: props.colorbutton,
+      opacity: [0.9, 0.8, 0.7],
+      },  
+  }} variant="contained" 
        >
           READ MORE
         </Button>
