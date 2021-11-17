@@ -74,16 +74,24 @@ function Footer2() {
                             </Box>
                             <Box display="flex" flexDirection="row" sx={{pt: 3}}>
                                 <Box sx={{pr: 10}}>
-                                <Typography color="#808080" fontSize="18px">Call us</Typography>
+                                <Typography color="#808080" fontSize="18px">Call us:</Typography>
                                     <Typography fontSize="22px" fontWeight="bold">+84 905137051</Typography>
                                 </Box>
                                 <Box>
-                                    <Typography color="#808080" fontSize="18px">E-mail us</Typography>
-                                    <Typography fontSize="22px" fontWeight="bold">foodtour@gmail.com</Typography>
+                                    <Typography color="#808080" fontSize="18px">E-mail us:</Typography>
+                                    <Typography fontSize="22px" fontWeight="bold">foodroad@gmail.com</Typography>
                                 </Box>
                             </Box>
-                                <Box sx={{pt: 5}}>
+                                <Box display="flex" sx={{pt: 5}}>
                                     <Typography color="#808080" fontSize="18px">Follow us on:</Typography>
+                                    <Box sx={{pl:2}}>
+                                    <Stack direction="row" spacing={2}>
+                                    <a href="https://www.facebook.com/FoodRoadSaigon" title="FoodRoad Facebook" target="_blank"> <i class="fab fa-facebook fa-2x" style={{color:"#3b5998"}}></i> </a>
+                                    <a href="https://www.twitter.com/" title="FoodRoad Twitter" target="_blank"> <i class="fab fa-twitter fa-2x" style={{color:"#1DA1F2"}}></i> </a>
+                                    <a href="https://www.youtube.com/" title="FoodRoad Youtube" target="_blank"> <i class="fab fa-youtube fa-2x" style={{color:"#FF0000"}}></i> </a>
+                                    <a href="https://github.com/HaoDinh9999/FoodRoad" title="FoodRoad Github" target="_blank"> <i class="fab fa-github fa-2x"></i> </a>
+                                    </Stack>
+                                    </Box>
                                 </Box>
                         </Stack>
                     </Box>
