@@ -16,10 +16,11 @@ import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
 import Booking from "./pages/Booking";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer3";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 function App() {
   return (
     <>
@@ -48,6 +49,10 @@ function App() {
           </Route>
         </Switch>
         <Footer></Footer>
+        <MessengerCustomerChat
+          pageId="109031571600773"
+          appId="291000409568661"
+        />
       </Router>
     </>
   );
