@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
+import News from "./pages/News";
 import DetailTour from "./pages/DetailTour";
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/tour/detailtour">
             <DetailTour/>
+          </Route>
+          <Route path="/news">
+            <News/>
           </Route>
         </Switch>
       </Router>
