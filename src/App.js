@@ -20,9 +20,17 @@ import Footer from "./components/footer/Footer";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "Inter, Roboto, san-serif",
+  },
+});
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Router>
         <Header />
         <Switch>
@@ -43,13 +51,16 @@ function App() {
           <Route path="/faqs">
             <FAQS />
           </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </Router>
-    </>
+    </ThemeProvider>
   );
 }
 

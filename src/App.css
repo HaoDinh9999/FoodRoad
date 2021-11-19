@@ -92,3 +92,6 @@ html {
   color: var(--main-bg);
   font-size: 100px;
 }
+legend {
+  float: none;
+}
