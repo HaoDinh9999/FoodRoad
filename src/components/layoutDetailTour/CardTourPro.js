@@ -49,7 +49,7 @@ const CardTourPro = (props) => {
         <Box
             backgroundColor="#fff"
         >
-            <Link href="#" underline="hover" fontWeight="bold" fontSize="18px"  color="#f2b203">
+            <Link href="/tours/detailtour" underline="none" fontWeight="bold" fontSize="18px"  color="#f2b203">
             {'Cu Chi Tunnels: Morning or Afternoon Guided Tour(Ben Duoc Option available)'}
             </Link>
             <Box 

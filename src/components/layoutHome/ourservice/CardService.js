@@ -9,7 +9,7 @@ import { UilMessage } from '@iconscout/react-unicons'
 
 const CardService =(props) => {
     return (
-       <Grid paddingLeft="30px" paddingRight="20px" 
+       <Grid 
        sx={{
         '&:hover': {
           transform: "translateY(-10px)",
@@ -32,7 +32,7 @@ const CardService =(props) => {
           padding:"10px 0px 10px 53px"
         }}
       >
-        <Typography  marginLeft="10px" marginTop="-5px" variant="h6" component="h2" style={{color:"#fff",fontSize:"17px",textAlign:"left",fontWeight:"Medium"}}>
+        <Typography  marginLeft="10px" marginTop="-5px" variant="h6" component="h2" style={{color:"#fff",fontSize:"17px",textAlign:"left",fontWeight:"Medium",width:"80%"}}>
           {props.text}
         </Typography>        
       </Box>
@@ -42,7 +42,12 @@ const CardService =(props) => {
           paddingLeft:"60px"
         }}
       >
-        <Button  sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",backgroundColor:props.color1,  textTransform: 'none' }} variant="contained" 
+        <Button  sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",backgroundColor:props.color1,  textTransform: 'none' ,
+        '&:hover': {
+          backgroundColor: props.color1,
+          opacity: [0.9, 0.8, 0.7],
+          },
+      }} variant="contained" 
         endIcon={<UilMessage />}>
           View More
         </Button>       
