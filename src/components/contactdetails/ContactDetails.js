@@ -142,7 +142,7 @@ class ContactDetails extends Component {
                                         value={this.state.fields["name"]}
                                         style={{marginTop:"16px"}}
                                     />
-                                    <span style={{ color: "red" }}>{this.state.errors["name"]}</span>
+                                    <span style={{ color: "red", fontSize: "10px"}}>{this.state.errors["name"]}</span>
                                     <input
                                         refs="email"
                                         type="text"

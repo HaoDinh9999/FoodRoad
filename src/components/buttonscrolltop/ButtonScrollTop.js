@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./ButtonScrollTop.css"
+import { FaChevronUp } from "react-icons/fa";
 
 const ButtonScrollTop = () => {
     const [showButton, setShowButton]= useState(false);
@@ -29,7 +30,7 @@ const ButtonScrollTop = () => {
         <>
             {showButton && (
                 <button onClick={scrollToTop} className="back-to-top">
-                    &#8682;
+                    <FaChevronUp/>
                 </button>
             )}
         </>

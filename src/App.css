@@ -127,3 +127,7 @@
   color:var(--main-bg);
   font-size: 100px;
 }
+
+.review{
+  background-color: rgba(153, 147, 147, 0.2);
+}

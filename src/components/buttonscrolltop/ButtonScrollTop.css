@@ -11,12 +11,12 @@
     font-size: 30px;
     bottom: 20px;
     right: 20px;
-    background: orange;
+    background: rgb(12, 141, 102);
     color: white;
     cursor: pointer;
     border: none;
   }
   
   .back-to-top:hover {
-    background: red;
+    background: rgb(82, 131, 18);
   }
