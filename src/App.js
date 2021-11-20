@@ -10,7 +10,6 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Contact from './pages/Contact';
 import Review from './pages/Review';
-import Expandable from './components/reviewdetails/ExpandableContent'
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path='/sign-in' component={SignIn} />
           <Route path='/contact' component={Contact} />
           <Route path='/review' component={Review} />
-          <Route path='/test' component={Expandable} />
         </Switch>
       </Router>
     </>
