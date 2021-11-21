@@ -13,20 +13,25 @@ const ContactInfo = () => {
   return (
     <Box>
       <Box mb={2}>
-        <Typography
-          textAlign="center"
-          fontWeight={700}
-          mb={1.5}
-          color="#1e2022"
-          variant="h4"
-        >
-          Contact details
-        </Typography>
-        <Typography textAlign="center" color="#677788" variant="body1">
-          Keep track of what's happening with your data, change permissions, and
-          run reports against your data anywhere in the world. Keep track of
-          what's happening with your data, change permissions.
-        </Typography>
+        <div data-aos="fade-up" data-aos-duration={900}>
+          <Typography
+            textAlign="center"
+            fontWeight={700}
+            mb={1.5}
+            color="#1e2022"
+            variant="h4"
+          >
+            Contact details
+          </Typography>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration={900}>
+          <Typography textAlign="center" color="#677788" variant="body1">
+            Keep track of what's happening with your data, change permissions,
+            and run reports against your data anywhere in the world. Keep track
+            of what's happening with your data, change permissions.
+          </Typography>
+        </div>
       </Box>
       <Box
         sx={{
@@ -37,33 +42,39 @@ const ContactInfo = () => {
           justifyContent: "space-between",
         }}
       >
-        <ListItem sx={{ width: "auto", padding: 0 }}>
-          <ListItemAvatar>
-            <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
-              <PhoneIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Phone" secondary="+84 353-398-596" />
-        </ListItem>
-        <ListItem sx={{ width: "auto", padding: 0 }}>
-          <ListItemAvatar>
-            <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
-              <MailIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Email" secondary="foodroad@gmail.com" />
-        </ListItem>
-        <ListItem sx={{ width: "auto", padding: 0 }}>
-          <ListItemAvatar>
-            <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
-              <LocationIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText
-            primary="Address"
-            secondary="1 Nguyen Binh Khiem, District 1."
-          />
-        </ListItem>
+        <div data-aos="fade-right" data-aos-duration={900}>
+          <ListItem sx={{ width: "auto", padding: 0 }}>
+            <ListItemAvatar>
+              <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
+                <PhoneIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Phone" secondary="+84 353-398-596" />
+          </ListItem>
+        </div>
+        <div data-aos="fade-up" data-aos-duration={900}>
+          <ListItem sx={{ width: "auto", padding: 0 }}>
+            <ListItemAvatar>
+              <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
+                <MailIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Email" secondary="foodroad@gmail.com" />
+          </ListItem>
+        </div>
+        <div data-aos="fade-left" data-aos-duration={900}>
+          <ListItem sx={{ width: "auto", padding: 0 }}>
+            <ListItemAvatar>
+              <Avatar sx={{ backgroundColor: "rgb(249, 185, 52)" }}>
+                <LocationIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText
+              primary="Address"
+              secondary="1 Nguyen Binh Khiem, District 1."
+            />
+          </ListItem>
+        </div>
       </Box>
     </Box>
   );

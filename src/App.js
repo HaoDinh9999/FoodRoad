@@ -22,6 +22,7 @@ import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Review from "./pages/Review";
 
 const theme = createTheme({
   typography: {
@@ -53,6 +54,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/review">
+            <Review />
           </Route>
           <Route path="*">
             <NotFound />

@@ -8,7 +8,14 @@ import Divider from "@mui/material/Divider";
 import Map from "../components/contact/Map";
 import ContactForm from "../components/contact/ContactForm";
 import ContactInfo from "../components/contact/ContactInfo";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Contact = () => {
+  React.useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, []);
   return (
     <Container fixed>
       <Grid container>

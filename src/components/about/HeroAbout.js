@@ -28,15 +28,22 @@ const HeroAbout = () => {
             textAlign: { md: "left", xs: "center" },
           }}
         >
-          <Typography fontWeight={700} color="primary" variant="h2">
-            Who
-          </Typography>
-          <Typography fontWeight={700} color="white" variant="h2">
-            we are?
-          </Typography>
-          <Typography mt={4} fontWeight={500} color="white" variant="h5">
-            Let's work together and make awesome site easily
-          </Typography>
+          <div data-aos="fade-right">
+            <Typography fontWeight={700} color="primary" variant="h2">
+              Who
+            </Typography>
+          </div>
+          <div data-aos="fade-right">
+            {" "}
+            <Typography fontWeight={700} color="white" variant="h2">
+              we are?
+            </Typography>
+          </div>
+          <div data-aos="zoom-in-down">
+            <Typography mt={4} fontWeight={500} color="white" variant="h5">
+              Let's work together and make awesome site easily
+            </Typography>
+          </div>
         </Box>
       </Container>
     </Box>
