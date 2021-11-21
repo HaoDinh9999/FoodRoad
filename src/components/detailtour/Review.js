@@ -168,7 +168,7 @@ const Review = () => {
                     </Grid>
                 </Grid>
             </Grid>
-        </div >
+        </div>
     );
 }
 

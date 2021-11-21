@@ -13,6 +13,8 @@ import FAQS from "./pages/FAQS";
 import Booking from "./pages/Booking";
 import Footer from "./components/footer/Footer";
 import DetailTour from "./pages/DetailTour";
+import Order from "./pages/Order";
+
 function App() {
   return (
     <>
@@ -21,10 +23,11 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/tours/detailtour" component={DetailTour} />
+          <Route path="/tours/" component={Tours} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
-          <Route path="/gallery">
+          <Route path="/order" component={Order} />
+          <Route path="/gallery">setPrice
             <Gallery />
           </Route>
           <Route path="/booking">
@@ -33,6 +36,10 @@ function App() {
           <Route path="/faqs">
             <FAQS />
           </Route>
+          <Route exact path="/tours/:id" render={props => <DetailTour {...props.match.params} />} />
+          {/* <Route path="/tours/:id">
+            <DetailTour />
+          </Route> */}
         </Switch>
         <Footer></Footer>
       </Router>
