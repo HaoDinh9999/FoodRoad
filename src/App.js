@@ -20,6 +20,8 @@ import Footer from "./components/footer/Footer";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
+
 function App() {
   return (
     <>
@@ -34,6 +36,7 @@ function App() {
           <Route path="/tours/detailtour" component={DetailTour} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
+          <Route path="/profile" component={Profile} />
           <Route path="/gallery">
             <Gallery />
           </Route>
