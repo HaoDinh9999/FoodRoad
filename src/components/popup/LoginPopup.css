@@ -1,17 +1,17 @@
 .textinput {
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 
 input {
     width: 100%;
     height: 45px;
-    border-radius: 10px;
-    border-color: #404040;
+    border-radius: 20px;
+    border-color: #808080;
     border-width: 2px;
     border-style: solid;
     padding: 15px;
-    background-color: #28282B;
-    color: white;
+    background-color: white;
 }
 
 ::-ms-reveal {
@@ -20,13 +20,31 @@ input {
   
 
 input:focus {
-    outline: none !important;
+    
     border:5px #808080;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 5px #808080;
 }
 
 
 ::placeholder {
     color: #808080;
     font-size: 14px;
+}
+
+.fa-google {    
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #42b72a;
+}
+
+a:hover {
+    text-decoration: underline;
 }

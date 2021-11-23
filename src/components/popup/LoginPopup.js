@@ -7,7 +7,10 @@ import Typography from "@mui/material/Typography";
 import "./LoginPopup.css";
 import Slide from "@mui/material/Slide";
 import Divider from "@mui/material/Divider";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
+import GoogleIcon from '@mui/icons-material/Google';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -38,11 +41,11 @@ export default function FormDialog(props) {
       fullWidth
       PaperProps={{
         style: {
-          backgroundColor: "#28282B",
-          borderStyle: "solid",
+          backgroundColor: "white",
+          borderStyle: "none",
           borderColor: "#808080",
           borderWidth: 2,
-          borderRadius: 10,
+          borderRadius: 30,
         },
       }}
     >
@@ -55,13 +58,14 @@ export default function FormDialog(props) {
         >
           WELCOME
         </Typography>
+
         <Typography
           variant="h5"
           align="center"
           style={{
-            color: "#fff",
+            color: "black",
             fontWeight: "bold",
-            fontSize: "20px",
+            fontSize: "24px",
             paddingBottom: "10px",
           }}
         >
@@ -79,7 +83,7 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{ color: "#fff", paddingBottom: "5px", fontSize: "15px" }}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "15px" , fontWeight: "bold"}}
           >
             E-mail or Username
           </Typography>
@@ -100,7 +104,7 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{ color: "#fff", paddingBottom: "5px", fontSize: "15px" }}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "15px", fontWeight: "bold"}}
           >
             Password
           </Typography>
@@ -122,29 +126,35 @@ export default function FormDialog(props) {
               textTransform: "none",
               fontSize: "20px",
               fontWeight: "bold",
-              borderRadius: "10px",
+              borderRadius: "24px",
             }}
           >
             Log In
           </Button>
         </div>
-
-        <Divider
-          sx={{ bgcolor: (theme) => theme.palette.divider }}
-          style={{
-            border: "none",
-            height: 1,
-            margin: 0,
-            backgroundColor: "#404040",
-          }}
-        />
-
-        <div style={{ padding: "10px" }}>
-          <Typography variant="subtitle5" style={{ color: "#808080" }}>
-            Not registered yet?
-          </Typography>
-        </div>
-        <div class="textinput">
+        <Box pt="10px" pb="20px">
+        <Divider sx={{color:"#808080", fontSize: "14px"}}> or Sign In with </Divider>
+        </Box>
+        <Box>
+        <Stack spacing="15px">
+          <Button
+            variant="contained"
+            fullWidth
+            style={{
+              height: "50px",
+              textTransform: "none",
+              fontSize: "22px",
+              fontWeight: "bold",
+              borderRadius: "24px",
+              backgroundColor: "#ededed",
+              color: "black"
+            }}
+          >
+            <Box pr="10px">
+            <i class="fab fa-google fa-x"></i>
+            </Box>
+            Google
+          </Button>
           <Button
             variant="contained"
             fullWidth
@@ -153,13 +163,26 @@ export default function FormDialog(props) {
               textTransform: "none",
               fontSize: "20px",
               fontWeight: "bold",
-              borderRadius: "10px",
-              backgroundColor: "#42b72a",
+              borderRadius: "24px",
+              backgroundColor: "black",
             }}
           >
-            Create New Account
+            <Box pr="10px">
+            <i class="fab fa-apple fa-lg"></i>
+            </Box>
+            Apple
           </Button>
-        </div>
+        </Stack>
+        
+        <Box p="10px" pt="20px" display="flex">
+          <Box pr="5px">
+          <Typography variant="subtitle5" style={{ color: "#808080" }}>
+            Not registered yet?
+          </Typography>
+          </Box>
+          <a href="sign-up">Create an Account</a>
+        </Box>
+      </Box>
       </DialogContent>
     </Dialog>
   );
