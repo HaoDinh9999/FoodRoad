@@ -10,9 +10,59 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { Grid } from '@mui/material';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+import { green } from '@mui/material/colors';
+
 
 function Footer2() {
-  return (
+    const [state, setState] = React.useState({
+        open: false,
+        vertical: 'bottom',
+        horizontal: 'left',
+    });
+
+    const [loading, setLoading] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
+    const timer = React.useRef();
+    
+    const { vertical, horizontal, open } = state;
+    
+    const handleClick = (newState) => () => {
+        setState({ open: true, ...newState });
+    };
+    
+    const handleClose = () => {
+        setState({ ...state, open: false });
+    };
+
+    const buttonSx = {
+        ...(success && {
+          bgcolor: green[500],
+          '&:hover': {
+            bgcolor: green[700],
+          },
+        }),
+    };
+
+    React.useEffect(() => {
+        return () => {
+          clearTimeout(timer.current);
+        };
+      }, []);
+
+    const handleButtonClick = () => {
+        if (!loading) {
+            setSuccess(false);
+            setLoading(true);
+            timer.current = window.setTimeout(() => {
+                setSuccess(true);
+                setLoading(false);
+            }, 2000);
+        }
+    };
+      
+    return (
     <Box sx={{backgroundColor: "#F8F6F6"}}>
         <Container maxWidth="lg">
             <Box sx={{pt: 2, pb: 4}}>
@@ -25,7 +75,7 @@ function Footer2() {
                 </Box>
                 <Divider></Divider>
             </Box>  
-            <Grid container spacing={5}>
+            <Grid container spacing={3}>
                 <Grid item xs={6} sm={3}>
                 {/* <Box display="flex" sx={{flexDirection: 'row', pb: 5}} justifyContent="center"> */}
                     <Box>
@@ -67,11 +117,51 @@ function Footer2() {
                                     label="Enter your e-mail here"
                                     variant="standard"
                                     fullWidth
+                                    
                                 />
                                 </Box>
-                                <Button variant="contained" disableElevation style={{width: "35%"}}>Subscribe</Button>
+                                <Button variant="contained" disableElevation style={{width: "35%"}}
+                                onClick={handleClick({
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                    })}
+                                disabled={loading}
+                                >
+                                    Subscribe
+                                </Button>
+                                <Snackbar
+                                    anchorOrigin={{ vertical, horizontal }}
+                                    autoHideDuration={6000}
+                                    open={open}
+                                    onClose={handleClose}
+                                    key={vertical + horizontal}
+                                >
+                                    <Alert onClose={handleClose} severity="success" variant="filled" sx={{ width: '100%' }}>
+                                        Subscribed!
+                                    </Alert>
+                                </Snackbar>
                             </Box>
-                            <Box display="flex" flexDirection="row" sx={{pt: 3}}>
+                        </Stack>
+                    </Box>
+                </Grid>
+                
+                <Grid item xs={12} sm={6}>
+                    <Box pt="30px">
+                        <Stack direction="row" spacing="20px">
+                            <a href="">
+                                <img src="https://i.imgur.com/L1iu1b2.png" height="80px" width="260px"></img>
+                            </a>
+                            <a href="">
+                                <img src="https://i.imgur.com/ii8CndV.png" height="80px" width="250px"></img>
+                            </a>
+                        </Stack>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={6} sm={6}>
+                    <Box sx={{pr:10}}>
+                        <Stack spacing="5px">
+                            <Box display="flex" flexDirection="row" sx={{pt: 0}}>
                                 <Box sx={{pr: 10}}>
                                 <Typography color="#808080" fontSize="18px">Call us:</Typography>
                                     <Typography fontSize="22px" fontWeight="bold">+84 905137051</Typography>
@@ -81,7 +171,7 @@ function Footer2() {
                                     <Typography fontSize="22px" fontWeight="bold">foodroad@gmail.com</Typography>
                                 </Box>
                             </Box>
-                                <Box display="flex" sx={{pt: 5}}>
+                                <Box display="flex" sx={{pt: 3}}>
                                     <Typography color="#808080" fontSize="18px">Follow us on:</Typography>
                                     <Box sx={{pl:2}}>
                                     <Stack direction="row" spacing={2}>
