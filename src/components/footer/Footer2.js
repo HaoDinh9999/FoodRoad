@@ -67,7 +67,6 @@ function Footer2() {
                                     label="Enter your e-mail here"
                                     variant="standard"
                                     fullWidth
-                                    
                                 />
                                 </Box>
                                 <Button variant="contained" disableElevation style={{width: "35%"}}>Subscribe</Button>

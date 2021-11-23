@@ -10,7 +10,6 @@ import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
-import GoogleIcon from '@mui/icons-material/Google';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -87,7 +86,7 @@ export default function FormDialog(props) {
           >
             E-mail or Username
           </Typography>
-          <input
+          <input class="logininput"
             type="email"
             id="Email"
             name="Email"
@@ -108,7 +107,7 @@ export default function FormDialog(props) {
           >
             Password
           </Typography>
-          <input
+          <input class="logininput"
             type="password"
             id="Password"
             name="Password"
