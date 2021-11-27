@@ -197,7 +197,7 @@ const CardTourItem = (props) => {
               08:00 - 21:00
           </Typography>   
           </Box>
-          <Box display="flex" marginTop="70px">
+          <Box display="flex" marginTop="30px">
           <MonetizationOnOutlinedIcon sx={{color:"#959595",width:"35px",height:"35px"}}/>     
           <Typography   fontWeight="bold" fontSize="25px"   color="#f2b203" marginLeft="5px" >
               20.000 - 40.000 VND

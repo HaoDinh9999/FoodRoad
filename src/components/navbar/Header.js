@@ -9,12 +9,15 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
-
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 import ScopedCssBaseline from "@mui/material/ScopedCssBaseline";
 import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import LoginPopup from "../popup/LoginPopup";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -49,10 +52,16 @@ ElevationScroll.propTypes = {
    */
   window: PropTypes.func,
 };
+
 const Header = (props) => {
+  const drawerWidth = 240;
   const [openLogin, setOpenLogin] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -61,6 +70,109 @@ const Header = (props) => {
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl);
+  const drawer = (
+    <div>
+      <Toolbar>
+        <Typography
+          sx={{ fontWeight: 700 }}
+          variant="h5"
+          className={classes.logo}
+        >
+          Food Road
+          <i className="fab fa-typo3" />
+        </Typography>
+      </Toolbar>
+
+      <Divider />
+      <Stack
+        sx={{ padding: "20px", paddingTop: 0 }}
+        mt={2}
+        // alignItems="center"
+        direction="column"
+        spacing={4}
+      >
+        <NavLink
+          to="/home"
+          activeClassName={classes["link--active"]}
+          className={classes.link}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/tours"
+          className={classes.link}
+        >
+          Tours
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/about"
+          className={classes.link}
+        >
+          About
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/contact"
+          className={classes.link}
+        >
+          Contact
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/faqs"
+          className={classes.link}
+        >
+          FAQ
+        </NavLink>
+      </Stack>
+      <Divider />
+      {!localStorage.getItem("isLogin") === true && (
+        <Stack
+          mt={2}
+          sx={{ paddingLeft: "20px", paddingRight: "20px" }}
+          direction="column"
+          spacing={1}
+        >
+          <Button
+            fullWidth
+            onClick={() => {
+              setOpenLogin(true);
+            }}
+            variant="outlined"
+          >
+            Login
+          </Button>
+
+          <Button fullWidth href="/sign-up" variant="contained">
+            Sign up
+          </Button>
+        </Stack>
+      )}
+      {localStorage.getItem("isLogin") && (
+        <Stack
+          mt={2}
+          sx={{ paddingLeft: "20px", paddingRight: "20px" }}
+          direction="column"
+          spacing={1}
+        >
+          <Button
+            fullWidth
+            onClick={() => {
+              localStorage.removeItem("isLogin");
+              window.location.reload();
+            }}
+            variant="outlined"
+          >
+            Logout
+          </Button>
+        </Stack>
+      )}
+    </div>
+  );
+  const container =
+    props.window !== undefined ? () => props.window().document.body : undefined;
   return (
     <ScopedCssBaseline>
       <ElevationScroll {...props}>
@@ -72,7 +184,11 @@ const Header = (props) => {
         //   }}
         >
           <Container fixed>
-            <Toolbar>
+            <Toolbar
+              sx={{
+                padding: 0,
+              }}
+            >
               <Typography
                 sx={{ fontWeight: 700 }}
                 variant="h5"
@@ -81,7 +197,21 @@ const Header = (props) => {
                 Food Road
                 <i className="fab fa-typo3" />
               </Typography>
-              <Stack alignItems="center" direction="row" spacing={4}>
+              <IconButton
+                color="default"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { md: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Stack
+                sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+                alignItems="center"
+                direction="row"
+                spacing={4}
+              >
                 <NavLink
                   to="/home"
                   activeClassName={classes["link--active"]}
@@ -133,22 +263,10 @@ const Header = (props) => {
                   </Stack>
                 )}
                 {localStorage.getItem("isLogin") && (
-                  // <Stack direction="row" spacing={1}>
-                  // <Button
-                  //   onClick={() => {
-                  //     localStorage.removeItem("isLogin");
-                  //     window.location.reload();
-                  //   }}
-                  //   variant="outlined"
-                  // >
-                  //   Đăng xuất
-                  // </Button>
-                  // </Stack>\
                   <>
                     <Avatar
                       alt="Remy Sharp"
                       onMouseEnter={handlePopoverOpen}
-                      // onMouseLeave={handlePopoverClose}
                       sx={{ width: 32, height: 32 }}
                       src="https://vnn-imgs-f.vgcloud.vn/2020/04/13/23/suzy-tinh-dau-quoc-dan-so-huu-khoi-tai-san-chuc-trieu-do.jpg"
                     />
@@ -215,6 +333,31 @@ const Header = (props) => {
           </Container>
         </AppBar>
       </ElevationScroll>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", md: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
       <Box sx={{ height: "64px" }} />
       <LoginPopup
         open={openLogin}
@@ -225,5 +368,7 @@ const Header = (props) => {
     </ScopedCssBaseline>
   );
 };
-
+Header.propTypes = {
+  window: PropTypes.func,
+};
 export default Header;
