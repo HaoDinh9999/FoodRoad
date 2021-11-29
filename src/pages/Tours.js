@@ -3,7 +3,7 @@ import '../App.css';
 import { Breadcrumbs, Link, Typography, Container, Grid, Box } from '@mui/material';
 import Tourheader from '../components/tour/TourHeader';
 import Tourfilters from '../components/tour/TourFilter';
-import { grey, red } from '@mui/material/colors';
+import { grey, red, cyan } from '@mui/material/colors';
 import { Pagination } from '@mui/material';
 import { Typographyf14light, TypographyMod, TypographyModWarning } from '../components/tour/TypoUtils';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -38,7 +38,7 @@ export default function Tours() {
 				</Box>
 				<Tourheader />
 			</Container>
-			<Box style={{ backgroundColor: grey[100], height: "100%" }}>
+			<Box style={{ backgroundColor: "#F6F9FC", height: "100%" }}>
 				<Container fixed>
 					<Grid container>
 						<Grid item xs={4} sx={{ pb: 2 }}>
