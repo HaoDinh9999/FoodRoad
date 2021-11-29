@@ -10,7 +10,6 @@ import Slider from '@mui/material/Slider';
 import "./cardheader.css"
 import { styled } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
-
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 
@@ -31,29 +30,25 @@ const TypographyMod = (props) => {
 }
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
-        // color: "#00aa6c",
-        color: green[600],
+        color: "#00aa6c",
+        // color: green[600],
     },
     '& .MuiRating-iconHover': {
-        color: green[600],
+        // color: green[600],
 
-        // color: "#00aa6c",
+        color: "#00aa6c",
     },
     '&.css-dqr9h-MuiRating-label': {
         marginTop: "2px"
     }
 });
 const labels = {
-    0.5: 'Useless',
-    1: 'Useless+',
-    1.5: 'Poor',
-    2: 'Poor+',
-    2.5: 'Ok',
-    3: 'Ok+',
-    3.5: 'Good',
-    4: 'Good+',
-    4.5: 'Excellent',
-    5: 'Excellent+',
+    0: 'Poor',
+    1: 'Terrible',
+    2: 'Average',
+    3: 'Good',
+    4: 'Very Good',
+    5: 'Excellent',
 };
 const Tourfilters = () => {
     const [price, setPrice] = useState([40, 100])
@@ -70,7 +65,7 @@ const Tourfilters = () => {
         }
     }
     return (
-        <Box sx={{ width: "296px", border: "1px solid black", backgroundColor: "white", borderRadius: "7px", mt: 1 }}>
+        <Box sx={{ width: "296px", backgroundColor: "white", borderRadius: "7px", mt: 1 }}>
             {/* Covid 19 */}
             <Box sx={{ m: 1, borderBottom: "1px solid black", ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Covid-19<IconButton sx={{ ml: 1 }}>
@@ -115,6 +110,7 @@ const Tourfilters = () => {
                         max={200}
                         valueLabelDisplay="auto"
                         disableSwap
+                        sx={{ color: "#00aa6c" }}
                     />
                 </Box>
                 {/* <FormControl sx={{ m: 2, width: "247px", height: "37" }}>
@@ -145,7 +141,7 @@ const Tourfilters = () => {
                 </Box>
                 <Box
                     sx={{
-                        width: 200,
+                        width: 250,
                         display: 'flex',
                         alignItems: 'center',
                     }}
@@ -154,12 +150,12 @@ const Tourfilters = () => {
                         name="customized-color"
                         defaultValue={stars}
                         onChange={(event, value) => setStars(value)}
-                        precision={0.5}
+                        precision={1}
                         icon={<CircleIcon fontSize="inherit" />}
                         emptyIcon={<CircleOutlinedIcon fontSize="inherit" />}
                         sx={{ mr: 2 }}
                     />
-                    <TypographyMod fontSize="18px">{labels[stars]}</TypographyMod>
+                    <TypographyMod fontSize="16px">{labels[stars]}</TypographyMod>
                 </Box>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Vegan</Typographyf14medium>} />
@@ -169,7 +165,7 @@ const Tourfilters = () => {
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Best Tours of the years</Typographyf14light>} />
                 </FormGroup>
             </Box>
-        </Box >
+        </Box>
     );
 }
 

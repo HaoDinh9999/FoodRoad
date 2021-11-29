@@ -14,20 +14,11 @@ import EventIcon from '@mui/icons-material/Event';
 import { Popover } from '@mui/material';
 import { Typographyf14light, Typographyf14medium, TypographyMod } from './TypoUtils';
 import { TextField } from '@mui/material';
+import { styled } from '@mui/system';
 import { LocalizationProvider, DateRangePicker } from '@mui/lab';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 // import CustomCalendar from './CustomCalendar';
-const CalendarA = () => {
-    var result = []
-    for (var i = 0; i <= 30; ++i) {
-        console.log(i)
-        result.push(<Grid item>
-            <Box sx={{ border: "1px solid black", padding: 1 }} key={i}>{i}</Box>
-        </Grid>)
-        console.log("1")
-    }
-    return result;
-}
+
 
 const Tourheader = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -53,7 +44,12 @@ const Tourheader = () => {
     };
     const [childNum, setChildNum] = useState(1);
     const [adultNum, setAdultNum] = useState(1)
-
+    const StyledDateRangePicker = styled(DateRangePicker)({
+        '& css-18fxmqw-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected': {
+            // color: "#00aa6c",
+            backgroundColor: "green",
+        }
+    });
     // console.log(result)
     return (
         <Grid container pd="0">
@@ -82,6 +78,12 @@ const Tourheader = () => {
                                 onClose={() => setOpenDate(false)}
                                 onChange={(newValue) => {
                                     setDate(newValue);
+                                }}
+                                sx={{
+                                    '& Mui-selected': {
+                                        backgroundColor: "green",
+                                        color: "green"
+                                    }
                                 }}
                                 renderInput={(startProps, endProps) => (
                                     <React.Fragment>

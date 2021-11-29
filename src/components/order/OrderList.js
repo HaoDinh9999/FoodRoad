@@ -1,12 +1,10 @@
-import { Avatar, Typography } from '@mui/material';
+
 import React from 'react';
-import { Typographyf14light, Typographyf14medium, TypographyMod } from '../tour/TypoUtils';
+import { TypographyMod } from '../tour/TypoUtils';
 import { Box } from '@mui/system';
 import OrderItem from './OrderItem';
 import { Pagination } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { IconButton } from '@mui/material';
+
 const OrderList = () => {
     return (
         <>
@@ -35,7 +33,7 @@ const OrderList = () => {
                     <OrderItem label="cancelled" />
                 </Box>
                 <Box display="flex" sx={{ justifyContent: "center", mb: 1 }}>
-                    <Pagination count={3} shape="rounded" />
+                    <Pagination count={3} />
                 </Box>
             </Box>
         </>

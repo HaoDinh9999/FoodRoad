@@ -9,7 +9,7 @@ import { Chip } from '@mui/material';
 const OrderHistoryItem = () => {
     return (
 
-        <Box display="flex" sx={{ backgroundColor: "white", borderRadius: "7px", border: "1px solid black", pt: 1, pb: 2, pl: 1, pb: 1, mt: 2 }}>
+        <Box display="flex" sx={{ backgroundColor: "white", borderRadius: "7px", pt: 1, pb: 2, pl: 1, pb: 1, mt: 2 }}>
             <Box sx={{ mr: 1, mt: "5px" }}>
                 <Avatar variant="rounded" src="../images/cards/card-image1.jpg" sx={{ width: "50px", hieght: "50px" }} />
             </Box>

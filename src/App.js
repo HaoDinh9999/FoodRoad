@@ -23,7 +23,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/tours/" component={Tours} />
+          <Route exact path="/tours/" component={Tours} />
+          <Route path="/tours/detail" component={DetailTour} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/order" component={Order} />
@@ -36,7 +37,7 @@ function App() {
           <Route path="/faqs">
             <FAQS />
           </Route>
-          <Route exact path="/tours/:id" render={props => <DetailTour {...props.match.params} />} />
+          {/* <Route exact path="/tours/:id" render={props => <DetailTour {...props.match.params} />} /> */}
           {/* <Route path="/tours/:id">
             <DetailTour />
           </Route> */}

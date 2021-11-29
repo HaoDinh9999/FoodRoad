@@ -35,7 +35,7 @@ const OrderItem = (props) => {
     const chipMr = props.label === "processing" ? "46px" : "50px"
     return (
 
-        <Box display="flex" sx={{ backgroundColor: "white", borderRadius: "7px", border: "1px solid black", pt: 1, pb: 2, pl: 1, pb: 1, mt: 2 }}>
+        <Box display="flex" sx={{ backgroundColor: "white", borderRadius: "7px", pt: 1, pb: 2, pl: 1, pb: 1, mt: 2 }}>
             <Box sx={{ mr: 1, mt: "5px" }}>
                 <Avatar variant="rounded" src="../images/cards/card-image1.jpg" sx={{ width: "50px", hieght: "50px" }} />
             </Box>
@@ -50,14 +50,6 @@ const OrderItem = (props) => {
             </Box>
             <Box sx={{ mt: 1 }}>
                 <TypographyMod fontSize="16px">69 USD</TypographyMod>
-            </Box>
-            <Box sx={{ mt: 0, ml: 4 }}>
-                <IconButton>
-                    <ArrowForwardIcon sx={{
-                        fontSize: "26px",
-
-                    }} onClick={() => window.location.href = "/order/detail"} />
-                </IconButton>
             </Box>
         </Box>
     );

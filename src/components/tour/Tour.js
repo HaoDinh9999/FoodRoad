@@ -1,13 +1,15 @@
 import React from 'react';
-import { Grid, Box, Typography, Button, Chip, Rating, Link } from '@mui/material';
-import { Typographyf14light, Typographyf14medium, TypographyMod } from './TypoUtils';
+import { Grid, Box, Typography, Button, Rating, Link } from '@mui/material';
+import { Typographyf14medium, TypographyMod } from './TypoUtils';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 import { red, green, yellow, grey } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CallMadeIcon from '@mui/icons-material/CallMade';
-
+import { CircularProgress } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+import Fade from '@mui/material/Fade';
 const styles = {
     media: {
         height: 0,
@@ -46,6 +48,13 @@ const StyledRating = styled(Rating)({
         marginTop: "2px"
     }
 });
+const CircularProgressWithLabel = (props) => {
+    return (
+        <Box sx={{ position: 'relative', display: 'inline-flex', mr: "3px", maxWidth: "20px" }}>
+            <CircularProgress variant="determinate" {...props} />
+        </Box>
+    );
+}
 const Tour = () => {
     const tags = ["Vegan", "Wine&Beer", "Traditional", "On Sales", "Best tours"]
     const Tag = (props) => {
@@ -55,6 +64,25 @@ const Tour = () => {
             // </Box>
         )
     }
+    const [progress, setProgress] = React.useState(10);
+    const [show, setShow] = React.useState(false);
+    const timerRef = React.useRef();
+    const [query, setQuery] = React.useState('idle');
+    const handleClickQuery = () => {
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+        }
+
+        if (query !== 'idle') {
+            setQuery('idle');
+            return;
+        }
+
+        setQuery('progress');
+        timerRef.current = window.setTimeout(() => {
+            setQuery('success');
+        }, 2000);
+    };
     return (
         <Grid container sx={{ backgroundColor: "white", borderRadius: "7px" }}>
             <Grid item xs={4} sx={{ maxWidth: "100%" }}>
@@ -129,7 +157,24 @@ const Tour = () => {
                                 '&:hover': {
                                     backgroundColor: yellow[900],
                                 }, mt: "30px"
-                            }} >
+                            }} onClick={handleClickQuery} >
+                                {query === 'success' ? (
+                                    <CheckIcon />
+                                ) : (
+                                    <Fade
+                                        in={query === 'progress'}
+                                        style={{
+                                            transitionDelay: query === 'progress' ? '800ms' : '0ms',
+                                        }}
+                                        unmountOnExit
+                                    >
+
+                                        <CircularProgress thickness={5.0} color="inherit" size={20} sx={{ mr: "3px" }} />
+
+                                    </Fade>
+                                )}
+                                {/* {show ? (<CircularProgressWithLabel value={progress} />) : null} */}
+                                {/* <CircularProgress variant="determinate" {...progress} /> */}
                                 Order Now
                             </Button>
                         </Box>
@@ -147,7 +192,7 @@ const Tour = () => {
                                 <CheckBoxIcon sx={{ mr: 1 }} />
                                 <Typographyf14medium>Properties with special offers</Typographyf14medium>
                             </Box>
-                            <Button variant="contained" sx={{
+                            <Button onClick={() => window.location.href = "/tours/detail"} variant="contained" sx={{
                                 backgroundColor: yellow[800],
                                 '&:hover': {
                                     backgroundColor: yellow[900],

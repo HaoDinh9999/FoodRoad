@@ -101,19 +101,6 @@ const AllCardTours = () => {
         <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
           Trending Tours
         </Typography>
-<<<<<<< HEAD
-    <Slider  {...settings}>
-      <CardTourPro/>
-      <CardTourPro/>
-      <CardTourPro/>
-      <CardTourPro/>
-      <CardTourPro/>
-
-    </Slider>
-    <Box height="50px"></Box>
-    <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
-        Favourite Foods
-=======
         <Slider  {...settings}>
           <CardTourItem url='/images/Food1.jpg'></CardTourItem>
           <CardTourItem url='/images/Food2.jpg'></CardTourItem>
@@ -127,7 +114,6 @@ const AllCardTours = () => {
         <Box height="50px"></Box>
         <Typography marginLeft="5px" variant="h6" gutterBottom component="div" fontWeight="bold" fontSize="25px"   >
           Favourite Foods
->>>>>>> 7ceded1d35b517465c4ca9de55e2c66633dba293
         </Typography>
         <Slider  {...settings}>
           <CardTourItem url='/images/Food1.jpg'></CardTourItem>
