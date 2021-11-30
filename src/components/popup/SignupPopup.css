@@ -6,7 +6,8 @@
     max-width: 45%;
 }
 
-input {
+.signupinput {
+    font-size: 17px;
     width: 100%;
     height: 45px;
     border-radius: 20px;
@@ -17,12 +18,11 @@ input {
     background-color: white;
 }
 
-::-ms-reveal {
-    filter: invert(100%);
-  }
-  
+.signupinput::-webkit-input-placeholder {
+    font-size: 17px;
+}  
 
-input:focus {
+.signupinput:focus {
     border:5px #808080;
     box-shadow: 0 0 5px #808080;
 }

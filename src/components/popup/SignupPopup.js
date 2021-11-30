@@ -72,7 +72,7 @@ export default function FormDialog(props) {
                 >
                     First Name
                 </Typography>
-                <input type="text" id="name" name="FirstName" placeholder="Mark"></input>
+                <input class="signupinput" type="text" id="name" name="FirstName" placeholder="Mark"></input>
             </div>
             <div class="nameinput">
                 <Typography
@@ -80,7 +80,7 @@ export default function FormDialog(props) {
                 >
                     Last Name
                 </Typography>
-                <input type="text" id="name" name="FirstName" placeholder="Zuckerberg"></input>
+                <input class="signupinput" type="text" id="name" name="FirstName" placeholder="Zuckerberg"></input>
             </div>
           </div>
           <div class="textinput">
@@ -89,7 +89,7 @@ export default function FormDialog(props) {
           >
             Username
           </Typography>
-          <input type="text" id="username" name="Username" placeholder="foodroad8000"></input>
+          <input class="signupinput" type="text" id="username" name="Username" placeholder="foodroad8000"></input>
           </div>
 
           <div class="textinput">
@@ -106,7 +106,7 @@ export default function FormDialog(props) {
           >
             E-mail
           </Typography>
-          <input type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"></input>
+          <input class="signupinput" type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"></input>
           </div>
 
           <div class="textinput">
@@ -115,7 +115,7 @@ export default function FormDialog(props) {
           >
             Password
           </Typography>
-          <input type="password" id="Password" name="Password" placeholder="Enter a password"></input>
+          <input class="signupinput" type="password" id="Password" name="Password" placeholder="Enter a password"></input>
           </div>
 
           <FormControlLabel  
