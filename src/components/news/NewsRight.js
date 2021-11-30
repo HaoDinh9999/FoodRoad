@@ -1,23 +1,13 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionSummary from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import FeatureCard from "./FeatureCard";
+import RecentCard from "./RecentCard";
 
 const  NewsRight =()=> {
     return (
@@ -43,9 +33,29 @@ const  NewsRight =()=> {
             <Typography variant="h5"> Recent Posts </Typography>
             <Divider></Divider>
             <Box pt={2}>
-            <li><a style={{textDecoration: "underline"}} href="#">Saigon Food Everywhere</a></li>
+            {/* <li><a style={{textDecoration: "underline"}} href="#">Saigon Food Everywhere</a></li>
             <li><a style={{textDecoration: "underline"}} href="#">Cocktails Of The Week</a></li>
-            <li><a style={{textDecoration: "underline"}} href="#">How Sticky Rice Cake (Bánh Chưng) Becomes an Iconic Symbol of New Year Day in Vietnam</a></li>
+            <li><a style={{textDecoration: "underline"}} href="#">How Sticky Rice Cake (Bánh Chưng) Becomes an Iconic Symbol of New Year Day in Vietnam</a></li> */}
+                <Stack spacing={2}>
+                    <RecentCard
+                    image="https://amthucvietnam.com.vn/wp-content/uploads/2021/04/cm_Anh_Ga_1.jpg"
+                    alt="Saigon Food Everywhere"
+                    title="Saigon Food Everywhere"
+                    date="2/11/2021"
+                    />
+                    <RecentCard
+                    image="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mojito-cocktails-150961e.jpg"
+                    alt="Cocktails Of The Week"
+                    title="Cocktails Of The Week"
+                    date="2/11/2021"
+                    />
+                    <RecentCard
+                    image="https://i.ytimg.com/vi/ZGs59VEu3hQ/maxresdefault.jpg"
+                    alt="How Sticky Rice Cake (Bánh Chưng) Becomes an Iconic Symbol of New Year Day in Vietnam"
+                    title="How Sticky Rice Cake..."
+                    date="2/11/2021"
+                    />
+                </Stack>
             </Box>
         </Box>
         <Box>
@@ -60,9 +70,15 @@ const  NewsRight =()=> {
         <Box>
             <Typography variant="h5"> Social Media </Typography>
             <Divider></Divider>
-            <div>
-
-            </div>
+            <Box pt={1}>
+                <Stack direction="row" spacing={2}>
+                    <a href="https://www.facebook.com/FoodRoadSaigon" title="FoodRoad Facebook" target="_blank"> <i class="fab fa-facebook fa-2x" style={{color:"#3b5998"}}></i> </a>
+                    <a href="https://www.twitter.com/" title="FoodRoad Twitter" target="_blank"> <i class="fab fa-twitter fa-2x" style={{color:"#1DA1F2"}}></i> </a>
+                    <a href="https://www.youtube.com/" title="FoodRoad Youtube" target="_blank"> <i class="fab fa-youtube fa-2x" style={{color:"#FF0000"}}></i> </a>
+                    <a href="https://github.com/HaoDinh9999/FoodRoad" title="FoodRoad Github" target="_blank"> <i class="fab fa-github fa-2x"></i> </a>
+                    <a href="https://discord.com/" title="FoodRoad Discord" target="_blank"> <i class="fab fa-discord fa-2x" style={{color:"black"}}></i> </a>
+                </Stack>  
+            </Box>          
         </Box>
     </Stack>
     </>
