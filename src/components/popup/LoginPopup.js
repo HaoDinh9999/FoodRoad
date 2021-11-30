@@ -10,6 +10,8 @@ import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
+import SignupPopup from "./SignupPopup";
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -18,6 +20,7 @@ const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 export default function FormDialog(props) {
+  const [openSignup, setOpenSignup] = React.useState(false);
   const [status, setStatus] = React.useState(null);
   const loginHandler = async () => {
     setStatus("loading");
@@ -179,10 +182,23 @@ export default function FormDialog(props) {
             Not registered yet?
           </Typography>
           </Box>
-          <a href="sign-up">Create an Account</a>
+          <a
+          style={{cursor: "pointer"}}
+          onClick={() => {
+            setOpenSignup(true);
+          }}
+          >
+            Create an Account
+          </a>
         </Box>
       </Box>
       </DialogContent>
+      <SignupPopup
+        open={openSignup}
+        onClose={() => {
+          setOpenSignup(false);
+        }}
+      />
     </Dialog>
   );
 }

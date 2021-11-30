@@ -15,6 +15,7 @@ import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import LoginPopup from "../popup/LoginPopup";
+import SignupPopup from "../popup/SignupPopup";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -51,6 +52,7 @@ ElevationScroll.propTypes = {
 };
 const Header = (props) => {
   const [openLogin, setOpenLogin] = React.useState(false);
+  const [openSignup, setOpenSignup] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handlePopoverOpen = (event) => {
@@ -127,7 +129,11 @@ const Header = (props) => {
                     >
                       Login
                     </Button>
-                    <Button href="/sign-up" variant="contained">
+                    <Button
+                      onClick={() => {
+                        setOpenSignup(true);
+                      }}
+                      variant="contained">
                       Sign up
                     </Button>
                   </Stack>
@@ -220,6 +226,12 @@ const Header = (props) => {
         open={openLogin}
         onClose={() => {
           setOpenLogin(false);
+        }}
+      />
+      <SignupPopup
+        open={openSignup}
+        onClose={() => {
+          setOpenSignup(false);
         }}
       />
     </ScopedCssBaseline>

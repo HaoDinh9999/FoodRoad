@@ -16,6 +16,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(true);
+  const [checked, setChecked] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -25,22 +26,25 @@ export default function FormDialog(props) {
     setOpen(false);
   };
   
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   return (
       <Dialog
-       open={open}
+       open={props.open}
        TransitionComponent={Transition}
        keepMounted
-       onClose={handleClose}
+       onClose={props.onClose}
        maxWidth="xs"
        fullWidth
        PaperProps={{
         style: {
-          backgroundColor: '#28282B',
+          backgroundColor: 'white',
           borderStyle: "solid",
           borderColor: "#808080",
           borderWidth: 2,
-          borderRadius: 10
+          borderRadius: 30
         },
       }}
        >
@@ -55,7 +59,7 @@ export default function FormDialog(props) {
           <Typography 
             variant="h5"
             align="center"
-            style={{color: "#fff", fontWeight: "bold", fontSize: "24px", paddingBottom: "10px", paddingTop: "10px"}}
+            style={{color: "black", fontWeight: "bold", fontSize: "24px", paddingBottom: "10px", paddingTop: "10px"}}
           >
           Create your account!
            </Typography>
@@ -64,7 +68,7 @@ export default function FormDialog(props) {
           <div class="textinput" style={{display: "flex", justifyContent: "space-between"}}>
             <div class="nameinput">
                 <Typography
-                    style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
                 >
                     First Name
                 </Typography>
@@ -72,7 +76,7 @@ export default function FormDialog(props) {
             </div>
             <div class="nameinput">
                 <Typography
-                    style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
                 >
                     Last Name
                 </Typography>
@@ -81,7 +85,7 @@ export default function FormDialog(props) {
           </div>
           <div class="textinput">
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
           >
             Username
           </Typography>
@@ -98,7 +102,7 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
           >
             E-mail
           </Typography>
@@ -107,7 +111,7 @@ export default function FormDialog(props) {
 
           <div class="textinput">
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
           >
             Password
           </Typography>
@@ -117,6 +121,8 @@ export default function FormDialog(props) {
           <FormControlLabel  
                 control={
                   <Checkbox
+                    checked = {checked}
+                    onChange={handleChange}
                     style ={{
                       color: "#42b72a",
                     }}
@@ -127,13 +133,24 @@ export default function FormDialog(props) {
               />
 
           <div class="textinput">
-            <Button 
-              variant="contained" 
-              fullWidth
-              style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "10px", backgroundColor: "#42b72a"}}
-              >
-              Sign Up
-            </Button>
+            {checked ? (
+              <Button
+                variant="contained" 
+                fullWidth
+                style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "#42b72a"}}
+                >
+                Sign Up
+              </Button>
+            ) : (
+              <Button
+                disabled
+                variant="contained" 
+                fullWidth
+                style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "rgba(0, 0, 0, 0.12)"}}
+                >
+                Sign Up
+              </Button>
+            )}
           </div>
 
           {/* <Divider
