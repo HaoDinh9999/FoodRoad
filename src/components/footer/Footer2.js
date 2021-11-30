@@ -97,11 +97,11 @@ function Footer2() {
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Box sx={{pr:10}}>
+                    <Box sx={{pr:0}} fullWidth>
                         <Stack spacing="5px">
                             <Typography fontWeight="bold">Subscribe to our Newsletter</Typography>
                             <Box display="flex" sx={{pt:2}}>
-                                <Box sx={{pr:1}}>
+                                <Box sx={{pr:1}} style={{width: "100%"}}>
                                 <TextField
                                     InputProps={{
                                         startAdornment: (
@@ -115,12 +115,11 @@ function Footer2() {
                                     size="big"
                                     id="standard-helperText"
                                     label="Enter your e-mail here"
-                                    variant="standard"
+                                    variant="standard"                                 
                                     fullWidth
-                                    
                                 />
                                 </Box>
-                                <Button variant="contained" disableElevation style={{width: "35%"}}
+                                <Button variant="contained" disableElevation style={{width: "60%"}}
                                 onClick={handleClick({
                                     vertical: 'bottom',
                                     horizontal: 'left',
@@ -159,10 +158,10 @@ function Footer2() {
                 </Grid>
 
                 <Grid item xs={6} sm={6}>
-                    <Box sx={{pr:10}}>
-                        <Stack spacing="5px">
-                            <Box display="flex" flexDirection="row" sx={{pt: 0}}>
-                                <Box sx={{pr: 10}}>
+                    <Box sx={{pr:0}} >
+                        <Stack spacing="5px" style={{width: "100%"}}>
+                            <Box display="flex" flexDirection="row" sx={{pt: 0}} >
+                                <Box sx={{pr: 15}}>
                                 <Typography color="#808080" fontSize="18px">Call us:</Typography>
                                     <Typography fontSize="22px" fontWeight="bold">+84 905137051</Typography>
                                 </Box>
