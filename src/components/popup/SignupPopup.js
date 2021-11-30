@@ -68,7 +68,7 @@ export default function FormDialog(props) {
           <div class="textinput" style={{display: "flex", justifyContent: "space-between"}}>
             <div class="nameinput">
                 <Typography
-                    style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
                 >
                     First Name
                 </Typography>
@@ -76,7 +76,7 @@ export default function FormDialog(props) {
             </div>
             <div class="nameinput">
                 <Typography
-                    style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
                 >
                     Last Name
                 </Typography>
@@ -85,7 +85,7 @@ export default function FormDialog(props) {
           </div>
           <div class="textinput">
           <Typography
-            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             Username
           </Typography>
@@ -102,7 +102,7 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             E-mail
           </Typography>
@@ -111,7 +111,7 @@ export default function FormDialog(props) {
 
           <div class="textinput">
           <Typography
-            style={{color: "black", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             Password
           </Typography>
