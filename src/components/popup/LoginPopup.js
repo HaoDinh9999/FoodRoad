@@ -11,15 +11,25 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
 import SignupPopup from "./SignupPopup";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 export default function FormDialog(props) {
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const handleClose = (event, reason) => {
+    setOpenSnackbar(false);
+  };
+  
   const [openSignup, setOpenSignup] = React.useState(false);
   const [status, setStatus] = React.useState(null);
   const loginHandler = async () => {
@@ -197,8 +207,14 @@ export default function FormDialog(props) {
         open={openSignup}
         onClose={() => {
           setOpenSignup(false);
+          // setOpenSnackbar(true);
         }}
       />
+      <Snackbar open={openSnackbar} autoHideDuration={2000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            Successfully signed up!
+          </Alert>
+      </Snackbar>
     </Dialog>
   );
 }

@@ -6,29 +6,23 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Typography from '@mui/material/Typography';
 import './SignupPopup.css';
 import Slide from '@mui/material/Slide';
-import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(true);
   const [checked, setChecked] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+
 
   return (
       <Dialog
@@ -117,26 +111,28 @@ export default function FormDialog(props) {
           </Typography>
           <input class="signupinput" type="password" id="Password" name="Password" placeholder="Enter a password"></input>
           </div>
-
-          <FormControlLabel  
-                control={
-                  <Checkbox
-                    checked = {checked}
-                    onChange={handleChange}
-                    style ={{
-                      color: "#42b72a",
-                    }}
-                  />
-                }
-                label={<Typography variant="subtitle6" style={{ color: '#808080', fontSize: '13px' }}>I've read and agree with Terms of Service and our Privacy Policy</Typography>}
-                style={{paddingRight:"10px", paddingLeft:"10px"}}
-              />
+          <Box pt={1}>
+            <FormControlLabel  
+                  control={
+                    <Checkbox
+                      checked = {checked}
+                      onChange={handleChange}
+                      style ={{
+                        color: "#42b72a",
+                      }}
+                    />
+                  }
+                  label={<Typography variant="subtitle6" style={{ color: '#808080', fontSize: '13px' }}>I've read and agree with Terms of Service and our Privacy Policy</Typography>}
+                  style={{paddingRight:"10px", paddingLeft:"10px"}}
+            />
+          </Box>
 
           <div class="textinput">
             {checked ? (
               <Button
                 variant="contained" 
                 fullWidth
+                onClick={props.onClose}
                 style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "#42b72a"}}
                 >
                 Sign Up
