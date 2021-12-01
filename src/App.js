@@ -31,6 +31,8 @@ const theme = createTheme({
     fontFamily: "Inter, Roboto, san-serif",
   },
 });
+import Order from "./pages/Order";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -42,11 +44,13 @@ function App() {
           </Route>
           <Route path="/home" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/tours/detailtour" component={DetailTour} />
+          <Route exact path="/tours/" component={Tours} />
+          <Route path="/tours/detail" component={DetailTour} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/profile" component={Profile} />
-          <Route path="/gallery">
+          <Route path="/order" component={Order} />
+          <Route path="/gallery">setPrice
             <Gallery />
           </Route>
           <Route path="/booking">
@@ -64,6 +68,10 @@ function App() {
           <Route path="*">
             <NotFound />
           </Route>
+          {/* <Route exact path="/tours/:id" render={props => <DetailTour {...props.match.params} />} /> */}
+          {/* <Route path="/tours/:id">
+            <DetailTour />
+          </Route> */}
         </Switch>
         {/* <Footer></Footer> */}
       </Router>

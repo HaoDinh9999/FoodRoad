@@ -4,10 +4,11 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Checkbox from '@mui/material/Checkbox';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { blue, pink } from "@mui/material/colors"
+import CircleIcon from '@mui/icons-material/Circle';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
+import { blue } from "@mui/material/colors"
 import Popover from '@mui/material/Popover';
-
+import { StyledRating } from './Review';
 const images = [
     {
         img: "/images/card_comment/image1.jpg"
@@ -54,6 +55,7 @@ const BasicPopover = () => {
     );
 }
 const Commentcard = () => {
+    const [readMore, setReadMore] = React.useState(false);
     return (
         <div >
             <Grid container sx={{ mt: 1, ml: 1, pt: 2, pb: 0, borderBottom: "1px solid gray" }} justifyContent="space-between">
@@ -96,20 +98,27 @@ const Commentcard = () => {
                     <Grid container>
                         <Grid item >
                             <Stack direction="row">
-                                <FavoriteIcon sx={{ color: pink[600] }} />
-                                <FavoriteIcon sx={{ color: pink[600] }} />
-                                <FavoriteIcon sx={{ color: pink[600] }} />
-                                <FavoriteIcon sx={{ color: pink[600] }} />
-                                <FavoriteIcon sx={{ color: pink[600] }} />
+                                <StyledRating
+                                    name="customized-color"
+                                    defaultValue={5}
+                                    precision={0.5}
+                                    icon={<CircleIcon fontSize="inherit" />}
+                                    emptyIcon={<CircleOutlinedIcon fontSize="inherit" />}
+                                    readOnly
+                                />
                             </Stack>
                             <Typography variant="subtitle2" component="h2" sx={{ fontSize: "18px", fontWeight: 'medium' }}> What a blast in Saigon!</Typography>
                             <Typography variant="h6" component="h2" sx={{ fontSize: "16px", fontWeight: 'medium' }}> May 2020</Typography>
                         </Grid>
                         <Grid item>
                             <Typography variant="h6" component="h2" sx={{ fontSize: "18px", fontWeight: 'light' }} >
-                                Danny and Sophia picked up Kelly and I at our hotel in District 1. They gave us a quick briefing on the scooters and off we went. What looks like chaos from the street is actually pretty organized when you’re on the back of a scooter. With Danny and Sophia driving we always felt safe the whole evening. They took us places we would have never gone on our own. From Vietnamese pancakes to noodle soup to barbecue, each food stop was just outstanding. And Danny and Sophia took time at each stop to explain to us what we were having, and how it was prepared. In fact they can tailor your tour to your food tastes which is outstanding. In our two weeks in Vietnam this was one of our most fun tours. If you ...
-                                <Link sx={{ fontSize: "20px", fontWeight: "bold", cursor: "pointer" }} > Read More</Link>
+                                Danny and Sophia picked up Kelly and I at our hotel in District 1. They gave us a quick briefing on the scooters and off we went. What looks like chaos from the street is actually pretty organized when you’re on the back of a scooter. With Danny and Sophia driving we always felt safe the whole evening. They took us places we would have never gone on our own. From Vietnamese pancakes to noodle soup to barbecue, each food stop was just outstanding. {readMore ? ('And Danny and Sophia took time at each stop to explain to us what we were having, and how it was prepared. In fact they can tailor your tour to your food tastes which is outstanding. In our two weeks in Vietnam this was one of our most fun tours. If you ...') : null}
                             </Typography>
+                            {/* <Typography variant="h6" component="h2" sx={{ fontSize: "18px", fontWeight: 'light' }} >
+                                
+                            </Typography> */}
+                            {readMore ? (<Link sx={{ fontSize: "20px", fontWeight: "bold", cursor: "pointer" }} onClick={() => setReadMore(false)} > Read less</Link>) : (<Link sx={{ fontSize: "20px", fontWeight: "bold", cursor: "pointer" }} onClick={() => setReadMore(true)} > Read More</Link>)}
+
                         </Grid>
                         <Grid item sx={{ mt: 2 }}>
                             <ImageList sx={{ width: 500, height: 200 }} cols={3} rowHeight={164}>

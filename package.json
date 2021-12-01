@@ -3,19 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/date-fns": "^2.11.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/unicons": "^4.0.1",
     "@mui/icons-material": "^5.0.5",
+<<<<<<< HEAD
     "@mui/lab": "^5.0.0-alpha.56",
+=======
+    "@mui/lab": "^5.0.0-alpha.54",
+>>>>>>> 6aba3431bb99a112f0891d4486911071f131b44e
     "@mui/material": "^5.0.4",
     "@mui/styles": "^5.1.1",
     "@react-google-maps/api": "^2.5.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+<<<<<<< HEAD
     "aos": "^2.3.4",
+=======
+    "date-fns": "^2.26.0",
+>>>>>>> 6aba3431bb99a112f0891d4486911071f131b44e
     "google-map-react": "^2.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

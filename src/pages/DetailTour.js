@@ -1,8 +1,7 @@
-import React from "react";
-import FAQImage from "../components/faqs/FAQImage";
-import Grid from "@mui/material/Grid";
-import FAQAccordion from "../components/faqs/FAQAccordion";
-import FAQRight from "../components/faqs/FAQRight";
+
+import React from 'react';
+
+import Grid from '@mui/material/Grid';
 import Container from "@mui/material/Container";
 import Footer from "../components/footer/Footer";
 import HeroSectionTour from "../components/layoutDetailTour/HeroSectionTour";

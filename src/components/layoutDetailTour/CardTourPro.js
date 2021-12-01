@@ -21,6 +21,7 @@ const CardTourPro = (props) => {
       <Grid
         container
         sm={12}
+
         sx={{
           height: 300,
           borderRadius: 2,
@@ -32,6 +33,7 @@ const CardTourPro = (props) => {
 
           "&:hover": {
             backgroundColor: "#ff6868",
+
             opacity: [0.9, 0.8, 0.7],
           },
         }}
@@ -49,6 +51,7 @@ const CardTourPro = (props) => {
             }}
           >
             <FavoriteBorderIcon sx={{ color: "#00000", fontSize: "35px" }} />
+
           </IconButton>
         </Grid>
       </Grid>
@@ -152,6 +155,7 @@ const CardTourPro = (props) => {
         </Typography>
       </Box>
     </Box>
+
   );
 };
 

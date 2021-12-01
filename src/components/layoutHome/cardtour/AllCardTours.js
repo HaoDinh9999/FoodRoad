@@ -128,6 +128,7 @@ const AllCardTours = () => {
           <CardTourPro />
           <CardTourPro />
           <CardTourPro />
+
         </Slider>
         <Box height="50px"></Box>
         <Typography
