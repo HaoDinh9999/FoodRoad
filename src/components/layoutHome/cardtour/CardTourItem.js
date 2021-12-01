@@ -90,10 +90,15 @@ const CardTourItem = (props) => {
         <Box display="flex" justifyContent="space-between">
           <Box>
             <Link
-              underline="hover"
+              underline="none"
               fontWeight="bold"
               fontSize="20px"
               color="#f2b203"
+              sx={{
+                "&:hover": {
+                  color: "#c89300",
+                },
+              }}
             >
               {"Bun bo Hue"}
             </Link>

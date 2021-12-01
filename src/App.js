@@ -25,13 +25,13 @@ import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Review from "./pages/Review";
+import Order from "./pages/Order";
 
 const theme = createTheme({
   typography: {
     fontFamily: "Inter, Roboto, san-serif",
   },
 });
-import Order from "./pages/Order";
 
 function App() {
   return (
@@ -45,12 +45,13 @@ function App() {
           <Route path="/home" exact component={Home} />
           <Route path="/about" component={About} />
           <Route exact path="/tours/" component={Tours} />
-          <Route path="/tours/detail" component={DetailTour} />
+          <Route path="/tours/detailtour" component={DetailTour} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/profile" component={Profile} />
           <Route path="/order" component={Order} />
-          <Route path="/gallery">setPrice
+          <Route path="/gallery">
+            setPrice
             <Gallery />
           </Route>
           <Route path="/booking">

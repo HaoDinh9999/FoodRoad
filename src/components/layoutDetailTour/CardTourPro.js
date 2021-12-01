@@ -21,7 +21,6 @@ const CardTourPro = (props) => {
       <Grid
         container
         sm={12}
-
         sx={{
           height: 300,
           borderRadius: 2,
@@ -51,7 +50,6 @@ const CardTourPro = (props) => {
             }}
           >
             <FavoriteBorderIcon sx={{ color: "#00000", fontSize: "35px" }} />
-
           </IconButton>
         </Grid>
       </Grid>
@@ -63,6 +61,11 @@ const CardTourPro = (props) => {
           fontWeight="bold"
           fontSize="18px"
           color="#f2b203"
+          sx={{
+            "&:hover": {
+              color: "#c89300",
+            },
+          }}
         >
           {
             "Cu Chi Tunnels: Morning or Afternoon Guided Tour(Ben Duoc Option available)"
@@ -155,7 +158,6 @@ const CardTourPro = (props) => {
         </Typography>
       </Box>
     </Box>
-
   );
 };
 
