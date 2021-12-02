@@ -9,7 +9,6 @@ import CleanHandsIcon from '@mui/icons-material/CleanHands';
 import Slider from '@mui/material/Slider';
 import "./cardheader.css"
 import { styled } from '@mui/material/styles';
-import { green } from '@mui/material/colors';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 
@@ -160,8 +159,6 @@ const Tourfilters = () => {
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Vegan</Typographyf14medium>} />
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Wine and Beer</Typographyf14light>} />
-                    <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Traditional</Typographyf14light>} />
-                    <FormControlLabel control={<Checkbox />} label={<Typographyf14light>On Sales</Typographyf14light>} />
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Best Tours of the years</Typographyf14light>} />
                 </FormGroup>
             </Box>

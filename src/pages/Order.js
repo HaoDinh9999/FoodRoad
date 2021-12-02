@@ -5,8 +5,6 @@ import OrderList from '../components/order/OrderList';
 import OrderHistoryList from '../components/order/OrderHistoryList';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Breadcrumbs } from '@mui/material';
-import { lightBlue, cyan } from '@mui/material/colors';
-import OrderDetail from '../components/order/OrderDetail';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 const Order = () => {
@@ -42,11 +40,10 @@ const Order = () => {
                     <Grid item xs={3}>
                         <OrderOption />
                     </Grid>
-                    <Grid item xs={8} sx={{ ml: 5 }}>
+                    <Grid item xs={8} sx={{ ml: 5, minHeight: "531px" }}>
                         <Router>
                             <Switch>
                                 <Route path="/order" exact component={OrderList} />
-                                <Route exact path="/order/detail" component={OrderDetail} />
                                 <Route exact path="/order/history" component={OrderHistoryList} />
                             </Switch>
                         </Router>

@@ -6,59 +6,30 @@ import { grey } from '@mui/material/colors';
 import { Button } from '@mui/material';
 import PeopleAltSharpIcon from '@mui/icons-material/PeopleAltSharp';
 import ChildCareSharpIcon from '@mui/icons-material/ChildCareSharp';
-import TodayIcon from '@mui/icons-material/Today';
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import EventIcon from '@mui/icons-material/Event';
-import { Popover } from '@mui/material';
-import { Typographyf14light, Typographyf14medium, TypographyMod } from './TypoUtils';
+import { Typographyf14medium, TypographyMod } from './TypoUtils';
 import { TextField } from '@mui/material';
-import { styled } from '@mui/system';
 import { LocalizationProvider, DateRangePicker } from '@mui/lab';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 // import CustomCalendar from './CustomCalendar';
 
 
 const Tourheader = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [anchorElScl, setAnchorElScl] = useState(null);
     const [date, setDate] = useState([null, null]);
     const [openDate, setOpenDate] = useState(false);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClickScl = (event) => {
-        setAnchorElScl(event.currentTarget);
-    };
-    const open = Boolean(anchorEl);
-    const openScl = Boolean(anchorElScl)
-    const id = open ? 'simple-popover' : undefined;
-    const idScl = openScl ? "Start Calendar" : undefined;
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    const handleCloseScl = () => {
-        setAnchorElScl(null);
-    };
     const [childNum, setChildNum] = useState(1);
     const [adultNum, setAdultNum] = useState(1)
-    const StyledDateRangePicker = styled(DateRangePicker)({
-        '& css-18fxmqw-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected': {
-            // color: "#00aa6c",
-            backgroundColor: "green",
-        }
-    });
-    // console.log(result)
     return (
         <Grid container pd="0">
             <Grid item>
                 <Map
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyClpHM2sDk1TbMKkjX_rd8AboU4RdolLtA'}&callback=initMap`}
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: "100%", margin: `auto`, border: '2px solid #000', borderRadius: 10, height: '136px', width: "294px" }} />}
-                    mapElement={<div style={{ height: '100%', height: '100%' }} />}
+                    containerElement={<div style={{ margin: `auto`, border: '2px solid #000', borderRadius: 10, height: '136px', width: "294px" }} />}
+                    mapElement={<div style={{ height: '100%' }} />}
                 />
             </Grid>
             <Grid item xs={8} >
