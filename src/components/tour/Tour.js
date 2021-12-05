@@ -3,13 +3,14 @@ import { Grid, Box, Typography, Button, Rating, Link } from '@mui/material';
 import { Typographyf14medium, TypographyMod } from './TypoUtils';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
-import { red, green, yellow, grey, blue, teal, deepOrange, orange } from '@mui/material/colors';
+import { red, green, yellow, grey } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CallMadeIcon from '@mui/icons-material/CallMade';
 import { CircularProgress } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import Fade from '@mui/material/Fade';
+
 const styles = {
     media: {
         height: 0,
@@ -60,6 +61,7 @@ const Tour = (props) => {
     const timerRef = React.useRef();
     const [query, setQuery] = React.useState('idle');
     const { image, name, properties, reviewNum, tags, salePrice, price, rating } = props
+
     const handleClickQuery = () => {
         if (timerRef.current) {
             clearTimeout(timerRef.current);
@@ -124,7 +126,11 @@ const Tour = (props) => {
                         <TypographyMod fontSize="22px">{name}</TypographyMod>
                     </Box>
                 </Box>
-                <Grid container sx={{ ml: 3, mb: 1 }}>
+                <Grid container sx={{ ml: 3, mb: 1 }} style={{
+                    '@media(minWidth: 1108px)': {
+                        marginLeft: "0px"
+                    }
+                }}>
                     <Grid item>
                         <Box>
                             {/* Rating */}

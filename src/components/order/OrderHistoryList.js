@@ -5,7 +5,7 @@ import { Box } from '@mui/system';
 
 import { Pagination } from '@mui/material';
 import OrderHistoryItem from './OrderHistoryItem';
-
+import useMediaQuery from "@mui/material/useMediaQuery"
 const data = [
     {
         image: "../images/cards/card-image1.jpg",
@@ -33,11 +33,14 @@ const data = [
     }
 ]
 const OrderHistoryList = () => {
+
+    const matches = useMediaQuery('(min-width:1200px)')
     return (
         <>
-            <TypographyMod fontSize="18px">Orders</TypographyMod>
+            {matches && (<TypographyMod fontSize="18px">Orders</TypographyMod>)}
+
             <Box sx={{ mt: 1 }}>
-                <Box display="flex">
+                {matches && (<Box display="flex">
                     <Box sx={{ pr: "220px" }}>
                         <TypographyMod fontSize="18px">Name</TypographyMod>
                     </Box>
@@ -50,7 +53,8 @@ const OrderHistoryList = () => {
                     <Box sx={{}}>
                         <TypographyMod fontSize="18px">Price</TypographyMod>
                     </Box>
-                </Box>
+                </Box>)}
+
                 <Box sx={{ mb: 2 }}>
                     {
                         data.map((item, index) => {

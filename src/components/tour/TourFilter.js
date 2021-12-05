@@ -7,11 +7,9 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { IconButton } from '@mui/material';
 import CleanHandsIcon from '@mui/icons-material/CleanHands';
 import Slider from '@mui/material/Slider';
-import "./cardheader.css"
 import { styled } from '@mui/material/styles';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
-
 const Typographyf14light = (props) => {
     return (
         <Typography variant="h6" component="h2" sx={{ fontSize: "14px", fontWeight: 'light' }}>{props.children}</Typography>
@@ -49,7 +47,7 @@ const labels = {
     4: 'Very Good',
     5: 'Excellent',
 };
-const Tourfilters = () => {
+const TourFilters = () => {
     const [price, setPrice] = useState([40, 100])
     const [stars, setStars] = useState(4);
     const handleChange = (event, newValue, activeThumb) => {
@@ -166,4 +164,4 @@ const Tourfilters = () => {
     );
 }
 
-export default Tourfilters;
+export default TourFilters;

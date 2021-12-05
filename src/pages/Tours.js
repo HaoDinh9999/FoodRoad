@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { Breadcrumbs, Link, Typography, Container, Grid, Box } from '@mui/material';
 import Tourheader from '../components/tour/TourHeader';
-import Tourfilters from '../components/tour/TourFilter';
+import TourFilters from '../components/tour/TourFilter';
 import { red, } from '@mui/material/colors';
 import { Pagination } from '@mui/material';
 import { TypographyMod } from '../components/tour/TypoUtils';
@@ -10,7 +10,8 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HomeIcon from '@mui/icons-material/Home';
 import Tour from '../components/tour/Tour';
-
+import useMediaQuery from "@mui/material/useMediaQuery"
+import DropDownTourFilter from '../components/tour/DropDownFilter';
 const data = [
 	{
 		image: "./images/cards/card-image1.jpg",
@@ -92,9 +93,10 @@ const data = [
 	},
 ]
 export default function Tours() {
+	const matches = useMediaQuery('(min-width:1108px)')
 	return (
 		<div className="">
-			<Container fixed sx={{ mb: 2 }}>
+			<Container fluid sx={{ mb: 2 }}>
 				<Box display="flex">
 					<HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
 
@@ -118,12 +120,14 @@ export default function Tours() {
 				<Tourheader />
 			</Container>
 			<Box style={{ backgroundColor: "#F6F9FC", height: "100%" }}>
-				<Container fixed>
+				<Container fluid>
 					<Grid container>
-						<Grid item xs={4} sx={{ pb: 2 }}>
-							<Tourfilters />
+						<Grid item xs={0} md={0} lg={4} sx={{ pb: 2 }}>
+							{matches ? (<TourFilters />) : (
+								<DropDownTourFilter />
+							)}
 						</Grid>
-						<Grid item xs={8} sx={{ mb: 2 }}>
+						<Grid item xs={12} md={8} lg={8} sx={{ mb: 2 }}>
 							<Box>
 								{/* Tour banner */}
 								<Box sx={{ backgroundColor: "white", p: 2, m: "7px 0 7px 0", borderRadius: "7px" }}>

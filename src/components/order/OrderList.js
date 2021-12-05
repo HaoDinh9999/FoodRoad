@@ -4,6 +4,10 @@ import { TypographyMod } from '../tour/TypoUtils';
 import { Box } from '@mui/system';
 import OrderItem from './OrderItem';
 import { Pagination } from '@mui/material';
+import { IconButton } from "@mui/material";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import useMediaQuery from "@mui/material/useMediaQuery"
+import HomeIcon from '@mui/icons-material/Home';
 
 const data = [
     {
@@ -48,11 +52,14 @@ const data = [
     },
 ]
 const OrderList = () => {
+    const matches = useMediaQuery('(min-width:1200px)')
+
     return (
         <>
-            <TypographyMod fontSize="18px">Orders</TypographyMod>
+            {matches && (<TypographyMod fontSize="18px">Orders</TypographyMod>)}
+
             <Box sx={{ mt: 1 }}>
-                <Box display="flex">
+                {matches && (<Box display="flex">
                     <Box sx={{ pr: "220px" }}>
                         <TypographyMod fontSize="18px">Name</TypographyMod>
                     </Box>
@@ -65,7 +72,8 @@ const OrderList = () => {
                     <Box sx={{}}>
                         <TypographyMod fontSize="18px">Price</TypographyMod>
                     </Box>
-                </Box>
+                </Box>)}
+
                 <Box sx={{ mb: 2 }}>
                     {
                         data.map((item, index) => {
