@@ -5,11 +5,12 @@
 }
 .section {
   width: 100%;
-  background: linear-gradient(
+  background-color: rgb(247, 250, 255);
+  /* background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 24%,
     rgba(230, 230, 237, 1) 48%,
     rgba(228, 228, 238, 1) 80%,
     rgba(232, 249, 255, 1) 100%
-  );
+  ); */
 }

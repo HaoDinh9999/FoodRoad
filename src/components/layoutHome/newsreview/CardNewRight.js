@@ -17,11 +17,16 @@ const CardNewRight = (props) => {
   return (
     <Grid width="103%" marginTop="60px"  flexDirection="row" display="flex"  sx={{ border: 1,borderColor: 'grey.300',borderRadius: 2,backgroundColor:props.color1  }}>
     
-    <Box marginLeft="30px" marginTop="25px" backgroundColor={props.color1}>
+    <Box marginLeft="30px" width="100%" marginTop="25px" backgroundColor={props.color1} paddingBottom="10px">
     <Typography  variant="h6" component="h2" style={{color:props.fontcolor1,fontSize:"16px",fontWeight:"light"}}>OUR NEWS </Typography> 
     <Typography  variant="h6" component="h2" style={{color:props.title1 ,fontSize:"26px",fontWeight:"bold"}}>TRAVEL EVENTS </Typography> 
-    <Typography sx={{marginTop:"15px",lineHeight: 2 }} width="230px" variant="h6" component="h2" style={{color:props.fontcolor1,fontSize:"16px",fontWeight:"light"}}>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. </Typography> 
-    <Button   sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",marginTop:"20px",backgroundColor: props.colorbutton,color:props.color1,  textTransform: 'none' }} variant="contained" 
+    <Typography sx={{marginTop:"15px",lineHeight: 2 }} width="100%"  style={{color:props.fontcolor1,fontSize:"16px",fontWeight:"light"}}>Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis. </Typography> 
+    <Button   sx={{ borderRadius: '20px',padding:"5px 20px 5px 20px",marginTop:"20px",backgroundColor: props.colorbutton,color:props.color1,  textTransform: 'none',
+    '&:hover': {
+      backgroundColor: props.colorbutton,
+      opacity: [0.9, 0.8, 0.7],
+      },  
+  }} variant="contained" 
        >
           READ MORE
         </Button>
@@ -30,9 +35,7 @@ const CardNewRight = (props) => {
 
     <Box
       sx={{
-        marginLeft:"16px",
-        height: 313,
-        width:"50%",
+        width:"120%",
         backgroundImage:`url(${"./images/Food1.jpg"})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

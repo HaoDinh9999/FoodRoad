@@ -22,13 +22,13 @@ const AllNewsReview = () => {
     >
 
     <Container fixed >
-      <Grid container sm={12} marginBottom="-40px" marginTop="60px" justifyContent="center" >
+      <Grid container sm={12} xs={12} marginBottom="-40px" marginTop="60px" justifyContent="center" >
         <Grid container item sm={12} justifyContent="center">
         <Typography variant="h6" component="h2" style={{color:"#c2c2c2",fontSize:"13px",fontWeight:"Medium"}}>
         FROM THE BLOG
       </Typography>
         </Grid>
-        <Grid container item sm={12} justifyContent="center" marginBottom="-19px"  zIndex= 'tooltip'>
+        <Grid container item sm={12} justifyContent="center" marginBottom="-19px"  zIndex= '1000'>
         <Typography variant="h6" component="h2" style={{color:"#000",fontSize:"35px",fontWeight:"bold"}}>
         ARTICLES & NEWS
       </Typography>
@@ -49,24 +49,24 @@ const AllNewsReview = () => {
     />
       
       </Grid>
-      <Grid cotainer sm={12} display="flex" marginLeft="20px" >
-      <Grid   item sm={5.7}>
+      <Grid container sm={12} xs={12} display="flex" marginLeft="10px" >
+      <Grid   item sm={5.7} xs={12}>
       <CardNews color1="#fff" fontcolor1="#999" title1="#5c5b5b" colorbutton="#f37011"></CardNews>
       </Grid>
-      <Box item sm={0.5} width="30px"></Box>
-      <Grid   item sm={5.7}>
+      <Box item sm={0.5} xs={12} width="30px"></Box>
+      <Grid   item sm={5.7} xs={12}>
       <CardNews color1="#1bbc9b" fontcolor1="#fbfeff" title1="#fff"colorbutton="#fff" ></CardNews>
 
 
       </Grid>
       
     </Grid>
-    <Grid cotainer sm={12} display="flex" marginTop="-45px" marginLeft="20px" >
-      <Grid   item sm={5.7}>
+    <Grid container sm={12} xs={12} display="flex" marginTop="-45px" marginLeft="10px" >
+      <Grid   item sm={5.7} xs={12}>
       <CardNewRight color1="#14b9d5" fontcolor1="#fbfeff" title1="#fff"colorbutton="#fff"></CardNewRight>
       </Grid>
-      <Box item sm={0.5} width="30px"></Box>
-      <Grid   item sm={5.7}>
+      <Box item sm={0.5} xs={12} width="30px"></Box>
+      <Grid   item sm={5.7} xs={12}>
       <CardNews color1="#fff" fontcolor1="#999" title1="#5c5b5b" colorbutton="#f76570"></CardNews>
       </Grid>
       

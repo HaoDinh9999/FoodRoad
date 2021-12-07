@@ -1,0 +1,15 @@
+.logo {
+  flex-grow: 1;
+  cursor: "pointer";
+  color: #1e2022;
+  /* color: white; */
+}
+
+.link {
+  text-decoration: none;
+  color: #1e2022;
+  /* color: "white"; */
+}
+.link--active {
+  font-weight: 700;
+}
