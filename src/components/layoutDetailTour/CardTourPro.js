@@ -25,7 +25,7 @@ const CardTourPro = (props) => {
           height: 300,
           borderRadius: 2,
           boxShadow: 3,
-          backgroundImage: `url(${"/images/Food1.jpg"})`,
+          backgroundImage: `url(${props.url})`,
           backgroundSize: " cover",
           backgroundColor: "#f99",
           backgroundPosition: "center",
@@ -67,9 +67,7 @@ const CardTourPro = (props) => {
             },
           }}
         >
-          {
-            "Cu Chi Tunnels: Morning or Afternoon Guided Tour(Ben Duoc Option available)"
-          }
+          {props.title}
         </Link>
         <Box display="flex" alignItems="center">
           <IconButton
@@ -154,7 +152,7 @@ const CardTourPro = (props) => {
           fontSize="16px"
           color="#000"
         >
-          from $16.00 per adult
+          from $72.00 per adult
         </Typography>
       </Box>
     </Box>

@@ -18,7 +18,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { LinearProgress } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
-
+import CardTourPro from "../layoutDetailTour/CardTourPro";
 const FAQRight = () => {
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -150,13 +150,19 @@ const FAQRight = () => {
           alignItems="center"
         >
           <Grid item sm={12} xs={12}>
-            <CardTourItem url="/images/Food1.jpg"></CardTourItem>
+            <CardTourPro
+              url="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ce/e4/72/caption.jpg?w=300&h=300&s=1"
+              title="Private Sightseeing Motorbike Tour with Local Students"
+            />
           </Grid>
           <Grid item sm={12} xs={12}>
-            <CardTourItem url="/images/Food2.jpg"></CardTourItem>
-          </Grid>
-          <Grid item sm={12} xs={12}>
-            <CardTourItem url="/images/Food3.jpg"></CardTourItem>
+            <CardTourPro
+              url="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/e2/2b/2c.jpg"
+              title="Saigon Food Tour on Scooter at Night
+
+
+            "
+            />
           </Grid>
         </Grid>
       </Grid>
