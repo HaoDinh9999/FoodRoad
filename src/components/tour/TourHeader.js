@@ -22,19 +22,19 @@ const Tourheader = () => {
     const [childNum, setChildNum] = useState(1);
     const [adultNum, setAdultNum] = useState(1)
     return (
-        <Grid container pd="0">
+        <Grid container>
             <Grid item lg={4} md={12} xs={12}>
                 <Map
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyClpHM2sDk1TbMKkjX_rd8AboU4RdolLtA'}&callback=initMap`}
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ margin: `auto`, border: '2px solid #000', borderRadius: 10, height: '136px', width: "294px", marginLeft: "0px" }} />}
+                    containerElement={<div style={{ margin: `auto`, border: '2px solid #000', borderRadius: 10, height: '136px', width: "294px", marginLeft: "0px", marginTop: "20px" }} />}
                     mapElement={<div style={{ height: '100%' }} />}
                 />
             </Grid>
             <Grid item xs={12} md={12} lg={8} style={{ marginLeft: "-94px" }}>
                 <Box sx={{ mb: 4, mt: 3, ml: 11 }}>
                     <Typography variant="h5" sx={{ fontWeight: "bold", fontSize: "30px" }}>
-                        Check out the best Food Tours of SaiGon at night
+                        Check out the best Food Tours of SaiGon
                     </Typography>
                 </Box>
                 <Grid container sx={{ ml: 12, pb: 1 }}>
@@ -59,7 +59,7 @@ const Tourheader = () => {
                                     renderInput={(startProps, endProps) => (
                                         <React.Fragment>
                                             <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: "0px" }}>
-                                                <TextField variant="filled" {...startProps} InputProps={{
+                                                <TextField variant="outlined" {...startProps} InputProps={{
                                                     endAdornment: (
                                                         <InputAdornment position="start">
                                                             <IconButton edge="end" onClick={() => setOpenDate(true)}>
@@ -71,7 +71,7 @@ const Tourheader = () => {
                                             </Box>
                                             <Box sx={{ ml: 2, mr: 2 }} > to </Box>
                                             <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: 2 }}>
-                                                <TextField variant="filled"  {...endProps} InputProps={{
+                                                <TextField variant="outlined"  {...endProps} InputProps={{
                                                     endAdornment: (
                                                         <InputAdornment position="start">
                                                             <IconButton edge="end" onClick={() => setOpenDate(true)}>
@@ -89,7 +89,7 @@ const Tourheader = () => {
                     </Grid>
 
 
-                    <Box sx={{ backgroundColor: grey[200], borderRadius: "7px", p: 1, ml: "15px" }} style={{ marginTop: `${matches ? "-17px" : "50px"}` }} >
+                    <Box sx={{ borderRadius: "7px", p: 1, ml: "15px" }} style={{ marginTop: `${matches ? "-17px" : "50px"}` }} >
                         <Box sx={{ borderTopLeftRadius: "7px 7px", borderTopRightRadius: "7px 7px", mb: 1 }}>
                             <Box display="flex">
                                 <PeopleAltSharpIcon sx={{ mr: "5px" }} />
@@ -129,7 +129,7 @@ const Tourheader = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box sx={{ backgroundColor: grey[200] }}>
+                        <Box >
                             <Box display="flex">
                                 <ChildCareSharpIcon sx={{ mr: "5px", fontSize: "30px" }} />
                                 <TypographyMod fontSize={"18px"}>Child</TypographyMod>

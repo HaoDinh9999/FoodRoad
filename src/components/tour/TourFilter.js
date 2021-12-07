@@ -93,7 +93,7 @@ const TourFilters = () => {
             <Box sx={{ m: 1, borderBottom: "1px solid black", ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Price</TypographyMod>
                 <Box textAlign="center">
-                    <TypographyMod fontSize="20px">From {price[0]} USD to {price[1]} USD</TypographyMod>
+                    <TypographyMod fontSize="12px">From {price[0]} USD to {price[1]} USD</TypographyMod>
 
                 </Box>
                 <Box>
@@ -133,7 +133,7 @@ const TourFilters = () => {
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Popular</TypographyMod>
                 <Box textAlign="center">
-                    <TypographyMod fontSize="20px">{stars} stars</TypographyMod>
+                    <TypographyMod fontSize="12px">{stars} stars</TypographyMod>
 
                 </Box>
                 <Box

@@ -9,7 +9,6 @@ export default function DropDownFilter() {
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
     const onClick = () => setIsActive(!isActive);
-
     return (
         <div >
             <div >

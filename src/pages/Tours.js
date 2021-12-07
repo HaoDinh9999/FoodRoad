@@ -14,7 +14,7 @@ import useMediaQuery from "@mui/material/useMediaQuery"
 import DropDownTourFilter from '../components/tour/DropDownFilter';
 const data = [
 	{
-		image: "./images/cards/card-image1.jpg",
+		image: "/images/cards/card-image1.jpg",
 		name: "Saigon Barbecue",
 		salePrice: 89,
 		price: 69,
@@ -29,7 +29,7 @@ const data = [
 		rating: 5
 	},
 	{
-		image: "./images/cards/card-image2.jpg",
+		image: "/images/cards/card-image2.jpg",
 		name: "In Love With Saigon",
 		salePrice: 89,
 		price: 59,
@@ -45,7 +45,7 @@ const data = [
 		rating: 4
 	},
 	{
-		image: "./images/cards/card-image3.jpg",
+		image: "/images/cards/card-image3.jpg",
 		name: "Saigon Vegan",
 		salePrice: 109,
 		price: 49,
@@ -61,7 +61,7 @@ const data = [
 		rating: 4
 	},
 	{
-		image: "./images/cards/card-image4.jpg",
+		image: "/images/cards/card-image4.jpg",
 		name: "Saigon BackStreet",
 		salePrice: 79,
 		price: 39,
@@ -76,7 +76,7 @@ const data = [
 		rating: 3
 	},
 	{
-		image: "./images/cards/card-image5.jpg",
+		image: "/images/cards/card-image5.jpg",
 		name: "In Love With Saigon",
 		salePrice: 89,
 		price: 59,
@@ -93,7 +93,7 @@ const data = [
 	},
 ]
 export default function Tours() {
-	const matches = useMediaQuery('(min-width:1108px)')
+	const matches = useMediaQuery('(min-width:1200px)')
 	return (
 		<div className="">
 			<Container fluid sx={{ mb: 2 }}>
@@ -122,12 +122,12 @@ export default function Tours() {
 			<Box style={{ backgroundColor: "#F6F9FC", height: "100%" }}>
 				<Container fluid>
 					<Grid container>
-						<Grid item xs={0} md={0} lg={4} sx={{ pb: 2 }}>
+						<Grid item xs={0} md={1} lg={4} sx={{ pb: 2 }}>
 							{matches ? (<TourFilters />) : (
 								<DropDownTourFilter />
 							)}
 						</Grid>
-						<Grid item xs={12} md={8} lg={8} sx={{ mb: 2 }}>
+						<Grid item xs={12} md={10} lg={8} sx={{ mb: 2 }}>
 							<Box>
 								{/* Tour banner */}
 								<Box sx={{ backgroundColor: "white", p: 2, m: "7px 0 7px 0", borderRadius: "7px" }}>
