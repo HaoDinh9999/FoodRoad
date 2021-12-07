@@ -1,0 +1,29 @@
+.sliders {
+    position: relative;
+    min-width: 330px;
+    margin-left: 10px;
+  }
+  
+  .sliders .slick-prev,
+  .sliders .slick-next {
+    position: absolute;
+    
+  }
+  .sliders .slick-prev {
+    color: #fff;
+    left: 0%;
+    z-index: 1;
+
+  }
+  .sliders .slick-next {
+    color: #fff;
+    right: 0%;
+    z-index: 1;
+  }
+  
+  .sliders .slick-prev:before, .slick-next:before {
+    color: #f99;
+    display: none;
+    display: none;
+
+  }
