@@ -106,6 +106,11 @@
     outline: rgb(44, 44, 44) none 0px;
 }
 
+.div-main{
+    text-align: center;
+    font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
 .div1{
     text-align: center;
     font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
