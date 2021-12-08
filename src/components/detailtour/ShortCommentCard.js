@@ -2,8 +2,9 @@ import React from 'react';
 import { Grid, Avatar, Typography, Link, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import Reply from './Reply';
-
+import { Input } from '@mui/material';
 const Shortcommentcard = () => {
+    const [reply, setReply] = React.useState(false);
     return (
         <div>
             <Grid container sx={{ mt: 3, pt: 2, pb: 0, borderBottom: "1px solid gray" }} justifyContent="space-between">
@@ -37,7 +38,13 @@ const Shortcommentcard = () => {
                         <Button sx={{ ml: 5, pl: 2, pt: "12px", pb: "12px", borderRadius: 6, maxWidth: '200px', maxHeight: '100px', color: "#000", backgroundColor: "#fff" }} > Read All Replies</Button>
                         {/* <Button variant="outlined" sx={{ ml: 5, pl: 2, pt: 2, pb: 0, mb: 2, borderRadius: 10 }} > Reply</Button> */}
                     </Box>
-                    <Button sx={{ mt: 1, pl: 2, pt: "12px", pb: "12px", mb: 2, borderRadius: 6, color: "#000", backgroundColor: "#fff" }} > Reply</Button>
+                    <Button sx={{ mt: 1, pl: 2, pt: "12px", pb: "12px", mb: 2, borderRadius: 6, color: "#000", backgroundColor: "#fff" }} onCLick={() => setReply(!reply)} > Reply</Button>
+                    {reply ? (<Input
+                        fullWidth
+                        multiline
+                        sx={{ width: "30px" }}
+                    />) : null}
+
                 </Box>
                 <Box>
                 </Box>

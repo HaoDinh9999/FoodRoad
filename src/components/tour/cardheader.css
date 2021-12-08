@@ -1,0 +1,11 @@
+.date-picker {
+  display: block;
+  height: 42px;
+  border: 1px solid black;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.a {
+  padding: 0 0 0 0 !important;
+}

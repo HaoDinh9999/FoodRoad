@@ -4,6 +4,10 @@ import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -12,20 +16,22 @@ import Avatar from "@mui/material/Avatar";
 import Badge from "@mui/material/Badge";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Tabs from "@material-ui/core/Tab";
-import TabContext from "@material-ui/lab/TabContext";
-import TabList from "@material-ui/lab/TabList";
+// import Tabs from "@material-ui/core/Tab";
+// import TabContext from "@material-ui/lab/TabContext";
+// import TabList from "@material-ui/lab/TabList";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TodayOutlinedIcon from "@mui/icons-material/TodayOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import LinkedCameraOutlinedIcon from "@mui/icons-material/LinkedCameraOutlined";
 import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutlined";
+
 const CardHero = () => {
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <Box sx={{ backgroundColor: "#f2f2f2" }} paddingBottom="10px">
       <Box
@@ -124,7 +130,7 @@ const CardHero = () => {
             </Box>
             <Box>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
-                Contributions
+                Reviews
               </Typography>
               <Typography
                 sx={{
@@ -138,7 +144,7 @@ const CardHero = () => {
             </Box>
             <Box>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
-                Blog
+                Tour Joined
               </Typography>
               <Typography
                 sx={{
@@ -152,7 +158,7 @@ const CardHero = () => {
             </Box>
             <Box>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
-                Tours
+                Favorite
               </Typography>
               <Typography
                 sx={{
@@ -183,29 +189,21 @@ const CardHero = () => {
             </Box>
           </Grid>
           <Grid item sm={12} xs={12} backgroundColor="#fff">
-            <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: "#f99" }}>
-                <TabList
-                  onChange={handleChange}
-                  aria-label="lab API tabs example"
-                  scrollButtons
-                  allowScrollButtonsMobile
-                  variant="scrollable"
-                  inkBarStyle={{ background: "blue" }}
-                >
-                  <Tabs
-                    label="Activity feed"
-                    value="1"
-                    TabIndicatorProps={{ style: { background: "#000" } }}
-                  />
-                  <Tabs label="Trips" value="2" />
-                  <Tabs label="Photos" value="3" />
-                  <Tabs label="Reviews" value="4" />
-                  <Tabs label="Forums" value="5" />
-                  <Tabs label="Badges" value="6" />
-                </TabList>
-              </Box>
-            </TabContext>
+            <Box sx={{ width: "100%", typography: "body1" }}>
+              <TabContext value={value}>
+                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                  <TabList
+                    onChange={handleChange}
+                    aria-label="lab API tabs example"
+                  >
+                    <Tab label="Trips" value="1" />
+                    <Tab label="Photos" value="2" />
+                    <Tab label="Reviews" value="3" />
+                    <Tab label="Forums" value="4" />
+                  </TabList>
+                </Box>
+              </TabContext>
+            </Box>
           </Grid>
           <Grid item sm={12} xs={12} height="25px"></Grid>
           <Grid
@@ -225,7 +223,7 @@ const CardHero = () => {
             >
               Intro
             </Typography>
-            <Box display="flex" marginBottom="10px">
+            <Box display="flex" marginBottom="10px" marginLeft="10px">
               <LocationOnIcon
                 sx={{ width: "20px", height: "20px", color: "#333333" }}
               />
@@ -240,7 +238,7 @@ const CardHero = () => {
                 Ho Chi Minh, VietNam
               </Typography>
             </Box>
-            <Box display="flex" marginBottom="10px">
+            <Box display="flex" marginBottom="10px" marginLeft="10px">
               <TodayOutlinedIcon sx={{ width: "20px", height: "20px" }} />
               <Typography
                 sx={{
@@ -277,7 +275,7 @@ const CardHero = () => {
                     color: "#757575",
                   }}
                 >
-                  Add a website
+                  Add your Facebook
                 </Typography>
               </Button>
             </Box>
@@ -305,7 +303,7 @@ const CardHero = () => {
                     color: "#757575",
                   }}
                 >
-                  Write details about yourself
+                  Write about yourself
                 </Typography>
               </Button>
             </Box>
