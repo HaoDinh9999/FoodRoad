@@ -21,8 +21,9 @@ const styles = {
         // objectFit: "cover",
         width: "100%",
         height: "100%",
-        // borderTopLeftRadius: "7px"
-        borderRadius: "7px"
+        borderTopLeftRadius: "7px",
+        borderBottomLeftRadius: "7px"
+        // borderRadius: "7px"
     },
     overlay: {
         position: 'absolute',
@@ -123,7 +124,7 @@ const Tour = (props) => {
                 <Grid container>
                     <Grid item xs={12} md={12} lg={12}>
                         <Box sx={{ ml: 3, mb: 0 }}>
-                            <TypographyMod fontSize="22px">{name}</TypographyMod>
+                            <TypographyMod fontSize="20px">{name}</TypographyMod>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12} >
@@ -149,35 +150,12 @@ const Tour = (props) => {
                             marginLeft: "0px"
                         }
                     }}>
-                        <Grid item xs={3} md={4} lg={4}>
-                            <Box>
+                        <Grid item xs={3} md={3} lg={3}>
+                            <Box sx={{ marginTop: "5px" }}>
                                 {/* Rating */}
 
-                                <Typography variant="h6" component="h2" sx={{ fontSize: "20px", fontWeight: "medium", color: red[500], textDecoration: "line-through" }}> {salePrice} USD  </Typography>
-                                <TypographyMod>{price} USD</TypographyMod>
-                                <Button variant="contained" sx={{
-                                    backgroundColor: yellow[800],
-                                    '&:hover': {
-                                        backgroundColor: yellow[900],
-                                    }, mt: "9px"
-                                }} onClick={handleClickQuery} >
-                                    {query === 'success' ? (
-                                        <CheckIcon />
-                                    ) : (
-                                        <Fade
-                                            in={query === 'progress'}
-                                            style={{
-                                                transitionDelay: query === 'progress' ? '800ms' : '0ms',
-                                            }}
-                                            unmountOnExit
-                                        >
-
-                                            <CircularProgress thickness={5.0} color="inherit" size={20} sx={{ mr: "3px" }} />
-
-                                        </Fade>
-                                    )}
-                                    Order Now
-                                </Button>
+                                <Typography variant="h6" component="h2" sx={{ fontSize: "1rem", fontWeight: "medium", color: red[500], textDecoration: "line-through" }}> {salePrice} USD  </Typography>
+                                <TypographyMod sx={{ fontSize: "1.2rem" }}>{price} USD</TypographyMod>
                             </Box>
                         </Grid>
                         <Grid item xs={7} md={8} lg={8}>
@@ -191,16 +169,49 @@ const Tour = (props) => {
                                         </Box>)
                                     })
                                 }
-                                <Button onClick={() => window.location.href = "/tours/detail"} variant="contained" sx={{
-                                    backgroundColor: yellow[800],
-                                    '&:hover': {
-                                        backgroundColor: yellow[900],
-                                        textDecoration: "underline"
-                                    }, mt: "13px"
-                                }} >
-                                    View Detail <CallMadeIcon sx={{ fontSize: "16px" }} />
-                                </Button>
                             </Box>
+                        </Grid>
+                        <Grid item xs={8} md={8} lg={8} sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <Grid container>
+                                <Grid item xs={5.5} md={6} lg={6}>
+                                    <Button variant="contained" sx={{
+                                        backgroundColor: yellow[800],
+                                        '&:hover': {
+                                            backgroundColor: yellow[900],
+                                        }, mt: "9px"
+                                    }} onClick={handleClickQuery} >
+                                        {query === 'success' ? (
+                                            <CheckIcon />
+                                        ) : (
+                                            <Fade
+                                                in={query === 'progress'}
+                                                style={{
+                                                    transitionDelay: query === 'progress' ? '800ms' : '0ms',
+                                                }}
+                                                unmountOnExit
+                                            >
+
+                                                <CircularProgress thickness={5.0} color="inherit" size={20} sx={{ mr: "3px" }} />
+
+                                            </Fade>
+                                        )}
+                                        Order Now
+                                    </Button>
+
+                                </Grid>
+                                <Grid item xs={6} md={6} lg={6}>
+                                    <Button onClick={() => window.location.href = "/tours/detail"} variant="contained" sx={{
+                                        backgroundColor: yellow[800],
+                                        '&:hover': {
+                                            backgroundColor: yellow[900],
+                                            textDecoration: "underline"
+                                        }, mt: "9px"
+                                    }} >
+                                        View Detail <CallMadeIcon sx={{ fontSize: "16px" }} />
+                                    </Button>
+                                </Grid>
+                            </Grid>
+
                         </Grid>
                     </Grid>
                 </Grid>

@@ -10,6 +10,10 @@ import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
+import { grey } from '@mui/material/colors';
+import PeopleAltSharpIcon from '@mui/icons-material/PeopleAltSharp';
+import ChildCareSharpIcon from '@mui/icons-material/ChildCareSharp';
+import { Button } from '@mui/material';
 const Typographyf14light = (props) => {
     return (
         <Typography variant="h6" component="h2" sx={{ fontSize: "14px", fontWeight: 'light' }}>{props.children}</Typography>
@@ -47,9 +51,16 @@ const labels = {
     4: 'Very Good',
     5: 'Excellent',
 };
+const LineBreak = () => {
+    return (
+        <hr style={{ marginLeft: "0.9rem", marginRight: "0.9rem" }} />
+    )
+}
 const TourFilters = () => {
     const [price, setPrice] = useState([40, 100])
     const [stars, setStars] = useState(4);
+    const [childNum, setChildNum] = useState(1);
+    const [adultNum, setAdultNum] = useState(1)
     const handleChange = (event, newValue, activeThumb) => {
         if (!Array.isArray(newValue)) {
             return;
@@ -64,21 +75,93 @@ const TourFilters = () => {
     return (
         <Box sx={{ width: "296px", backgroundColor: "white", borderRadius: "7px", mt: 1 }}>
             {/* Covid 19 */}
-            <Box sx={{ m: 1, borderBottom: "1px solid black", ml: 2, mr: 2 }}>
+            <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Covid-19<IconButton sx={{ ml: 1 }}>
                     <CleanHandsIcon />
                 </IconButton></TypographyMod>
                 <TypographyMod fontSize="14px">Because of Covid-19,you must wear mask except for eating</TypographyMod>
             </Box>
-            {/* <Box sx={{ borderBottom: "1px solid black", ml: -2, mr: 2 }}>
-                <LocalizationProvider dateAdapter={DateAdapter}>
-                    <CalendarPicker sx={{
-                        fontSize: "14px", fontWeight: "light"
-                    }} />
-                </LocalizationProvider>
-            </Box> */}
-            {/* Deals */}
-            <Box sx={{ m: 1, borderBottom: "1px solid black", ml: 2, mr: 2 }}>
+            <LineBreak />
+            <Box sx={{ borderRadius: "7px", p: 1, ml: "15px" }}  >
+                <Box sx={{ borderTopLeftRadius: "7px 7px", borderTopRightRadius: "7px 7px", mb: 1 }}>
+                    <Box display="flex">
+                        <PeopleAltSharpIcon sx={{ mr: "5px" }} />
+                        <TypographyMod sx={{ fontSize: "18px" }}>Adults</TypographyMod>
+                        <Box display="flex" sx={{ ml: "65px" }}>
+                            <Button
+                                onClick={(event) => adultNum >= 2 ? setAdultNum(adultNum - 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    padding: "1px 7px 1px 7px",
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[800],
+                                    borderColor: grey[600],
+                                    '&:hover': {
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                            <Box sx={{ borderTop: "1px solid", borderTopColor: grey[600], borderBottom: "1px solid", borderBottomColor: grey[600], pl: "20px", pr: "20px", pt: "5px" }}>
+                                <Typographyf14medium>{adultNum}</Typographyf14medium>
+                            </Box>
+                            <Button
+                                onClick={(event) => adultNum <= 6 ? setAdultNum(adultNum + 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    padding: "1px 7px 1px 7px",
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[700],
+                                    borderColor: grey[600],
+                                    '&:hover': {
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
+                        </Box>
+                    </Box>
+                </Box>
+                <Box display="flex" >
+                    <ChildCareSharpIcon sx={{ mr: "5px", fontSize: "30px" }} />
+                    <TypographyMod fontSize={"18px"}>Child</TypographyMod>
+                    <Box display="flex" sx={{ ml: "69px" }}>
+                        <Button
+                            onClick={(event) => childNum >= 1 ? setChildNum(childNum - 1) : 0}
+                            variant="outlined" size="small" sx={{
+                                padding: "1px 7px 1px 7px",
+                                minHeight: 0,
+                                minWidth: 0,
+                                color: grey[800],
+                                borderColor: grey[600],
+                                '&:hover': {
+                                    backgroundColor: grey[500],
+                                    color: grey[800],
+                                    borderColor: grey[600]
+                                },
+                            }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                        <Box sx={{ borderTop: "1px solid", borderTopColor: grey[600], borderBottom: "1px solid", borderBottomColor: grey[600], pl: "20px", pr: "20px", pt: "5px" }}>
+                            <Typographyf14medium>{childNum}</Typographyf14medium>
+                        </Box>
+                        <Button
+                            onClick={(event) => childNum <= 2 ? setChildNum(childNum + 1) : 0}
+                            variant="outlined" size="small" sx={{
+                                padding: "1px 7px 1px 7px",
+                                minHeight: 0,
+                                minWidth: 0,
+                                color: grey[700],
+                                borderColor: grey[600],
+                                '&:hover': {
+                                    backgroundColor: grey[500],
+                                    color: grey[800],
+                                    borderColor: grey[600]
+                                },
+                            }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
+                    </Box>
+                </Box>
+            </Box>
+            <LineBreak />
+            <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Deals</TypographyMod>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Free cancellation <IconButton sx={{ ml: 1 }}>
@@ -90,7 +173,8 @@ const TourFilters = () => {
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Properties with special offers</Typographyf14light>} />
                 </FormGroup>
             </Box>
-            <Box sx={{ m: 1, borderBottom: "1px solid black", ml: 2, mr: 2 }}>
+            <LineBreak />
+            <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Price</TypographyMod>
                 <Box textAlign="center">
                     <TypographyMod fontSize="12px">From {price[0]} USD to {price[1]} USD</TypographyMod>
@@ -110,26 +194,12 @@ const TourFilters = () => {
                         sx={{ color: "#00aa6c" }}
                     />
                 </Box>
-                {/* <FormControl sx={{ m: 2, width: "247px", height: "37" }}>
-                    <Select
-                        labelId="select-price label"
-                        id="Select"
-                        value={priceType}
-                        defaultValue={priceType}
-                        onChange={(event) => { setPriceType(event.target.value) }}> */}
-                {/* <MenuItem value={0} sx={{ padding: "0px 0px 0px 0px" }}>Price without VAT</MenuItem>
-                        <MenuItem value={0} sx={{ padding: "0px 0px 0px 0px" }}>Price with VAT</MenuItem>
-                        <MenuItem value={0} sx={{ padding: "0px 0px 0px 0px" }}>Price per night</MenuItem> */}
-                {/* <MenuItem value={1}>Price + taxes and fees</MenuItem>
-                        
-                        <MenuItem value={2}>Total stay + taxes and fees</MenuItem> */}
-                {/* </Select>
-                </FormControl> */}
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Price without VAT</Typographyf14medium>} />
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Price with VAT</Typographyf14light>} />
                 </FormGroup>
             </Box>
+            <LineBreak />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Popular</TypographyMod>
                 <Box textAlign="center">
@@ -152,7 +222,7 @@ const TourFilters = () => {
                         emptyIcon={<CircleOutlinedIcon fontSize="inherit" />}
                         sx={{ mr: 2 }}
                     />
-                    <TypographyMod fontSize="16px">{labels[stars]}</TypographyMod>
+                    <TypographyMod fontSize="12px">{labels[stars]}</TypographyMod>
                 </Box>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Vegan</Typographyf14medium>} />
