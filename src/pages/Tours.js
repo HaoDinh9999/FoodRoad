@@ -135,11 +135,15 @@ export default function Tours() {
 				<Container fluid>
 					<Grid container style={{ justifyContent: "space-between" }}>
 						<div data-aos="fade-up" data-aos-duration={1000}>
-							<Grid item xs={0} md={1} lg={4} sx={{ pb: 2 }}>
-								{matchesLg ? (<TourFilters />) : (
+							{matchesLg ? (
+								<Grid item xs={4} md={4} lg={4} sx={{ pb: 2 }}>
+									<TourFilters />
+								</Grid>
+							) : (
+								<Grid item xs={12} md={4} lg={4} sx={{ pb: 2 }}>
 									<DropDownTourFilter />
-								)}
-							</Grid>
+								</Grid>
+							)}
 						</div>
 						<Grid item xs={12} md={10} lg={8} sx={{ mb: 2 }}>
 							{/* Tour banner */}
