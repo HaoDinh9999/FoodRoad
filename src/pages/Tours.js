@@ -100,7 +100,6 @@ const data = [
 
 export default function Tours() {
 	const theme = useTheme();
-	const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
 	const matchesLg = useMediaQuery(theme.breakpoints.up('lg'));
 	React.useEffect(() => {
 		Aos.init();
@@ -162,7 +161,7 @@ export default function Tours() {
 								{
 									data.map((item, index) => {
 										return (
-											<Box sx={{ mt: 1 }}>
+											<Box sx={{ mt: 1, mb: 1 }}>
 												<Tour {...item} key={index} />
 											</Box>
 										)

@@ -10,20 +10,12 @@ import CallMadeIcon from '@mui/icons-material/CallMade';
 import { CircularProgress } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import Fade from '@mui/material/Fade';
-
+import useMediaQuery from "@mui/material/useMediaQuery"
+import { useTheme } from "@mui/material/styles"
 const styles = {
     media: {
         height: 0,
         paddingTop: '56.25%' // 16:9
-    },
-    image: {
-        // position: 'relative',
-        // objectFit: "cover",
-        width: "100%",
-        height: "100%",
-        borderTopLeftRadius: "7px",
-        borderBottomLeftRadius: "7px"
-        // borderRadius: "7px"
     },
     overlay: {
         position: 'absolute',
@@ -62,8 +54,9 @@ const Tag = (props) => {
 const Tour = (props) => {
     const timerRef = React.useRef();
     const [query, setQuery] = React.useState('idle');
+    const theme = useTheme();
+    const matchesSm = useMediaQuery(theme.breakpoints.up('xs'));
     const { image, name, properties, reviewNum, tags, salePrice, price, rating } = props
-
     const handleClickQuery = () => {
         if (timerRef.current) {
             clearTimeout(timerRef.current);
@@ -82,7 +75,16 @@ const Tour = (props) => {
     return (
         <Grid container sx={{ backgroundColor: "white", borderRadius: "7px" }}>
             <Grid item xs={12} md={3} lg={4} sx={{ position: "relative" }}>
-                <img src={image} alt="tour" style={styles.image} loading="lazy" />
+                <img src={image} alt="tour"
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        borderTopLeftRadius: "7px",
+                        borderBottomLeftRadius: "7px",
+                        borderBottomRightRadius: `${matchesSm ? "7px" : "0px"}`,
+                        borderTopRightRadius: `${matchesSm ? "7px" : "0px"}`,
+                    }}
+                    loading="lazy" />
                 {tags.slice(0, 2).map((item, index) => {
                     var space = "";
 
