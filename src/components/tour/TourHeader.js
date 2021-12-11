@@ -151,7 +151,7 @@ const Tourheader = () => {
                     </Grid>
                 </div>
             </Grid >
-        </Grid >
+        </Grid>
     );
 }
 

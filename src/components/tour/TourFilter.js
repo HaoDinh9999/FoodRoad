@@ -82,7 +82,7 @@ const TourFilters = () => {
                 <TypographyMod fontSize="14px">Because of Covid-19,you must wear mask except for eating</TypographyMod>
             </Box>
             <LineBreak />
-            <Box sx={{ borderRadius: "7px", p: 1, ml: "15px" }}  >
+            <Box sx={{ borderRadius: "7px", p: 1, ml: "5px" }}  >
                 <Box sx={{ borderTopLeftRadius: "7px 7px", borderTopRightRadius: "7px 7px", mb: 1 }}>
                     <Box display="flex">
                         <PeopleAltSharpIcon sx={{ mr: "5px" }} />
