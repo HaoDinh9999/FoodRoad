@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import ExpandableContent from './ExpandableContent'
 
 const labels ={
+    0: 'Click to rate',
     1: 'Terrible',
     2: 'Poor',
     3: 'Average',
@@ -14,11 +15,11 @@ const labels ={
 }
 
 function ReviewDetails() {
-    const [value1, setValue1] = useState(4)
+    const [value1, setValue1] = useState(0)
     const [hover1, setHover1] = useState(-1)
-    const [value2, setValue2] = useState(4)
+    const [value2, setValue2] = useState(0)
     const [hover2, setHover2] = useState(-1)
-    const [value3, setValue3] = useState(4)
+    const [value3, setValue3] = useState(0)
     const [hover3, setHover3] = useState(-1)
 
     const [style1,setStyle1] = useState("div3");
@@ -28,9 +29,13 @@ function ReviewDetails() {
     const [showForm2, setShowForm2]=useState(false);
     const [showForm3, setShowForm3]=useState(false);
 
-    const [showFinishBtn, setShowFinishBtn] = useState(true)
+    const [showFinishBtn1, setShowFinishBtn1] = useState(true);
+    const [showFinishBtn2, setShowFinishBtn2] = useState(true);
+    const [showFinishBtn3, setShowFinishBtn3] = useState(true);
 
-    const onClick = () => setShowFinishBtn(false)
+    const onClick1 = () => setShowFinishBtn1(false);
+    const onClick2 = () => setShowFinishBtn2(false);
+    const onClick3 = () => setShowFinishBtn3(false);
 
     const ShowForm1 = () => {
         setShowForm1(true);
@@ -78,15 +83,14 @@ function ReviewDetails() {
             </div>
             <div style={{height:"20px"}}></div>
             <div className="div1">
-                <div class="whereError">Location not found</div>
                 <div className="fauxInput where">
                 <input
                     className="review"
-                    name="where"
-                    autoComplete="off"
+                    refs="which"
                     type="text"
-                    placeholder="City or destination"
-                />
+                    required="required"
+                    placeholder="City or destination "
+                 />
                 <FaMapMarkerAlt class="image"/>
                 </div>
                 
@@ -130,16 +134,14 @@ function ReviewDetails() {
             </div>
             <div style={{height:50}}/>
             <div className="div2">
-                <h2>
                 Have you been? Travelers want to see more reviews of these places.
-                </h2>
             </div>
             <div style={{height:"10px"}}></div>
             <div className={style1} 
                 onClick={() => {
                                 ShowForm1();
                                 changeStyle1();
-                                onClick();
+                                onClick1();
                              }}>
                 <div className="locationPhoto">
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/60/ef/cf/caption.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
@@ -181,7 +183,7 @@ function ReviewDetails() {
                             )}
                         </Box>
                     </div>
-                    {showFinishBtn ? <Finish /> : null}
+                    {showFinishBtn1 ? <Finish /> : null}
                     {showForm1 && (
                         <ExpandableContent />
                     )}
@@ -191,7 +193,7 @@ function ReviewDetails() {
                     onClick={() => {
                                 ShowForm2();
                                 changeStyle2();
-                                
+                                onClick2();
                              }}>
                 <div className="locationPhoto">
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/b5/80/c6/good-vibes-central-hotel.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
@@ -236,7 +238,7 @@ function ReviewDetails() {
                             )}
                         </Box>
                     </div>
-                    {showFinishBtn ? <Finish /> : null}
+                    {showFinishBtn2 ? <Finish /> : null}
                     {showForm2 && (
                         <ExpandableContent />
                     )}
@@ -246,7 +248,7 @@ function ReviewDetails() {
                     onClick={() => {
                                 ShowForm3();
                                 changeStyle3();
-                                
+                                onClick3();
                              }}>
                 <div className="locationPhoto">
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/63/ee/8a/caption.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
@@ -289,7 +291,7 @@ function ReviewDetails() {
                             )}
                         </Box>
                     </div>
-                    {showFinishBtn ? <Finish /> : null}
+                    {showFinishBtn3 ? <Finish /> : null}
                     {showForm3 && (
                         <ExpandableContent />
                     )}

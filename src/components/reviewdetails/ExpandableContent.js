@@ -1,14 +1,39 @@
 import React, { useState } from 'react'
+import { Button, CircularProgress, Fab } from '@mui/material';
+import { Check } from '@mui/icons-material';
+import { green } from '@mui/material/colors';
+
 
 export default function ExpandableContent() {
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const timer = React.useRef();
 
-    const [state, setState] = useState(false);
+    const buttonSx = {
+        ...(success && {
+            bgcolor: green[500],
+            '&:hover': {
+            bgcolor: green[700],
+            },
+        }),
+    };
 
-    const Submit = () =>{
-        alert("Submit successful!");
+    React.useEffect(() => {
+        return () => {
+            clearTimeout(timer.current);
+        };
+    }, []);
 
-        setState(true);
-    }
+    const handleButtonClick = () => {
+        if (!loading) {
+          setSuccess(false);
+          setLoading(true);
+          timer.current = window.setTimeout(() => {
+            setSuccess(true);
+            setLoading(false);
+          }, 2000);
+        }
+      };
 
     return (
         <div className="submit-form">
@@ -58,14 +83,47 @@ export default function ExpandableContent() {
                 </label>
                 <label className="fraudCheck required">
                     <div className="inner">
-                        <input type="checkbox" name="noFraud" value="1"/>
+                        <input type="checkbox" name="noFraud" value="1" className="verify-ckbx"/>
                         <div className="terms">
-                            I certify that this review is based on my own experience and is my genuine opinion of this establishment and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review. I understand that Tripadvisor has a zero-tolerance policy on fake reviews.
+                            I vertify that this review is based on my own experience and is my genuine opinion of this establishment and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review. I understand that Tripadvisor has a zero-tolerance policy on fake reviews.
                         </div>
                     </div>
                 </label>
                 <div className="primary_button">
-                    <input type="submit" className="ui_button primary" value="Submit" onClick={Submit}/>
+                    <Button
+                        className="ui_button"
+                        variant="contained"
+                        sx={buttonSx}
+                        disabled={loading}
+                        onClick={handleButtonClick}
+                        >
+                        Submit
+                    </Button>
+                    {loading && (
+                        <CircularProgress
+                            size={36}
+                            sx={{
+                            color: green[500],
+                            position: 'absolute',
+                            top: 294,
+                            left: 96,
+                            zIndex: 1,
+                            }}
+                        />
+                    )}
+                    {success && (
+                        <Fab
+                            aria-label="save"
+                            color="primary"
+                            sx={buttonSx}
+                            size= "small"
+                            onClick={handleButtonClick}
+                            style={{marginLeft:"12px"}}
+                            disabled={!success}
+                        >
+                            <Check></Check>
+                        </Fab>
+                    )}
                 </div>
             </form>
         </div>

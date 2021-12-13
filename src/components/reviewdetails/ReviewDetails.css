@@ -118,9 +118,10 @@
 
 .div2{
     margin-left: 200px;
-    font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
     margin-bottom: 10px;
     margin-right: 190px;
+    font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    font-weight: normal;
 }
 
 .div3{
@@ -211,6 +212,20 @@ input.review {
     border-radius: 3px;
 }
 
+.suggList{
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.suggList li:hover{
+    background-color: rgb(12, 141, 102);
+    color: white;
+}
+
+input.review:focus {
+    border: 2px solid rgb(12, 141, 102);
+}
+
 .image{
     position:absolute;
     bottom:8px;
@@ -279,6 +294,7 @@ a.locationName:visited{
     text-overflow: ellipsis;
     white-space: nowrap;
     font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    color: rgb(12, 141, 102);
 }
 
 .primaryButton{
@@ -307,6 +323,7 @@ a.locationName:visited{
     padding-bottom: 8px;
     cursor: pointer;
     margin-top: 20px;
+    border: none;
 }
 
 .ui_button:hover{
@@ -317,7 +334,6 @@ a.locationName:visited{
     position: absolute;
     padding-bottom: 100px;
     padding-top: 10px;
-    
 }
 
 .inner{
@@ -338,12 +354,7 @@ a.locationName:visited{
     height: 16px;
     padding-top:10px;
     font-size: 14px;
-    color: rgb(41, 42, 43)
-}
-
-input:focus, textarea:focus{    
-    outline: none;
-    border: 2px solid rgb(12, 141, 102);
+    color: rgb(41, 42, 43);
 }
 
 .primary_button{
@@ -355,5 +366,21 @@ input:focus, textarea:focus{
 }
 
 .formInput{
-    border: 1px solid rgb(219, 210, 210);
+    background-color: white;
+    color: black;
+    border-radius: 0%;
+    border: 1px solid rgb(82, 80, 80);
+    padding-left: 5px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.formInput:focus {
+    border: 2px solid rgb(12, 141, 102);
+    outline: none;
+}
+
+.verify-ckbx{
+    width: 12px;
+    height: 12px;
 }

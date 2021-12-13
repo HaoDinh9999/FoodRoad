@@ -60,57 +60,14 @@ html {
 }
 
 .about {
-<<<<<<< HEAD
-=======
-  background-image: url("./assets/img/img-2.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
->>>>>>> upstream/mainFood
   color: var(--main-bg);
   height: 100%;
   display: block;
   padding-top: 50px;
 }
 
-.background{
-  background-color: rgba(153, 147, 147, 0.2);
-}
-
-.about-title{
-  background-color: #ffff00;
-  width: 380px;
-  margin-left: 35%;
-  text-align: center;
-  color: #000000;
-  border-radius: 8px;
-  margin-bottom: 50px;
-}
-
-.about-paragraph{
-  position: inherit;
-  margin-left: 150px;
-  margin-right: 150px;
-  text-indent: 50px;
-  line-height: 2.0;
-  background-color: #ffffff;
-  margin-bottom: 50px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.about-footer{
-  font-size: large;
-}
-
 .tours {
-<<<<<<< HEAD
-  /* background-image: url('/images/img-1.jpg'); */
-=======
   background-image: url("./assets/img/img-1.jpg");
->>>>>>> upstream/mainFood
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -125,11 +82,7 @@ html {
 }
 
 .sign-up {
-<<<<<<< HEAD
-  /* background-image: url('/images/img-9.jpg'); */
-=======
   background-image: url("./assets/img/img-9.jpg");
->>>>>>> upstream/mainFood
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -137,18 +90,10 @@ html {
   font-size: 100px;
 }
 .sign-in {
-<<<<<<< HEAD
-  /* background-image: url('/images/img-8.jpg'); */
-=======
   background-image: url("./assets/img/img-8.jpg");
->>>>>>> upstream/mainFood
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--main-bg);
   font-size: 100px;
-}
-
-.review{
-  background-color: rgba(153, 147, 147, 0.2);
 }
