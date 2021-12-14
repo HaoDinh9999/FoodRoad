@@ -32,7 +32,6 @@ const FAQS = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer></Footer>
     </Grid>
   );
 };

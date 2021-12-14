@@ -6,41 +6,39 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Typography from '@mui/material/Typography';
 import './SignupPopup.css';
 import Slide from '@mui/material/Slide';
-import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
 export default function FormDialog(props) {
   const [open, setOpen] = React.useState(true);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [checked, setChecked] = React.useState(false);
   
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
 
   return (
       <Dialog
-       open={open}
+       open={props.open}
        TransitionComponent={Transition}
        keepMounted
-       onClose={handleClose}
+       onClose={props.onClose}
        maxWidth="xs"
        fullWidth
        PaperProps={{
         style: {
-          backgroundColor: '#28282B',
+          backgroundColor: 'white',
           borderStyle: "solid",
           borderColor: "#808080",
           borderWidth: 2,
-          borderRadius: 10
+          borderRadius: 30
         },
       }}
        >
@@ -55,7 +53,7 @@ export default function FormDialog(props) {
           <Typography 
             variant="h5"
             align="center"
-            style={{color: "#fff", fontWeight: "bold", fontSize: "24px", paddingBottom: "10px", paddingTop: "10px"}}
+            style={{color: "black", fontWeight: "bold", fontSize: "24px", paddingBottom: "10px", paddingTop: "10px"}}
           >
           Create your account!
            </Typography>
@@ -64,28 +62,28 @@ export default function FormDialog(props) {
           <div class="textinput" style={{display: "flex", justifyContent: "space-between"}}>
             <div class="nameinput">
                 <Typography
-                    style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
                 >
                     First Name
                 </Typography>
-                <input type="text" id="name" name="FirstName" placeholder="Mark"></input>
+                <input class="signupinput" type="text" id="name" name="FirstName" placeholder="Mark"></input>
             </div>
             <div class="nameinput">
                 <Typography
-                    style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+                    style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
                 >
                     Last Name
                 </Typography>
-                <input type="text" id="name" name="FirstName" placeholder="Zuckerberg"></input>
+                <input class="signupinput" type="text" id="name" name="FirstName" placeholder="Zuckerberg"></input>
             </div>
           </div>
           <div class="textinput">
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             Username
           </Typography>
-          <input type="text" id="username" name="Username" placeholder="foodroad8000"></input>
+          <input class="signupinput" type="text" id="username" name="Username" placeholder="foodroad8000"></input>
           </div>
 
           <div class="textinput">
@@ -98,42 +96,57 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             E-mail
           </Typography>
-          <input type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"></input>
+          <input class="signupinput" type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"></input>
           </div>
 
           <div class="textinput">
           <Typography
-            style={{color: "#fff", paddingBottom: "5px", fontSize: "15px"}}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             Password
           </Typography>
-          <input type="password" id="Password" name="Password" placeholder="Enter a password"></input>
+          <input class="signupinput" type="password" id="Password" name="Password" placeholder="Enter a password"></input>
           </div>
-
-          <FormControlLabel  
-                control={
-                  <Checkbox
-                    style ={{
-                      color: "#42b72a",
-                    }}
-                  />
-                }
-                label={<Typography variant="subtitle6" style={{ color: '#808080', fontSize: '13px' }}>I've read and agree with Terms of Service and our Privacy Policy</Typography>}
-                style={{paddingRight:"10px", paddingLeft:"10px"}}
-              />
+          <Box pt={1}>
+            <FormControlLabel  
+                  control={
+                    <Checkbox
+                      checked = {checked}
+                      onChange={handleChange}
+                      style ={{
+                        color: "#42b72a",
+                      }}
+                    />
+                  }
+                  label={<Typography variant="subtitle6" style={{ color: '#808080', fontSize: '13px' }}>I've read and agree with Terms of Service and our Privacy Policy</Typography>}
+                  style={{paddingRight:"10px", paddingLeft:"10px"}}
+            />
+          </Box>
 
           <div class="textinput">
-            <Button 
-              variant="contained" 
-              fullWidth
-              style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "10px", backgroundColor: "#42b72a"}}
-              >
-              Sign Up
-            </Button>
+            {checked ? (
+              <Button
+                variant="contained" 
+                fullWidth
+                onClick={props.onClose}
+                style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "#42b72a"}}
+                >
+                Sign Up
+              </Button>
+            ) : (
+              <Button
+                disabled
+                variant="contained" 
+                fullWidth
+                style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "rgba(0, 0, 0, 0.12)"}}
+                >
+                Sign Up
+              </Button>
+            )}
           </div>
 
           {/* <Divider

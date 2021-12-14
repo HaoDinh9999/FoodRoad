@@ -22,7 +22,15 @@ const CardService = (props) => {
           display: "flex",
         }}
       >
-        <UilAmbulance color="#d7d7d7" width="50px" height="50px"></UilAmbulance>
+        {props.icon ? (
+          <props.icon color="#d7d7d7" width="50px" height="50px"></props.icon>
+        ) : (
+          <UilAmbulance
+            color="#d7d7d7"
+            width="50px"
+            height="50px"
+          ></UilAmbulance>
+        )}
         <Typography
           marginLeft="10px"
           marginTop="-2px"

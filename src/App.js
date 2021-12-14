@@ -16,18 +16,17 @@ import SignIn from "./pages/SignIn";
 import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
 import Booking from "./pages/Booking";
-import Footer from "./components/footer/Footer";
 import News from "./pages/News";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
-
 import Contact from "./pages/Contact";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Review from "./pages/Review";
 import Order from "./pages/Order";
-
+import Footer from "./components/footer/Footer2";
+//import MessengerCustomerChat from 'react-messenger-customer-chat';
 const theme = createTheme({
   typography: {
     fontFamily: "Inter, Roboto, san-serif",
@@ -79,6 +78,10 @@ function App() {
           </Route> */}
         </Switch>
         {/* <Footer></Footer> */}
+        {/*<MessengerCustomerChat
+          pageId="109031571600773"
+          appId="291000409568661"
+        />*/}
       </Router>
     </ThemeProvider>
   );

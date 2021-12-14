@@ -18,6 +18,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import LoginPopup from "../popup/LoginPopup";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
+import SignupPopup from "../popup/SignupPopup";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -56,6 +57,7 @@ ElevationScroll.propTypes = {
 const Header = (props) => {
   const drawerWidth = 240;
   const [openLogin, setOpenLogin] = React.useState(false);
+  const [openSignup, setOpenSignup] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -90,6 +92,7 @@ const Header = (props) => {
         // alignItems="center"
         direction="column"
         spacing={4}
+        className={classes["nav-bar"]}
       >
         <NavLink
           to="/home"
@@ -257,7 +260,12 @@ const Header = (props) => {
                     >
                       Login
                     </Button>
-                    <Button href="/sign-up" variant="contained">
+                    <Button
+                      onClick={() => {
+                        setOpenSignup(true);
+                      }}
+                      variant="contained"
+                    >
                       Sign up
                     </Button>
                   </Stack>
@@ -363,6 +371,12 @@ const Header = (props) => {
         open={openLogin}
         onClose={() => {
           setOpenLogin(false);
+        }}
+      />
+      <SignupPopup
+        open={openSignup}
+        onClose={() => {
+          setOpenSignup(false);
         }}
       />
     </ScopedCssBaseline>
