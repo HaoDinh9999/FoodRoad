@@ -25,7 +25,9 @@ import Contact from "./pages/Contact";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Review from "./pages/Review";
 import Order from "./pages/Order";
+import AllReview from "./pages/AllReview";
 import Footer from "./components/footer/Footer2";
+import ButtonScrollTop from "./components/buttonscroll/ButtonScrollTop";
 //import MessengerCustomerChat from 'react-messenger-customer-chat';
 const theme = createTheme({
   typography: {
@@ -69,6 +71,9 @@ function App() {
           <Route path="/news">
             <News />
           </Route>
+          <Route path="/allreviews">
+            <AllReview />
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>
@@ -83,6 +88,7 @@ function App() {
           appId="291000409568661"
         />*/}
       </Router>
+      <ButtonScrollTop />
     </ThemeProvider>
   );
 }

@@ -96,18 +96,48 @@ const AllCardReview = () => {
   return (
     <Container fixed>
       <Box marginLeft="0px" padding="0px 0px 0px 5px">
-        <Box display="flex" justifyContent="space-between">
+        <Grid container sm={12} justifyContent="center">
           <Typography
-            marginLeft="5px"
             variant="h6"
-            gutterBottom
-            component="div"
-            fontWeight="bold"
-            fontSize="25px"
+            component="h2"
+            style={{
+              color: "#c2c2c2",
+              fontSize: "13px",
+              fontWeight: "Medium",
+            }}
           >
-            Customer review
+            MULTIPLE REVIEWS INCLUDED
           </Typography>
-        </Box>
+        </Grid>
+        <Grid
+          container
+          item
+          sm={12}
+          justifyContent="center"
+          marginBottom="-19px"
+          zIndex="1000"
+        >
+          <Typography
+            variant="h6"
+            component="h2"
+            style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+          >
+            CUSTOMER RATE
+          </Typography>
+        </Grid>
+
+        <Box
+          sx={{
+            margin: "0 0px 10px 610px",
+            position: "position",
+            width: 130,
+            height: 5,
+            backgroundColor: "#1976d2",
+            "&:hover": {
+              opacity: [0.9, 0.8, 0.7],
+            },
+          }}
+        />
         <Slider {...settings}>
           <CardReview
             url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"

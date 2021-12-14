@@ -59,13 +59,12 @@ const AllNewsReview = () => {
           </Grid>
           <Box
             sx={{
-              margin: "0 0px 10px 200px",
+              margin: "0 0px 10px 210px",
               position: "position",
               width: 105,
               height: 5,
-              backgroundColor: "primary.dark",
+              backgroundColor: "#1976d2",
               "&:hover": {
-                backgroundColor: "primary.main",
                 opacity: [0.9, 0.8, 0.7],
               },
             }}

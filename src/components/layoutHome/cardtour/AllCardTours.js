@@ -96,17 +96,7 @@ const AllCardTours = () => {
   return (
     <Container fixed>
       <Box marginLeft="0px" padding="0px 0px 0px 5px">
-        <Box display="flex" justifyContent="space-between">
-          <Typography
-            marginLeft="5px"
-            variant="h6"
-            gutterBottom
-            component="div"
-            fontWeight="bold"
-            fontSize="25px"
-          >
-            Trending Tours
-          </Typography>
+        <Box display="flex" justifyContent="flex-end">
           <Button
             sx={{
               color: "#9e9e9e",
@@ -121,6 +111,47 @@ const AllCardTours = () => {
             View More
           </Button>
         </Box>
+        <Grid container sm={12} justifyContent="center">
+          <Typography
+            variant="h6"
+            component="h2"
+            style={{
+              color: "#c2c2c2",
+              fontSize: "13px",
+              fontWeight: "Medium",
+            }}
+          >
+            MULTIPLE TOUR INCLUDED
+          </Typography>
+          <Grid
+            container
+            item
+            sm={12}
+            justifyContent="center"
+            zIndex="1000"
+            marginLeft="20px"
+          >
+            <Typography
+              variant="h6"
+              component="h2"
+              style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+            >
+              Trending Tours
+            </Typography>
+          </Grid>
+          <Box
+            sx={{
+              margin: "-19px 0px 10px 185px",
+              position: "position",
+              width: 90,
+              height: 5,
+              backgroundColor: "#1976d2",
+              "&:hover": {
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          />
+        </Grid>
 
         <Slider {...settings}>
           <CardTourPro
@@ -156,16 +187,48 @@ const AllCardTours = () => {
           />
         </Slider>
         <Box height="50px"></Box>
-        <Typography
-          marginLeft="5px"
-          variant="h6"
-          gutterBottom
-          component="div"
-          fontWeight="bold"
-          fontSize="25px"
-        >
-          Favourite Foods
-        </Typography>
+
+        <Grid container sm={12} justifyContent="center">
+          <Typography
+            variant="h6"
+            component="h2"
+            style={{
+              color: "#c2c2c2",
+              fontSize: "13px",
+              fontWeight: "Medium",
+            }}
+          >
+            MULTIPLE FOOD INCLUDED
+          </Typography>
+          <Grid
+            container
+            item
+            sm={12}
+            justifyContent="center"
+            zIndex="1000"
+            marginLeft="20px"
+          >
+            <Typography
+              variant="h6"
+              component="h2"
+              style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+            >
+              Favourite Foods
+            </Typography>
+          </Grid>
+          <Box
+            sx={{
+              margin: "-19px 0px 10px 188px",
+              position: "position",
+              width: 100,
+              height: 5,
+              backgroundColor: "#1976d2",
+              "&:hover": {
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          />
+        </Grid>
         <Slider {...settings}>
           <CardTourItem
             url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"

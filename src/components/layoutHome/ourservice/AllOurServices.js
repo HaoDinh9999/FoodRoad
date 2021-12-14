@@ -58,9 +58,9 @@ const AllOurServices = () => {
             </Typography>
             <Box
               sx={{
-                margin: "-18px 0px 0px 80px",
+                margin: "-18px 0px 0px 85px",
                 position: "position",
-                width: 170,
+                width: 180,
                 height: 5,
                 backgroundColor: "#1976d2",
                 "&:hover": {
