@@ -106,6 +106,10 @@
     outline: rgb(44, 44, 44) none 0px;
 }
 
+.mobile{
+    width: auto;
+}
+
 .div-main{
     text-align: center;
     font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
@@ -124,6 +128,13 @@
     font-weight: normal;
 }
 
+.div2-mobile{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    font-weight: normal;
+}
+
 .div3{
     margin-left: 200px;
     font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
@@ -131,6 +142,18 @@
     margin-right: 190px;
     width: 965px;
     background-color: white;
+}
+
+.div3-mobile{
+    margin-left: 20px;
+    font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    margin-bottom: 10px;
+    width: 590px;
+    background-color: white;
+}
+
+.div3-mobile:hover{
+    box-shadow: 1px 1px 20px 1px grey;
 }
 
 .div3c1, .div3c2, .div3c3{
@@ -143,7 +166,20 @@
     background-color: white;
 }
 
+.div3c1-mobile, .div3c2-mobile, .div3c3-mobile{
+    margin-left: 20px;
+    font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    margin-bottom: 10px;
+    width: 590px;
+    height: 580px;
+    background-color: white;
+}
+
 .div3:hover, .div3c1:hover, .div3c2:hover, .div3c3:hover{
+    box-shadow: 1px 1px 20px 1px grey;
+}
+
+.div3c1-mobile:hover, .div3c2-mobile:hover, .div3c3-mobile:hover{
     box-shadow: 1px 1px 20px 1px grey;
 }
 
@@ -265,7 +301,28 @@ input.review:focus {
     font: 700 18px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
 }
 
-a.locationName:link{
+.locationName-mobile{
+    margin-top: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: 700 18px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    width: 280px;
+}
+
+a.locationName-mobile:link{
+    text-decoration: none;
+    color: rgb(8, 99, 134);
+}
+
+a.locationName-mobile:visited{
+    text-decoration: none;
+    color: rgb(8, 99, 134);
+}
+
+a.locationName-mobile:link{
     text-decoration: none;
     color: rgb(8, 99, 134);
 }
@@ -285,6 +342,19 @@ a.locationName:visited{
     font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
     letter-spacing: 0.2px;
     color: #666;
+}
+
+.locationAddress-mobile{
+    margin-right: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: lighter;
+    font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+    letter-spacing: 0.2px;
+    color: #666;
+    width: 320px;
 }
 
 .locationRating{
@@ -334,6 +404,14 @@ a.locationName:visited{
     position: absolute;
     padding-bottom: 100px;
     padding-top: 10px;
+}
+
+.submit-form-mobile{
+    position: absolute;
+    padding-bottom: 100px;
+    padding-top: 10px;
+    top: 90px;
+    left: -100px
 }
 
 .inner{
