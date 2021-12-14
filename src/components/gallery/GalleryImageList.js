@@ -1,7 +1,21 @@
 import React, { useState, useCallback } from "react";
 import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
+
+import TextField from "@mui/material/TextField";
+
 import classes from "./GalleryImageList.module.css";
 import ImageViewer from "react-simple-image-viewer";
+
+const tours = [
+  "All the tours",
+  "Taste of the night",
+  "Sai Gon backstreet",
+  "Sai Gon by night",
+  "Tast of the morning",
+  "Vegan tour",
+];
+
 const GalleryImageList = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -17,6 +31,20 @@ const GalleryImageList = () => {
   return (
     <>
       <Grid container spacing={2}>
+        <Grid display="flex" justifyContent="flex-end" item xs={12}>
+          <TextField
+            defaultValue="All the tours"
+            label="Tours"
+            size="small"
+            select
+          >
+            {tours.map((option, index) => (
+              <MenuItem key={index} value={option}>
+                {option}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
         {itemData.map((item, index) => (
           <Grid item key={item.img} sm={12} md={6} lg={4}>
             <img
@@ -32,7 +60,7 @@ const GalleryImageList = () => {
       </Grid>
       {isViewerOpen && (
         <ImageViewer
-          backgroundStyle={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
+          backgroundStyle={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
           src={itemData.map((e) => e.img + "?w=500&h=500&fit=crop&auto=format")}
           currentIndex={currentImage}
           disableScroll={true}

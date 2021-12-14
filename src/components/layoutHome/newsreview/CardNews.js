@@ -34,7 +34,7 @@ const CardNews = (props) => {
       <Box
         sx={{
           width: "100%",
-          backgroundImage: `url(${"./images/Food1.jpg"})`,
+          backgroundImage: `url(${props.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "#f99",

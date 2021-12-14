@@ -7,15 +7,30 @@ import Typography from "@mui/material/Typography";
 import "./LoginPopup.css";
 import Slide from "@mui/material/Slide";
 import Divider from "@mui/material/Divider";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
+import SignupPopup from "./SignupPopup";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
+});
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 export default function FormDialog(props) {
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const handleClose = (event, reason) => {
+    setOpenSnackbar(false);
+  };
+  
+  const [openSignup, setOpenSignup] = React.useState(false);
   const [status, setStatus] = React.useState(null);
   const loginHandler = async () => {
     setStatus("loading");
@@ -38,11 +53,11 @@ export default function FormDialog(props) {
       fullWidth
       PaperProps={{
         style: {
-          backgroundColor: "#28282B",
-          borderStyle: "solid",
+          backgroundColor: "white",
+          borderStyle: "none",
           borderColor: "#808080",
           borderWidth: 2,
-          borderRadius: 10,
+          borderRadius: 30,
         },
       }}
     >
@@ -55,13 +70,14 @@ export default function FormDialog(props) {
         >
           WELCOME
         </Typography>
+
         <Typography
           variant="h5"
           align="center"
           style={{
-            color: "#fff",
+            color: "black",
             fontWeight: "bold",
-            fontSize: "20px",
+            fontSize: "24px",
             paddingBottom: "10px",
           }}
         >
@@ -79,11 +95,11 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{ color: "#fff", paddingBottom: "5px", fontSize: "15px" }}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px" , fontWeight: "bold"}}
           >
             E-mail or Username
           </Typography>
-          <input
+          <input class="logininput"
             type="email"
             id="Email"
             name="Email"
@@ -100,11 +116,11 @@ export default function FormDialog(props) {
             fullWidth
           /> */}
           <Typography
-            style={{ color: "#fff", paddingBottom: "5px", fontSize: "15px" }}
+            style={{ color: "black", paddingBottom: "5px", fontSize: "16px", fontWeight: "bold"}}
           >
             Password
           </Typography>
-          <input
+          <input class="logininput"
             type="password"
             id="Password"
             name="Password"
@@ -122,29 +138,35 @@ export default function FormDialog(props) {
               textTransform: "none",
               fontSize: "20px",
               fontWeight: "bold",
-              borderRadius: "10px",
+              borderRadius: "24px",
             }}
           >
             Log In
           </Button>
         </div>
-
-        <Divider
-          sx={{ bgcolor: (theme) => theme.palette.divider }}
-          style={{
-            border: "none",
-            height: 1,
-            margin: 0,
-            backgroundColor: "#404040",
-          }}
-        />
-
-        <div style={{ padding: "10px" }}>
-          <Typography variant="subtitle5" style={{ color: "#808080" }}>
-            Not registered yet?
-          </Typography>
-        </div>
-        <div class="textinput">
+        <Box pt="10px" pb="20px">
+        <Divider sx={{color:"#808080", fontSize: "14px"}}> or Sign In with </Divider>
+        </Box>
+        <Box>
+        <Stack spacing="15px">
+          <Button
+            variant="contained"
+            fullWidth
+            style={{
+              height: "50px",
+              textTransform: "none",
+              fontSize: "22px",
+              fontWeight: "bold",
+              borderRadius: "24px",
+              backgroundColor: "#ededed",
+              color: "black"
+            }}
+          >
+            <Box pr="10px">
+            <i class="fab fa-google fa-x"></i>
+            </Box>
+            Google
+          </Button>
           <Button
             variant="contained"
             fullWidth
@@ -153,14 +175,46 @@ export default function FormDialog(props) {
               textTransform: "none",
               fontSize: "20px",
               fontWeight: "bold",
-              borderRadius: "10px",
-              backgroundColor: "#42b72a",
+              borderRadius: "24px",
+              backgroundColor: "black",
             }}
           >
-            Create New Account
+            <Box pr="10px">
+            <i class="fab fa-apple fa-lg"></i>
+            </Box>
+            Apple
           </Button>
-        </div>
+        </Stack>
+        
+        <Box p="10px" pt="20px" display="flex">
+          <Box pr="5px">
+          <Typography variant="subtitle5" style={{ color: "#808080" }}>
+            Not registered yet?
+          </Typography>
+          </Box>
+          <a
+          style={{cursor: "pointer"}}
+          onClick={() => {
+            setOpenSignup(true);
+          }}
+          >
+            Create an Account
+          </a>
+        </Box>
+      </Box>
       </DialogContent>
+      <SignupPopup
+        open={openSignup}
+        onClose={() => {
+          setOpenSignup(false);
+          // setOpenSnackbar(true);
+        }}
+      />
+      <Snackbar open={openSnackbar} autoHideDuration={2000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            Successfully signed up!
+          </Alert>
+      </Snackbar>
     </Dialog>
   );
 }

@@ -45,7 +45,7 @@ const News = () => {
                 p={2}
                 borderColor="white"
                 borderRadius={3}
-                boxShadow={3}
+                boxShadow={0}
               >
                 <Box pb={2} display="flex">
                   <Typography variant="h4" color="primary">
@@ -80,7 +80,7 @@ const News = () => {
                 p={2}
                 borderColor="white"
                 borderRadius={3}
-                boxShadow={3}
+                boxShadow={0}
               >
                 <Box pb={2} display="flex">
                   <Typography variant="h4" color="primary">

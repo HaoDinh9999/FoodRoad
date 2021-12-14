@@ -2,6 +2,8 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import overlay from "../../assets/img/overlay.svg";
+import hero from "../../assets/img/hero-about.jpg";
 const HeroAbout = () => {
   return (
     <Box
@@ -14,7 +16,7 @@ const HeroAbout = () => {
           xs: "80px 0",
           md: 0,
         },
-        backgroundImage: `url("https://minimals.cc/static/overlay.svg"), url("https://minimals.cc/static/about/hero.jpg")`,
+        backgroundImage: `url(${overlay}), url(${hero})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
       }}

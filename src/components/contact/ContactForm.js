@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
+import ReCAPTCHA from "react-google-recaptcha";
 const ContactForm = () => {
   return (
     <Box>
@@ -48,6 +49,10 @@ const ContactForm = () => {
               />
             </div>
           </Grid>
+          <Grid item xs={12}>
+            <ReCAPTCHA sitekey="6LfEk50dAAAAACRVErvAkl4Wki0bjqlwe2BPMN7w" />
+          </Grid>
+
           <Grid item xs={12}>
             <div data-aos="fade-up" data-aos-duration={700}>
               <Button
