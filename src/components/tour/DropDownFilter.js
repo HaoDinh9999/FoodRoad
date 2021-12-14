@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TourFilters from './TourFilter';
 import { IconButton } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import { Drawer } from "@mui/material";
+import { Drawer, Fab } from "@mui/material";
 import { Box } from "@mui/system";
 export default function DropDownFilter() {
     const [left, setLeft] = useState(false);
@@ -31,7 +31,9 @@ export default function DropDownFilter() {
             >
                 {list()}
             </Drawer>
-            <IconButton onClick={toggleDrawer(true)}><MenuIcon /></IconButton>
+            <Fab sx={{ position: "fixed", zIndex: "99", right: "5px", bottom: "20px" }}>
+                <IconButton onClick={toggleDrawer(true)}><MenuIcon /></IconButton>
+            </Fab>
         </div>
     );
 }
