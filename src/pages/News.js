@@ -40,7 +40,7 @@ const  News =() => {
 
       <Grid container sm={12} >
         <Grid item sm={9}>
-            <Box mt={2} border={1} p={2} borderColor="white" borderRadius={3} boxShadow={3}>
+            <Box mt={0} border={1} p={2} borderColor="white" borderRadius={3} boxShadow={3}>
               <Box pb={2} display="flex">
                 <Typography variant="h4" color="primary">Food News</Typography>
                 <StarOutlineIcon color="primary" style={{fontSize:"36px"}}></StarOutlineIcon>
