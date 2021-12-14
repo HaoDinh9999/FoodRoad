@@ -53,7 +53,6 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/order" component={Order} />
           <Route path="/gallery">
-            setPrice
             <Gallery />
           </Route>
           <Route path="/booking">

@@ -41,27 +41,27 @@ const SlickMemberList = () => {
       <MemberCard
         name="Hao Dinh"
         role="Founder & Managing Director"
-        img="https://minimals.cc/static/mock-images/avatars/avatar_2.jpg"
+        img="https://i.pravatar.cc/150?img=57"
       />
       <MemberCard
         name="Cuong Nguyen"
         role="Co-founder"
-        img="https://minimals.cc/static/mock-images/avatars/avatar_3.jpg"
+        img="https://i.pravatar.cc/150?img=60"
       />
       <MemberCard
         name="Quan Vu"
         role="Tour Operation"
-        img="https://minimals.cc/static/mock-images/avatars/avatar_1.jpg"
+        img="https://i.pravatar.cc/150?img=66"
       />
       <MemberCard
         name="Huy Do"
         role="Sales Executive"
-        img="https://minimals.cc/static/mock-images/avatars/avatar_4.jpg"
+        img="https://i.pravatar.cc/150?img=56"
       />
       <MemberCard
         name="Truong Lam"
         role="Tour Guides"
-        img="https://minimals.cc/static/mock-images/avatars/avatar_5.jpg"
+        img="https://i.pravatar.cc/150?img=55"
       />
     </Slider>
   );
