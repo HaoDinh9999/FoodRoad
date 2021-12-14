@@ -152,7 +152,7 @@ export default function Tours() {
 										<LocalOfferIcon />
 										<Typography variant="h6" component="h2" fontSize="18px" fontWeight="medium" color={red[600]} sx={{ ml: 2, mr: 2 }}>Hot deals</Typography>
 										<Box sx={{ ml: 2 }}>
-											<TypographyMod fontSize="1rem" >We offers varieyy of Food Tours which are suitable for everyone</TypographyMod>
+											<TypographyMod fontSize="1rem" fontWeight="light">We offers variety of Food Tours which are suitable for everyone</TypographyMod>
 										</Box>
 									</Box>
 								</Box>

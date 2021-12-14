@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box, Typography, Button, Rating, Link } from '@mui/material';
-import { Typographyf14medium, TypographyMod } from './TypoUtils';
+import { Typographyf14light, TypographyMod } from './TypoUtils';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 import { red, green, yellow, grey } from '@mui/material/colors';
@@ -167,7 +167,7 @@ const Tour = (props) => {
                                     properties.map((property, index) => {
                                         return (<Box display="flex" key={index}>
                                             <CheckBoxIcon sx={{ mr: 1 }} />
-                                            <Typographyf14medium>{property}</Typographyf14medium>
+                                            <Typographyf14light>{property}</Typographyf14light>
                                         </Box>)
                                     })
                                 }
