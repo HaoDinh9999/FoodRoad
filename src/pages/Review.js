@@ -16,6 +16,7 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { useHistory } from "react-router-dom";
 import ReviewForm from "../components/review-page/ReviewForm";
+import { Home } from "@mui/icons-material";
 
 const Review = () => {
   const history = useHistory();
@@ -23,31 +24,36 @@ const Review = () => {
   return (
     <Container fixed>
       <Box mt={4} mb={4}>
-        <Breadcrumbs separator="›" aria-label="breadcrumb" mb={2}>
-          <Link
-            underline="hover"
-            color="inherit"
-            href="/tours"
-            onClick={(event) => {
-              event.preventDefault();
-              history.push("/tours");
-            }}
-          >
-            Tours
-          </Link>
-          <Link
-            underline="hover"
-            color="inherit"
-            href="/tours/detailtour"
-            onClick={(event) => {
-              event.preventDefault();
-              history.push("/tours/detailtour");
-            }}
-          >
-            Detail
-          </Link>
-          <Typography color="text.primary">Review</Typography>
-        </Breadcrumbs>
+        <Box mb={2} display="flex" alignItems="center">
+          <Home sx={{ mr: 0.5 }} fontSize="inherit" />
+
+          <Breadcrumbs separator="›" aria-label="breadcrumb">
+            <Link
+              underline="hover"
+              color="inherit"
+              href="/tours"
+              onClick={(event) => {
+                event.preventDefault();
+                history.push("/tours");
+              }}
+            >
+              Tours
+            </Link>
+            <Link
+              underline="hover"
+              color="inherit"
+              href="/tours/detailtour"
+              onClick={(event) => {
+                event.preventDefault();
+                history.push("/tours/detailtour");
+              }}
+            >
+              Detail
+            </Link>
+            <Typography color="text.primary">Review</Typography>
+          </Breadcrumbs>
+        </Box>
+
         <Grid container mt={2} spacing={4}>
           <Grid item xs={12} md={7}>
             <Box mb={4} p={2}>

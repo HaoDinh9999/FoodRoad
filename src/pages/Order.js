@@ -24,10 +24,11 @@ import HomeIcon from "@mui/icons-material/Home";
 import DropDownOrder from "../components/order/DropDownOrder";
 const Order = () => {
   const matches = useMediaQuery("(min-width:1200px)");
+
   return (
     <Box sx={{ backgroundColor: "#F6F9FC", pt: 4, minHeight: "100vh" }}>
       <Container fixed sx={{ mb: 1, mt: 1, backgroundColor: "#F6F9FC" }}>
-        <Box display="flex">
+        <Box display="flex" alignItems="center">
           <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
 
           <Breadcrumbs
@@ -39,7 +40,7 @@ const Order = () => {
             </Link>
             , ,
             <Typography key="3" color="black">
-              Orders
+              Orders history
             </Typography>
           </Breadcrumbs>
         </Box>

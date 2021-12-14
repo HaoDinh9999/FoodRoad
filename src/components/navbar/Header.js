@@ -202,7 +202,7 @@ const Header = (props) => {
         //     transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         //   }}
         >
-          <Container fixed>
+          <Container maxWidth="lg">
             <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
               <Stack alignItems="center" spacing={1} direction="row">
                 <IconButton
@@ -210,7 +210,7 @@ const Header = (props) => {
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
-                  sx={{ mr: 2, display: { md: "none" } }}
+                  sx={{ mr: 2, display: { lg: "none" } }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -229,7 +229,7 @@ const Header = (props) => {
               </Stack>
               <Box display="flex" alignItems="center">
                 <Stack
-                  sx={{ mr: 4, display: { xs: "none", md: "flex" } }}
+                  sx={{ mr: 4, display: { xs: "none", lg: "flex" } }}
                   alignItems="center"
                   direction="row"
                   spacing={4}
@@ -283,22 +283,23 @@ const Header = (props) => {
                   >
                     News
                   </NavLink>
+                  {!localStorage.getItem("isLogin") === true && (
+                    <Stack direction="row" spacing={1}>
+                      <Button
+                        onClick={() => {
+                          setOpenLogin(true);
+                        }}
+                        variant="outlined"
+                      >
+                        Login
+                      </Button>
+                      <Button href="/sign-up" variant="contained">
+                        Sign up
+                      </Button>
+                    </Stack>
+                  )}
                 </Stack>
-                {!localStorage.getItem("isLogin") === true && (
-                  <Stack direction="row" spacing={1}>
-                    <Button
-                      onClick={() => {
-                        setOpenLogin(true);
-                      }}
-                      variant="outlined"
-                    >
-                      Login
-                    </Button>
-                    <Button href="/sign-up" variant="contained">
-                      Sign up
-                    </Button>
-                  </Stack>
-                )}
+
                 {localStorage.getItem("isLogin") && (
                   <>
                     <Avatar
@@ -364,6 +365,27 @@ const Header = (props) => {
                             class="fas fa-history"
                           ></i>
                           History
+                        </Button>
+                        <Button
+                          href="/order"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            history.push("/write-review");
+                          }}
+                          variant="text"
+                          sx={{
+                            color: "#555",
+                            textTransform: "none",
+                            fontWeight: 300,
+                            justifyContent: "flex-start",
+                            paddingLeft: "20px",
+                          }}
+                        >
+                          <i
+                            style={{ marginRight: "8px" }}
+                            class="far fa-edit"
+                          ></i>
+                          Write review
                         </Button>
                         <Button
                           onClick={() => {
