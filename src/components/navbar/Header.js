@@ -12,7 +12,7 @@ import Popover from "@mui/material/Popover";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ScopedCssBaseline from "@mui/material/ScopedCssBaseline";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import classes from "./Header.module.css";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import LoginPopup from "../popup/LoginPopup";
@@ -54,6 +54,7 @@ ElevationScroll.propTypes = {
 };
 
 const Header = (props) => {
+  const history = useHistory();
   const drawerWidth = 240;
   const [openLogin, setOpenLogin] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -74,9 +75,13 @@ const Header = (props) => {
     <div>
       <Toolbar>
         <Typography
-          sx={{ fontWeight: 700 }}
+          sx={{ fontWeight: 700, cursor: "pointer" }}
           variant="h5"
+          component="span"
           className={classes.logo}
+          onClick={() => {
+            history.push("/");
+          }}
         >
           Food Road
           <i className="fab fa-typo3" />
@@ -125,6 +130,20 @@ const Header = (props) => {
           className={classes.link}
         >
           FAQ
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/gallery"
+          className={classes.link}
+        >
+          Gallery
+        </NavLink>
+        <NavLink
+          activeClassName={classes["link--active"]}
+          to="/news"
+          className={classes.link}
+        >
+          News
         </NavLink>
       </Stack>
       <Divider />
@@ -184,69 +203,87 @@ const Header = (props) => {
         //   }}
         >
           <Container fixed>
-            <Toolbar
-              sx={{
-                padding: 0,
-              }}
-            >
-              <Typography
-                sx={{ fontWeight: 700 }}
-                variant="h5"
-                className={classes.logo}
-              >
-                Food Road
-                <i className="fab fa-typo3" />
-              </Typography>
-              <IconButton
-                color="default"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { md: "none" } }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Stack
-                sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                alignItems="center"
-                direction="row"
-                spacing={4}
-              >
-                <NavLink
-                  to="/home"
-                  activeClassName={classes["link--active"]}
-                  className={classes.link}
+            <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
+              <Stack alignItems="center" spacing={1} direction="row">
+                <IconButton
+                  color="default"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, display: { md: "none" } }}
                 >
-                  Home
-                </NavLink>
-                <NavLink
-                  activeClassName={classes["link--active"]}
-                  to="/tours"
-                  className={classes.link}
+                  <MenuIcon />
+                </IconButton>
+                <Typography
+                  sx={{ fontWeight: 700, cursor: "pointer" }}
+                  variant="h5"
+                  component="span"
+                  className={classes.logo}
+                  onClick={() => {
+                    history.push("/");
+                  }}
                 >
-                  Tours
-                </NavLink>
-                <NavLink
-                  activeClassName={classes["link--active"]}
-                  to="/about"
-                  className={classes.link}
+                  Food Road
+                  <i className="fab fa-typo3" />
+                </Typography>
+              </Stack>
+              <Box display="flex" alignItems="center">
+                <Stack
+                  sx={{ mr: 4, display: { xs: "none", md: "flex" } }}
+                  alignItems="center"
+                  direction="row"
+                  spacing={4}
                 >
-                  About
-                </NavLink>
-                <NavLink
-                  activeClassName={classes["link--active"]}
-                  to="/contact"
-                  className={classes.link}
-                >
-                  Contact
-                </NavLink>
-                <NavLink
-                  activeClassName={classes["link--active"]}
-                  to="/faqs"
-                  className={classes.link}
-                >
-                  FAQ
-                </NavLink>
+                  <NavLink
+                    to="/home"
+                    activeClassName={classes["link--active"]}
+                    className={classes.link}
+                  >
+                    Home
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/tours"
+                    className={classes.link}
+                  >
+                    Tours
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/about"
+                    className={classes.link}
+                  >
+                    About
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/contact"
+                    className={classes.link}
+                  >
+                    Contact
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/faqs"
+                    className={classes.link}
+                  >
+                    FAQ
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/gallery"
+                    className={classes.link}
+                  >
+                    Gallery
+                  </NavLink>
+                  <NavLink
+                    activeClassName={classes["link--active"]}
+                    to="/news"
+                    className={classes.link}
+                  >
+                    News
+                  </NavLink>
+                </Stack>
                 {!localStorage.getItem("isLogin") === true && (
                   <Stack direction="row" spacing={1}>
                     <Button
@@ -266,8 +303,8 @@ const Header = (props) => {
                   <>
                     <Avatar
                       alt="Remy Sharp"
-                      onMouseEnter={handlePopoverOpen}
-                      sx={{ width: 32, height: 32 }}
+                      onClick={handlePopoverOpen}
+                      sx={{ width: 32, height: 32, cursor: "pointer" }}
                       src="https://vnn-imgs-f.vgcloud.vn/2020/04/13/23/suzy-tinh-dau-quoc-dan-so-huu-khoi-tai-san-chuc-trieu-do.jpg"
                     />
                     <Popover
@@ -288,7 +325,10 @@ const Header = (props) => {
                       <Stack spacing={1} sx={{ width: "150px" }}>
                         <Button
                           href="/profile"
-                          onClick={() => {}}
+                          onClick={(event) => {
+                            event.preventDefault();
+                            history.push("/profile");
+                          }}
                           variant="text"
                           sx={{
                             color: "#555",
@@ -303,6 +343,27 @@ const Header = (props) => {
                             class="far fa-user-circle"
                           ></i>
                           Profile
+                        </Button>
+                        <Button
+                          href="/order"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            history.push("/order");
+                          }}
+                          variant="text"
+                          sx={{
+                            color: "#555",
+                            textTransform: "none",
+                            fontWeight: 300,
+                            justifyContent: "flex-start",
+                            paddingLeft: "20px",
+                          }}
+                        >
+                          <i
+                            style={{ marginRight: "8px" }}
+                            class="fas fa-history"
+                          ></i>
+                          History
                         </Button>
                         <Button
                           onClick={() => {
@@ -328,7 +389,7 @@ const Header = (props) => {
                     </Popover>
                   </>
                 )}
-              </Stack>
+              </Box>
             </Toolbar>
           </Container>
         </AppBar>

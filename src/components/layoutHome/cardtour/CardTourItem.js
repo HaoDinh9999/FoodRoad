@@ -100,7 +100,7 @@ const CardTourItem = (props) => {
                 },
               }}
             >
-              {"Bun bo Hue"}
+              {props.title}
             </Link>
             <Box display="flex" alignItems="center">
               <IconButton
@@ -175,9 +175,9 @@ const CardTourItem = (props) => {
             fontWeight="bold"
             fontSize="35px"
             color="#f2b203"
-            marginRight="15px"
+            marginRight="0px"
           >
-            25$
+            {props.price}$
           </Typography>
         </Box>
       </Box>
@@ -251,10 +251,10 @@ const CardTourItem = (props) => {
                 fontWeight="medium"
                 fontSize="30px"
               >
-                Bun bo Hue - Ly Chinh Thang
+                {"Bun bo Hue - Ly Chinh Thang"}
               </Typography>
               <Typography fontWeight="regular" fontSize="15px" color="#000">
-                60/1 Ly Chinh Thang Street, District 3, Ho Chi Minh city
+                {props.address}
               </Typography>
               <Box display="flex" alignItems="center" marginTop="5px">
                 <StarOutlinedIcon sx={{ color: "#ffc107" }} />
@@ -288,7 +288,7 @@ const CardTourItem = (props) => {
                 </Typography>
               </Box>
               <Button
-                href="https://www.foody.vn/ho-chi-minh/chicc-chicc-ga-ran-han-quoc"
+                href="https://www.foody.vn/ho-chi-minh/khanh-ngoc-bun-bo-hue"
                 sx={{ marginLeft: "-5px" }}
               >
                 See more reviews from Foody{" "}
@@ -325,7 +325,7 @@ const CardTourItem = (props) => {
                   color="#f2b203"
                   marginLeft="5px"
                 >
-                  20.000 - 40.000 VND
+                  10$ - 20$
                 </Typography>
               </Box>
             </Grid>

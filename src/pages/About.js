@@ -23,11 +23,18 @@ export default function About() {
                 <Grid item xs={12} md={6}>
                   <div data-aos="fade-up">
                     <Box
-                      sx={{ "& img": { width: "100%", borderRadius: "12px" } }}
+                      sx={{
+                        "& img": {
+                          maxWidth: "100%",
+                          objectFit: "cover",
+                          height: "400px",
+                          borderRadius: "12px",
+                        },
+                      }}
                     >
                       <img
                         alt="ada"
-                        src="https://minimals.cc/static/about/what-1.jpg"
+                        src="https://giaiphaptinhhoa.com/wp-content/uploads/2019/11/teamw.jpg"
                       />
                     </Box>
                   </div>
@@ -35,11 +42,18 @@ export default function About() {
                 <Grid item xs={12} md={6}>
                   <div data-aos="fade-up">
                     <Box
-                      sx={{ "& img": { width: "100%", borderRadius: "12px" } }}
+                      sx={{
+                        "& img": {
+                          maxWidth: "100%",
+                          objectFit: "cover",
+                          height: "300px",
+                          borderRadius: "12px",
+                        },
+                      }}
                     >
                       <img
                         alt="ada"
-                        src="https://minimals.cc/static/about/what-2.jpg"
+                        src="https://wiindi.net/DContent/Image/2021/01/Teamwork-la-gi-2.jpg"
                       />
                     </Box>
                   </div>

@@ -17,6 +17,7 @@ import Gallery from "./components/gallery/Gallery";
 import FAQS from "./pages/FAQS";
 import Booking from "./pages/Booking";
 import Footer from "./components/footer/Footer";
+import News from "./pages/News";
 import DetailTour from "./pages/DetailTour";
 import Header from "./components/navbar/Header";
 import NotFound from "./pages/NotFound";
@@ -51,7 +52,6 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/order" component={Order} />
           <Route path="/gallery">
-            setPrice
             <Gallery />
           </Route>
           <Route path="/booking">
@@ -65,6 +65,9 @@ function App() {
           </Route>
           <Route path="/review">
             <Review />
+          </Route>
+          <Route path="/news">
+            <News />
           </Route>
           <Route path="*">
             <NotFound />

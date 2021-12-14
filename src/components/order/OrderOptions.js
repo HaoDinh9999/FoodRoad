@@ -3,9 +3,7 @@ import React from 'react';
 import { grey } from '@mui/material/colors';
 import { Typographyf14medium } from '../tour/TypoUtils';
 import HistoryIcon from '@mui/icons-material/History';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
-import { Link } from 'react-router-dom';
 const OrderOption = () => {
     return (
         <div>
@@ -32,7 +30,7 @@ const OrderOption = () => {
                     <Typographyf14medium> <HistoryIcon /> History</Typographyf14medium>
                 </Box>
             </Box>
-        </div >
+        </div>
     );
 }
 

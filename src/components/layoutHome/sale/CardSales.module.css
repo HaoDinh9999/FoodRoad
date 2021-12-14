@@ -1,10 +1,10 @@
 .sales-card {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .sales-card p,
 .sales-card h2,
 .sales-card a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .card-img {
   width: 100%;
@@ -49,6 +49,13 @@
   font-size: 28px;
   font-weight: 500;
   color: #f04f5f;
+}
+.card-price--sale {
+  text-decoration: line-through;
+  font-size: 24px;
+  color: #9a9a9a;
+  margin-right: 8px;
+  font-weight: 400;
 }
 .sales-card .card-des {
   margin-bottom: 16px;
