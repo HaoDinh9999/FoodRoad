@@ -10,18 +10,12 @@ import CallMadeIcon from '@mui/icons-material/CallMade';
 import { CircularProgress } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import Fade from '@mui/material/Fade';
-
+import useMediaQuery from "@mui/material/useMediaQuery"
+import { useTheme } from "@mui/material/styles"
 const styles = {
     media: {
         height: 0,
         paddingTop: '56.25%' // 16:9
-    },
-    image: {
-        // position: 'relative',
-        objectFit: "cover",
-        height: "230px",
-        width: "258px",
-        borderTopLeftRadius: "7px"
     },
     overlay: {
         position: 'absolute',
@@ -60,8 +54,9 @@ const Tag = (props) => {
 const Tour = (props) => {
     const timerRef = React.useRef();
     const [query, setQuery] = React.useState('idle');
+    const theme = useTheme();
+    const matchesSm = useMediaQuery(theme.breakpoints.up('xs'));
     const { image, name, properties, reviewNum, tags, salePrice, price, rating } = props
-
     const handleClickQuery = () => {
         if (timerRef.current) {
             clearTimeout(timerRef.current);
@@ -79,61 +74,63 @@ const Tour = (props) => {
     };
     return (
         <Grid container sx={{ backgroundColor: "white", borderRadius: "7px" }}>
-            <Grid item xs={4} sx={{ maxWidth: "100%" }}>
-                <Box sx={{ position: "relative" }}>
-                    <img src={image} alt="tour" style={styles.image} loading="lazy" />
-                    {tags.slice(0, 2).map((item, index) => {
-                        var space = "";
+            <Grid item xs={12} md={3} lg={4} sx={{ position: "relative" }}>
+                <img src={image} alt="tour"
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        borderTopLeftRadius: "7px",
+                        borderBottomLeftRadius: "7px",
+                        borderBottomRightRadius: `${matchesSm ? "7px" : "0px"}`,
+                        borderTopRightRadius: `${matchesSm ? "7px" : "0px"}`,
+                    }}
+                    loading="lazy" />
+                {tags.slice(0, 2).map((item, index) => {
+                    var space = "";
 
-                        switch (index) {
-                            case 0:
-                                space = "7px";
-                                break;
-                            case 1:
-                                space = "40px";
-                                break;
-                            case 2:
-                                space = "70px";
-                                break;
-                            default:
-                                break
-                        }
-                        var color = null;
-                        switch (item) {
-                            case "Vegan":
-                                color = green[500];
-                                break
-                            case "Best Tours":
-                                color = yellow[800];
-                                break
-                            case "Wine&Beer":
-                                color = red[500];
-                                break
-                            default:
-                                break
-                        }
-                        return (
-                            <Box key={index} backgroundColor={color} style={styles.overlay} marginTop={space}>
-                                <Tag>{item}</Tag>
-                            </Box>
-                        )
-                    })}
-                </Box>
-            </Grid>
-            <Grid item xs={7} sx={{ ml: 1 }}>
-                <Box>
-                    <Box sx={{ ml: 3, mb: 1 }}>
-                        <TypographyMod fontSize="22px">{name}</TypographyMod>
-                    </Box>
-                </Box>
-                <Grid container sx={{ ml: 3, mb: 1 }} style={{
-                    '@media(minWidth: 1108px)': {
-                        marginLeft: "0px"
+                    switch (index) {
+                        case 0:
+                            space = "7px";
+                            break;
+                        case 1:
+                            space = "40px";
+                            break;
+                        case 2:
+                            space = "70px";
+                            break;
+                        default:
+                            break
                     }
-                }}>
-                    <Grid item>
-                        <Box>
-                            {/* Rating */}
+                    var color = null;
+                    switch (item) {
+                        case "Vegan":
+                            color = green[500];
+                            break
+                        case "Best Tours":
+                            color = yellow[800];
+                            break
+                        case "Wine&Beer":
+                            color = red[500];
+                            break
+                        default:
+                            break
+                    }
+                    return (
+                        <Box key={index} backgroundColor={color} style={styles.overlay} marginTop={space}>
+                            <Tag>{item}</Tag>
+                        </Box>
+                    )
+                })}
+            </Grid>
+            <Grid xs={12} md={8} lg={7} sx={{ ml: 1 }}>
+                <Grid container>
+                    <Grid item xs={12} md={12} lg={12}>
+                        <Box sx={{ ml: 3, mb: 0 }}>
+                            <TypographyMod fontSize="20px">{name}</TypographyMod>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} md={12} lg={12} >
+                        <Box sx={{ ml: 3 }} display="flex"  >
                             <StyledRating
                                 name="customized-color"
                                 defaultValue={5}
@@ -141,58 +138,83 @@ const Tour = (props) => {
                                 icon={<CircleIcon fontSize="inherit" />}
                                 emptyIcon={<CircleOutlinedIcon fontSize="inherit" />}
                                 readOnly
+                                sx={{ mt: 1 }}
                             />
-
-                            <Typography variant="h6" component="h2" sx={{ fontSize: "20px", fontWeight: "medium", color: red[500], textDecoration: "line-through" }}> {salePrice} USD  </Typography>
-                            <TypographyMod>{price} USD</TypographyMod>
-                            <Button variant="contained" sx={{
-                                backgroundColor: yellow[800],
-                                '&:hover': {
-                                    backgroundColor: yellow[900],
-                                }, mt: "30px"
-                            }} onClick={handleClickQuery} >
-                                {query === 'success' ? (
-                                    <CheckIcon />
-                                ) : (
-                                    <Fade
-                                        in={query === 'progress'}
-                                        style={{
-                                            transitionDelay: query === 'progress' ? '800ms' : '0ms',
-                                        }}
-                                        unmountOnExit
-                                    >
-
-                                        <CircularProgress thickness={5.0} color="inherit" size={20} sx={{ mr: "3px" }} />
-
-                                    </Fade>
-                                )}
-                                Order Now
-                            </Button>
+                            {/* <Box display="inline-block"> */}
+                            <Link href="#" underline="always" sx={{ color: grey[700], ml: 1, mt: "auto", '&:hover': { color: grey[800] } }}>
+                                {reviewNum} reviews <CallMadeIcon sx={{ fontSize: "16px" }} />
+                            </Link>
+                            {/* </Box> */}
                         </Box>
                     </Grid>
-                    <Grid item>
-                        <Link href="#" underline="always" sx={{ color: grey[700], ml: 1, '&:hover': { color: grey[800] } }}>
-                            {reviewNum} reviews <CallMadeIcon sx={{ fontSize: "16px" }} />
-                        </Link>
-                        <Box sx={{ mt: 1, ml: 5 }}>
-                            {
-                                properties.map((property, index) => {
-                                    return (<Box display="flex" key={index}>
-                                        <CheckBoxIcon sx={{ mr: 1 }} />
-                                        <Typographyf14medium>{property}</Typographyf14medium>
-                                    </Box>)
-                                })
-                            }
-                            <Button onClick={() => window.location.href = "/tours/detail"} variant="contained" sx={{
-                                backgroundColor: yellow[800],
-                                '&:hover': {
-                                    backgroundColor: yellow[900],
-                                    textDecoration: "underline"
-                                }, mt: "41.5px"
-                            }} >
-                                View Detail <CallMadeIcon sx={{ fontSize: "16px" }} />
-                            </Button>
-                        </Box>
+                    <Grid container sx={{ ml: 3, mb: 1 }} style={{
+                        '@media(minWidth: 1108px)': {
+                            marginLeft: "0px"
+                        }
+                    }}>
+                        <Grid item xs={3} md={3} lg={3}>
+                            <Box sx={{ marginTop: "5px" }}>
+                                {/* Rating */}
+
+                                <Typography variant="h6" component="h2" sx={{ fontSize: "1rem", fontWeight: "medium", color: red[500], textDecoration: "line-through" }}> {salePrice} USD  </Typography>
+                                <TypographyMod sx={{ fontSize: "1.2rem" }}>{price} USD</TypographyMod>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={7} md={8} lg={8}>
+
+                            <Box sx={{ mt: 1, ml: 5 }}>
+                                {
+                                    properties.map((property, index) => {
+                                        return (<Box display="flex" key={index}>
+                                            <CheckBoxIcon sx={{ mr: 1 }} />
+                                            <Typographyf14medium>{property}</Typographyf14medium>
+                                        </Box>)
+                                    })
+                                }
+                            </Box>
+                        </Grid>
+                        <Grid item xs={8} md={8} lg={8} sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <Grid container>
+                                <Grid item xs={5.5} md={6} lg={6}>
+                                    <Button variant="contained" sx={{
+                                        backgroundColor: yellow[800],
+                                        '&:hover': {
+                                            backgroundColor: yellow[900],
+                                        }, mt: "9px"
+                                    }} onClick={handleClickQuery} >
+                                        {query === 'success' ? (
+                                            <CheckIcon />
+                                        ) : (
+                                            <Fade
+                                                in={query === 'progress'}
+                                                style={{
+                                                    transitionDelay: query === 'progress' ? '800ms' : '0ms',
+                                                }}
+                                                unmountOnExit
+                                            >
+
+                                                <CircularProgress thickness={5.0} color="inherit" size={20} sx={{ mr: "3px" }} />
+
+                                            </Fade>
+                                        )}
+                                        Order Now
+                                    </Button>
+
+                                </Grid>
+                                <Grid item xs={6} md={6} lg={6}>
+                                    <Button onClick={() => window.location.href = "/tours/detail"} variant="contained" sx={{
+                                        backgroundColor: yellow[800],
+                                        '&:hover': {
+                                            backgroundColor: yellow[900],
+                                            textDecoration: "underline"
+                                        }, mt: "9px"
+                                    }} >
+                                        View Detail <CallMadeIcon sx={{ fontSize: "16px" }} />
+                                    </Button>
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>

@@ -12,9 +12,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import Tour from '../components/tour/Tour';
 import useMediaQuery from "@mui/material/useMediaQuery"
 import DropDownTourFilter from '../components/tour/DropDownFilter';
+
+import { useTheme } from "@mui/material/styles"
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 const data = [
 	{
-		image: "./images/cards/card-image1.jpg",
+		image: "/images/cards/card-image1.jpg",
 		name: "Saigon Barbecue",
 		salePrice: 89,
 		price: 69,
@@ -29,7 +34,7 @@ const data = [
 		rating: 5
 	},
 	{
-		image: "./images/cards/card-image2.jpg",
+		image: "/images/cards/card-image2.jpg",
 		name: "In Love With Saigon",
 		salePrice: 89,
 		price: 59,
@@ -45,7 +50,7 @@ const data = [
 		rating: 4
 	},
 	{
-		image: "./images/cards/card-image3.jpg",
+		image: "/images/cards/card-image3.jpg",
 		name: "Saigon Vegan",
 		salePrice: 109,
 		price: 49,
@@ -61,7 +66,7 @@ const data = [
 		rating: 4
 	},
 	{
-		image: "./images/cards/card-image4.jpg",
+		image: "/images/cards/card-image4.jpg",
 		name: "Saigon BackStreet",
 		salePrice: 79,
 		price: 39,
@@ -76,7 +81,7 @@ const data = [
 		rating: 3
 	},
 	{
-		image: "./images/cards/card-image5.jpg",
+		image: "/images/cards/card-image5.jpg",
 		name: "In Love With Saigon",
 		salePrice: 89,
 		price: 59,
@@ -92,8 +97,14 @@ const data = [
 		rating: 4
 	},
 ]
+
 export default function Tours() {
-	const matches = useMediaQuery('(min-width:1108px)')
+	const theme = useTheme();
+	const matchesLg = useMediaQuery(theme.breakpoints.up('lg'));
+	React.useEffect(() => {
+		Aos.init();
+		Aos.refresh();
+	}, []);
 	return (
 		<div className="">
 			<Container fluid sx={{ mb: 2 }}>
@@ -121,36 +132,42 @@ export default function Tours() {
 			</Container>
 			<Box style={{ backgroundColor: "#F6F9FC", height: "100%" }}>
 				<Container fluid>
-					<Grid container>
-						<Grid item xs={0} md={0} lg={4} sx={{ pb: 2 }}>
-							{matches ? (<TourFilters />) : (
-								<DropDownTourFilter />
+					<Grid container style={{ justifyContent: "space-between" }}>
+						<div data-aos="fade-up" data-aos-duration={1000}>
+							{matchesLg ? (
+								<Grid item xs={4} md={4} lg={4} sx={{ pb: 2 }}>
+									<TourFilters />
+								</Grid>
+							) : (
+								<Grid item xs={12} md={4} lg={4} sx={{ pb: 2 }}>
+									<DropDownTourFilter />
+								</Grid>
 							)}
-						</Grid>
-						<Grid item xs={12} md={8} lg={8} sx={{ mb: 2 }}>
-							<Box>
-								{/* Tour banner */}
+						</div>
+						<Grid item xs={12} md={10} lg={8} sx={{ mb: 2 }}>
+							{/* Tour banner */}
+							<div data-aos="fade-up" data-aos-duration={1000}>
 								<Box sx={{ backgroundColor: "white", p: 2, m: "7px 0 7px 0", borderRadius: "7px" }}>
 									<Box display="flex">
 										<LocalOfferIcon />
 										<Typography variant="h6" component="h2" fontSize="18px" fontWeight="medium" color={red[600]} sx={{ ml: 2, mr: 2 }}>Hot deals</Typography>
 										<Box sx={{ ml: 2 }}>
-											<TypographyMod fontSize="16px" >We offers varieyy of Food Tours which are suitable for everyone</TypographyMod>
+											<TypographyMod fontSize="1rem" >We offers varieyy of Food Tours which are suitable for everyone</TypographyMod>
 										</Box>
 									</Box>
-
 								</Box>
-							</Box>
-							{
-								data.map((item, index) => {
-									return (
-										<Box sx={{ mt: 1 }}>
-											<Tour {...item} key={index} />
-										</Box>
-									)
-								})
-							}
-
+							</div>
+							<div data-aos="fade-up" data-aos-duration={1000}>
+								{
+									data.map((item, index) => {
+										return (
+											<Box sx={{ mt: 1, mb: 1 }}>
+												<Tour {...item} key={index} />
+											</Box>
+										)
+									})
+								}
+							</div>
 							<Box display="flex" sx={{ justifyContent: "center", mb: 1, mt: 2 }}>
 								<Pagination count={4} />
 							</Box>
