@@ -17,7 +17,7 @@ const labels ={
 
 function ReviewDetails() {
     const viewPort = Responsive();
-    const isMobile = viewPort.width <= 1024;
+    const isMobile = viewPort.width <= 720;
 
     const [value1, setValue1] = useState(0)
     const [hover1, setHover1] = useState(-1)
@@ -158,7 +158,7 @@ function ReviewDetails() {
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/60/ef/cf/caption.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
 			    </div>
                 <div className="locationContent">
-			        <div className="locationName">
+			        <div className="locationName-mobile">
                         <a className="locationName-mobile" href="/AttractionProductReview-g293925-d15593290-Seafood_trail-Ho_Chi_Minh_City.html" target="_blank">Seafood trail</a>
 			        </div>
                     <div className="locationAddress-mobile">
@@ -166,7 +166,7 @@ function ReviewDetails() {
                         <span> Vietnam</span>
                     </div>
                     <div style={{height:10}}></div>
-                    <div className="locationRating required">
+                    <div className="locationRating-mobile required">
                         <Box
                             sx={{
                                 width: 200,
@@ -190,10 +190,11 @@ function ReviewDetails() {
                             icon={<FaCircle/>}
                             />
                             {value1 !== null && (
-                                <Box sx={{ ml: 2 }}>{labels[hover1 !== -1 ? hover1 : value1]}</Box>
+                                <Box className="rating-mobile" sx={{ ml: 2 }}>{labels[hover1 !== -1 ? hover1 : value1]}</Box>
                             )}
                         </Box>
                     </div>
+                    <div style={{height: 10}}></div>
                     {showFinishBtn1 ? <Finish /> : null}
                     {showForm1 && (
                         <ExpandableContent />
@@ -211,7 +212,7 @@ function ReviewDetails() {
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/b5/80/c6/good-vibes-central-hotel.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
 			    </div>
                 <div className="locationContent">
-			        <div className="locationName">
+			        <div className="locationName-mobile">
 				        <a className="locationName-mobile" href="/Hotel_Review-g293925-d12596354-Reviews-Good_Vibes_Central_Hotel-Ho_Chi_Minh_City.html" target="_blank">Good Vibes Central Hotel</a>
 			        </div>
                     <div className="locationAddress-mobile">
@@ -246,10 +247,11 @@ function ReviewDetails() {
                             icon={<FaCircle/>}
                             />
                             {value2 !== null && (
-                                <Box sx={{ ml: 2 }}>{labels[hover2 !== -1 ? hover2 : value2]}</Box>
+                                <Box className="rating-mobile" sx={{ ml: 2 }}>{labels[hover2 !== -1 ? hover2 : value2]}</Box>
                             )}
                         </Box>
                     </div>
+                    <div style={{height: 10}}></div>
                     {showFinishBtn2 ? <Finish /> : null}
                     {showForm2 && (
                         <ExpandableContent />
@@ -267,7 +269,7 @@ function ReviewDetails() {
 				    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/63/ee/8a/caption.jpg" alt="Seafood trail" width="240" height="194" id="IMG_16" />
 			    </div>
                 <div className="locationContent">
-			        <div className="locationName">
+			        <div className="locationName-mobile">
 				        <a className="locationName-mobile" href="/Hotel_Review-g293925-d12596354-Reviews-Good_Vibes_Central_Hotel-Ho_Chi_Minh_City.html" target="_blank">Saigon Food Tour on Scooter at Night</a>
 			        </div>
                     <div className="locationAddress-mobile">
@@ -300,10 +302,11 @@ function ReviewDetails() {
                             icon={<FaCircle/>}
                             />
                             {value3 !== null && (
-                                <Box sx={{ ml: 2 }}>{labels[hover3 !== -1 ? hover3 : value3]}</Box>
+                                <Box className="rating-mobile" sx={{ ml: 2 }}>{labels[hover3 !== -1 ? hover3 : value3]}</Box>
                             )}
                         </Box>
                     </div>
+                    <div style={{height: 10}}></div>
                     {showFinishBtn3 ? <Finish /> : null}
                     {showForm3 && (
                         <ExpandableContent />

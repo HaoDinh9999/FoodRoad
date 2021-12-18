@@ -6,7 +6,7 @@ import Responsive from "./Responsive";
 
 export default function ExpandableContent() {
     const viewPort = Responsive();
-    const isMobile = viewPort.width <= 1024;
+    const isMobile = viewPort.width <= 720;
 
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -52,7 +52,7 @@ export default function ExpandableContent() {
                         type="text"
                         size="32"
                         placeholder="Summarize your visit or highlight an interesting detail"
-                        style={{marginTop:"16px", width:"460px", height:"36px"}}/>
+                        style={{marginTop:"16px", width:"400px", height:"36px"}}/>
                 </label>
                 <label clasname="reviewBody required">
                     <div className="review-form">Your review</div>
@@ -61,7 +61,7 @@ export default function ExpandableContent() {
                         name="review"
                         size="32"
                         placeholder="By sharing your experiences, you're helping travelers make better choices and plan their dream trips. Thank you!   "
-                        style={{marginTop:"16px", width:"460px", height:"78px"}} />
+                        style={{marginTop:"16px", width:"400px", height:"78px"}} />
                 </label>
                 <label className="visitDate required complete">
                     <div className="review-form">When did you travel?</div>
