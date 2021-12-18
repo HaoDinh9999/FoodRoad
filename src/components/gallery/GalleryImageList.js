@@ -46,8 +46,8 @@ const GalleryImageList = () => {
           </TextField>
         </Grid>
 
-        <Grid item sm={12} md={6} lg={4}>
-          {itemData.map((item, index) => (
+        {itemData.map((item, index) => (
+          <Grid item sm={12} md={6} lg={4}>
             <img
               key={item.img}
               onClick={openImageViewer.bind(null, index)}
@@ -57,8 +57,8 @@ const GalleryImageList = () => {
               alt={item.title}
               loading="lazy"
             />
-          ))}
-        </Grid>
+          </Grid>
+        ))}
       </Grid>
       {isViewerOpen && (
         <ImageViewer
