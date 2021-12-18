@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "./components/navbar/Navbar";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import Home from "./pages/Home";
@@ -34,11 +35,23 @@ const theme = createTheme({
   },
 });
 
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Header />
+        <ScrollToTop />
+
         <Switch>
           <Route path="/" exact>
             <Redirect to="/home" />

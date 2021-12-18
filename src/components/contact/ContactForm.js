@@ -31,7 +31,7 @@ const ContactForm = () => {
   }, [status]);
   return (
     <Box>
-      <form>
+      <form onSubmit={submitFormHandler}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <div data-aos="fade-right" data-aos-duration={700}>
@@ -40,6 +40,7 @@ const ContactForm = () => {
                 type="text"
                 label="First name"
                 id="firstName"
+                required
               />
             </div>
           </Grid>
@@ -50,17 +51,25 @@ const ContactForm = () => {
                 type="text"
                 label="Last name"
                 id="lastName"
+                required
               />
             </div>
           </Grid>
           <Grid item xs={12}>
             <div data-aos="fade-right" data-aos-duration={700}>
-              <TextField fullWidth type="email" label="Email" id="email" />
+              <TextField
+                required
+                fullWidth
+                type="email"
+                label="Email"
+                id="email"
+              />
             </div>
           </Grid>
           <Grid item xs={12}>
             <div data-aos="fade-right" data-aos-duration={700}>
               <TextField
+                required
                 minRows={6}
                 fullWidth
                 multiline
@@ -77,7 +86,7 @@ const ContactForm = () => {
           <Grid item xs={12}>
             <div data-aos="fade-up" data-aos-duration={700}>
               <Button
-                onClick={submitFormHandler}
+                type="submit"
                 sx={{
                   boxShadow: "rgb(140 152 164 / 10%) 0px 12px 15px",
                   textTransform: "none",

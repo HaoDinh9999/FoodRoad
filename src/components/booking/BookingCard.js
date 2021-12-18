@@ -9,23 +9,12 @@ import Button from "@mui/material/Button";
 
 import classes from "./BookingCard.module.css";
 
-const sleep = (milliseconds) => {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
-
 const BookingCard = (props) => {
-  const [status, setStatus] = React.useState("");
-  const submitFormHandler = async (event) => {
-    event.preventDefault();
-    setStatus("loading");
-    await sleep(3000);
-    setStatus("completed");
-  };
   React.useEffect(() => {
-    if (status === "completed") {
+    if (props.status === "completed") {
       swal("Success!", "You have booked successfully!", "success");
     }
-  }, [status, props]);
+  }, [props.status]);
   return (
     <>
       <Paper sx={{ minHeight: "500px" }}>
@@ -101,17 +90,17 @@ const BookingCard = (props) => {
               <p className={classes["booking-price"]}>100$</p>
             </Box>
             <Button
-              onClick={submitFormHandler}
+              type="submit"
               size="large"
               variant="contained"
-              disabled={status === "loading"}
+              disabled={props.status === "loading"}
             >
               Book now
             </Button>
           </Stack>
         </div>
       </Paper>
-      {status === "loading" && <LinearProgress />}
+      {props.status === "loading" && <LinearProgress />}
     </>
   );
 };
