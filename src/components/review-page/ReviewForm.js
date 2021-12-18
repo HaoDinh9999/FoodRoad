@@ -16,6 +16,8 @@ import Circle from "@mui/icons-material/Circle";
 
 import CustomRad from "./CustomRad";
 import { styled } from "@mui/material/styles";
+import swal from "sweetalert";
+import { LinearProgress } from "@mui/material";
 
 const month = [
   "Noverber 2021",
@@ -54,206 +56,246 @@ const labels = {
 const Input = styled("input")({
   display: "none",
 });
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 const ReviewForm = () => {
+  const [status, setStatus] = React.useState("");
+  const submitFormHandler = async (event) => {
+    event.preventDefault();
+    setStatus("loading");
+    await sleep(3000);
+    setStatus("completed");
+  };
+  React.useEffect(() => {
+    if (status === "completed") {
+      swal("Success!", "You have reviewed successfully!", "success");
+    }
+  }, [status]);
   return (
-    <Stack spacing={2} mt={4}>
-      <Box>
-        <Typography variant="subtitle1">Rate Your Experience</Typography>
-      </Box>
-      <HoverRating />
-      <Divider />
-      <Stack spacing={1}>
-        <Typography component="p" variant="subtitle2" color="text.secondary">
-          Leave a review{" "}
-          <Typography component="span" variant="body2">
-            (required)
+    <>
+      <Stack spacing={2} mt={4}>
+        <Box>
+          <Typography variant="subtitle1">Rate Your Experience</Typography>
+        </Box>
+        <HoverRating />
+        <Divider />
+        <Stack spacing={1}>
+          <Typography component="p" variant="subtitle2" color="text.secondary">
+            Leave a review{" "}
+            <Typography component="span" variant="body2">
+              (required)
+            </Typography>
           </Typography>
-        </Typography>
-        <TextField
-          size="small"
-          minRows={6}
-          id="reviewContent"
-          multiline
-          required
-          type="text"
-          variant="outlined"
-          placeholder="Highlight your experience"
-        />
-      </Stack>
-      <Stack spacing={1}>
-        <Typography component="p" variant="subtitle2" color="text.secondary">
-          Give your review a title{" "}
-          <Typography component="span" variant="body2">
-            (required)
+          <TextField
+            size="small"
+            minRows={6}
+            id="reviewContent"
+            multiline
+            required
+            type="text"
+            variant="outlined"
+            placeholder="Highlight your experience"
+          />
+        </Stack>
+        <Stack spacing={1}>
+          <Typography component="p" variant="subtitle2" color="text.secondary">
+            Give your review a title{" "}
+            <Typography component="span" variant="body2">
+              (required)
+            </Typography>
           </Typography>
-        </Typography>
-        <TextField
-          size="small"
-          required
-          id="title"
-          type="text"
-          variant="outlined"
-          placeholder="Summarize your experience"
-        />
-      </Stack>
-      <Stack spacing={1}>
-        <Typography component="p" variant="subtitle2" color="text.secondary">
-          When did you go?{" "}
-          <Typography component="span" variant="body2">
-            (required)
+          <TextField
+            size="small"
+            required
+            id="title"
+            type="text"
+            variant="outlined"
+            placeholder="Summarize your experience"
+          />
+        </Stack>
+        <Stack spacing={1}>
+          <Typography component="p" variant="subtitle2" color="text.secondary">
+            When did you go?{" "}
+            <Typography component="span" variant="body2">
+              (required)
+            </Typography>
           </Typography>
-        </Typography>
-        <TextField
-          size="small"
-          required
-          id="title"
-          select
-          variant="outlined"
-          placeholder="Summarize your experience"
-        >
-          {month.map((x, index) => (
-            <MenuItem id={index} value={x}>
-              {x}
-            </MenuItem>
-          ))}
-        </TextField>
-      </Stack>
-      <Stack spacing={1}>
-        <Typography component="p" variant="subtitle2" color="text.secondary">
-          Who was with you?{" "}
-          <Typography component="span" variant="body2">
-            (required)
-          </Typography>
-        </Typography>
-        <TextField
-          size="small"
-          required
-          id="title"
-          select
-          variant="outlined"
-          placeholder="Select one"
-        >
-          {withWhom.map((x, index) => (
-            <MenuItem id={index} value={x}>
-              {x}
-            </MenuItem>
-          ))}
-        </TextField>
-      </Stack>
-      <Typography component="p" variant="subtitle1" fontWeight="600">
-        Could you say a little more about it?{" "}
-        <Typography component="span" color="text.secondary" variant="subtitle2">
-          (optional)
-        </Typography>
-      </Typography>
-      <Divider />
-      <Grid container>
-        <Grid item xs={12} md={6}>
-          <Typography color="text.secondary" variant="subtitle2" component="p">
-            Did the tour company require{" "}
-            <Typography color="primary" variant="subtitle2" component="span">
-              temperature checks for tour participants
-            </Typography>{" "}
-            upon arrival?
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Stack justifyContent="flex-end" direction="row">
-            <CustomRad />
-          </Stack>
-        </Grid>
-      </Grid>
-
-      <Grid container>
-        <Grid item xs={12} md={6}>
-          <Typography color="text.secondary" variant="subtitle2" component="p">
-            Were{" "}
-            <Typography color="primary" variant="subtitle2" component="span">
-              face masks provided
-            </Typography>{" "}
-            for tour participants?
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Stack justifyContent="flex-end" direction="row">
-            <CustomRad />
-          </Stack>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid item xs={12} md={6}>
-          <Typography color="text.secondary" variant="subtitle2" component="p">
-            Was{" "}
-            <Typography color="primary" variant="subtitle2" component="span">
-              hand sanitizer readily available
-            </Typography>{" "}
-            to tour guests and staff?
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Stack justifyContent="flex-end" direction="row">
-            <CustomRad />
-          </Stack>
-        </Grid>
-      </Grid>
-      <Divider />
-      <Typography component="p" variant="subtitle2" color="text.secondary">
-        Upload a photo
-      </Typography>
-      <Box sx={{ border: "1px dashed #fafafa" }}>
-        <label htmlFor="icon-button-file">
-          <Input accept="image/*" id="icon-button-file" type="file" />
-          <IconButton
-            color="primary"
-            aria-label="upload picture"
-            component="span"
-            sx={{
-              width: "150px",
-              height: "150px",
-              borderRadius: "4px",
-              border: "2px dashed #e0e0e0",
-            }}
+          <TextField
+            size="small"
+            required
+            id="title"
+            select
+            variant="outlined"
+            placeholder="Summarize your experience"
           >
-            <PhotoCamera />
-          </IconButton>
-        </label>
-      </Box>
-
-      <Divider />
-      <Stack direction="row">
-        <Checkbox
-          a
-          sx={{ mt: 0, alignItems: "flex-start", pt: 0 }}
-          defaultChecked
-        />
-        <Typography
-          component="p"
-          color="text.secondary"
-          variant="caption"
-          fontWeight="500"
-        >
-          I certify that this review is based on my own experience and is my
-          genuine opinion of this establishment and that I have no personal or
-          business relationship with this establishment, and have not been
-          offered any incentive or payment originating from the establishment to
-          write this review. I understand that Tripadvisor has a zero-tolerance
-          policy on fake reviews.{" "}
+            {month.map((x, index) => (
+              <MenuItem id={index} value={x}>
+                {x}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Stack>
+        <Stack spacing={1}>
+          <Typography component="p" variant="subtitle2" color="text.secondary">
+            Who was with you?{" "}
+            <Typography component="span" variant="body2">
+              (required)
+            </Typography>
+          </Typography>
+          <TextField
+            size="small"
+            required
+            id="title"
+            select
+            variant="outlined"
+            placeholder="Select one"
+          >
+            {withWhom.map((x, index) => (
+              <MenuItem id={index} value={x}>
+                {x}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Stack>
+        <Typography component="p" variant="subtitle1" fontWeight="600">
+          Could you say a little more about it?{" "}
           <Typography
-            fontWeight={600}
-            href="#"
-            component="a"
-            color="primary"
-            variant="caption"
+            component="span"
+            color="text.secondary"
+            variant="subtitle2"
           >
-            Learn more
+            (optional)
           </Typography>
         </Typography>
-      </Stack>
+        <Divider />
+        <Grid container>
+          <Grid item xs={12} md={6}>
+            <Typography
+              color="text.secondary"
+              variant="subtitle2"
+              component="p"
+            >
+              Did the tour company require{" "}
+              <Typography color="primary" variant="subtitle2" component="span">
+                temperature checks for tour participants
+              </Typography>{" "}
+              upon arrival?
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Stack justifyContent="flex-end" direction="row">
+              <CustomRad />
+            </Stack>
+          </Grid>
+        </Grid>
 
-      <Button variant="contained" sx={{ textTranform: "unset" }} fullWidth>
-        Submit your review
-      </Button>
-    </Stack>
+        <Grid container>
+          <Grid item xs={12} md={6}>
+            <Typography
+              color="text.secondary"
+              variant="subtitle2"
+              component="p"
+            >
+              Were{" "}
+              <Typography color="primary" variant="subtitle2" component="span">
+                face masks provided
+              </Typography>{" "}
+              for tour participants?
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Stack justifyContent="flex-end" direction="row">
+              <CustomRad />
+            </Stack>
+          </Grid>
+        </Grid>
+        <Grid container>
+          <Grid item xs={12} md={6}>
+            <Typography
+              color="text.secondary"
+              variant="subtitle2"
+              component="p"
+            >
+              Was{" "}
+              <Typography color="primary" variant="subtitle2" component="span">
+                hand sanitizer readily available
+              </Typography>{" "}
+              to tour guests and staff?
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Stack justifyContent="flex-end" direction="row">
+              <CustomRad />
+            </Stack>
+          </Grid>
+        </Grid>
+        <Divider />
+        <Typography component="p" variant="subtitle2" color="text.secondary">
+          Upload a photo
+        </Typography>
+        <Box sx={{ border: "1px dashed #fafafa" }}>
+          <label htmlFor="icon-button-file">
+            <Input accept="image/*" id="icon-button-file" type="file" />
+            <IconButton
+              color="primary"
+              aria-label="upload picture"
+              component="span"
+              sx={{
+                width: "150px",
+                height: "150px",
+                borderRadius: "4px",
+                border: "2px dashed #e0e0e0",
+              }}
+            >
+              <PhotoCamera />
+            </IconButton>
+          </label>
+        </Box>
+
+        <Divider />
+        <Stack direction="row">
+          <Checkbox
+            a
+            sx={{ mt: 0, alignItems: "flex-start", pt: 0 }}
+            defaultChecked
+          />
+          <Typography
+            component="p"
+            color="text.secondary"
+            variant="caption"
+            fontWeight="500"
+          >
+            I certify that this review is based on my own experience and is my
+            genuine opinion of this establishment and that I have no personal or
+            business relationship with this establishment, and have not been
+            offered any incentive or payment originating from the establishment
+            to write this review. I understand that Tripadvisor has a
+            zero-tolerance policy on fake reviews.{" "}
+            <Typography
+              fontWeight={600}
+              href="#"
+              component="a"
+              color="primary"
+              variant="caption"
+            >
+              Learn more
+            </Typography>
+          </Typography>
+        </Stack>
+
+        <Button
+          onClick={submitFormHandler}
+          variant="contained"
+          sx={{ textTranform: "unset" }}
+          fullWidth
+          disabled={status === "loading"}
+        >
+          Submit your review
+        </Button>
+      </Stack>
+      {status === "loading" && <LinearProgress />}
+    </>
   );
 };
 function HoverRating() {
