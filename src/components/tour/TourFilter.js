@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
-import Checkbox from '@mui/material/Checkbox';
-import { FormControlLabel, FormGroup, Rating } from '@mui/material';
+import {
+    FormControlLabel,
+    FormGroup, Rating, Grid,
+    Button, Slider, Checkbox, Typography
+} from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { IconButton } from '@mui/material';
-import CleanHandsIcon from '@mui/icons-material/CleanHands';
-import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 import { grey } from '@mui/material/colors';
 import PeopleAltSharpIcon from '@mui/icons-material/PeopleAltSharp';
 import ChildCareSharpIcon from '@mui/icons-material/ChildCareSharp';
-import { Button } from '@mui/material';
 const Typographyf14light = (props) => {
     return (
         <Typography variant="h6" component="h2" sx={{ fontSize: "14px", fontWeight: 'light' }}>{props.children}</Typography>
@@ -53,7 +52,7 @@ const labels = {
 };
 const LineBreak = () => {
     return (
-        <hr style={{ marginLeft: "0.9rem", marginRight: "0.9rem" }} />
+        <hr style={{ marginLeft: "0.9rem", marginRight: "0.9rem", color: "E5E5E5" }} />
     )
 }
 const TourFilters = () => {
@@ -76,89 +75,7 @@ const TourFilters = () => {
         <Box sx={{ width: "296px", backgroundColor: "white", borderRadius: "7px", mt: 1 }}>
             {/* Covid 19 */}
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
-                <TypographyMod fontSize="14px">Covid-19<IconButton sx={{ ml: 1 }}>
-                    <CleanHandsIcon />
-                </IconButton></TypographyMod>
                 <TypographyMod fontSize="14px">Because of Covid-19,you must wear mask except for eating</TypographyMod>
-            </Box>
-            <LineBreak />
-            <Box sx={{ borderRadius: "7px", p: 1, ml: "5px" }}  >
-                <Box sx={{ borderTopLeftRadius: "7px 7px", borderTopRightRadius: "7px 7px", mb: 1 }}>
-                    <Box display="flex">
-                        <PeopleAltSharpIcon sx={{ mr: "5px" }} />
-                        <TypographyMod sx={{ fontSize: "18px" }}>Adults</TypographyMod>
-                        <Box display="flex" sx={{ ml: "65px" }}>
-                            <Button
-                                onClick={(event) => adultNum >= 2 ? setAdultNum(adultNum - 1) : 0}
-                                variant="outlined" size="small" sx={{
-                                    padding: "1px 7px 1px 7px",
-                                    minHeight: 0,
-                                    minWidth: 0,
-                                    color: grey[800],
-                                    borderColor: grey[600],
-                                    '&:hover': {
-                                        backgroundColor: grey[500],
-                                        color: grey[800],
-                                        borderColor: grey[600]
-                                    },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
-                            <Box sx={{ borderTop: "1px solid", borderTopColor: grey[600], borderBottom: "1px solid", borderBottomColor: grey[600], pl: "20px", pr: "20px", pt: "5px" }}>
-                                <Typographyf14medium>{adultNum}</Typographyf14medium>
-                            </Box>
-                            <Button
-                                onClick={(event) => adultNum <= 6 ? setAdultNum(adultNum + 1) : 0}
-                                variant="outlined" size="small" sx={{
-                                    padding: "1px 7px 1px 7px",
-                                    minHeight: 0,
-                                    minWidth: 0,
-                                    color: grey[700],
-                                    borderColor: grey[600],
-                                    '&:hover': {
-                                        backgroundColor: grey[500],
-                                        color: grey[800],
-                                        borderColor: grey[600]
-                                    },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
-                        </Box>
-                    </Box>
-                </Box>
-                <Box display="flex" >
-                    <ChildCareSharpIcon sx={{ mr: "5px", fontSize: "30px" }} />
-                    <TypographyMod fontSize={"18px"}>Child</TypographyMod>
-                    <Box display="flex" sx={{ ml: "69px" }}>
-                        <Button
-                            onClick={(event) => childNum >= 1 ? setChildNum(childNum - 1) : 0}
-                            variant="outlined" size="small" sx={{
-                                padding: "1px 7px 1px 7px",
-                                minHeight: 0,
-                                minWidth: 0,
-                                color: grey[800],
-                                borderColor: grey[600],
-                                '&:hover': {
-                                    backgroundColor: grey[500],
-                                    color: grey[800],
-                                    borderColor: grey[600]
-                                },
-                            }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
-                        <Box sx={{ borderTop: "1px solid", borderTopColor: grey[600], borderBottom: "1px solid", borderBottomColor: grey[600], pl: "20px", pr: "20px", pt: "5px" }}>
-                            <Typographyf14medium>{childNum}</Typographyf14medium>
-                        </Box>
-                        <Button
-                            onClick={(event) => childNum <= 2 ? setChildNum(childNum + 1) : 0}
-                            variant="outlined" size="small" sx={{
-                                padding: "1px 7px 1px 7px",
-                                minHeight: 0,
-                                minWidth: 0,
-                                color: grey[700],
-                                borderColor: grey[600],
-                                '&:hover': {
-                                    backgroundColor: grey[500],
-                                    color: grey[800],
-                                    borderColor: grey[600]
-                                },
-                            }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
-                    </Box>
-                </Box>
             </Box>
             <LineBreak />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
@@ -181,7 +98,6 @@ const TourFilters = () => {
 
                 </Box>
                 <Box>
-
                     <Slider
                         defaultValue={40}
                         onChange={handleChange}
@@ -191,13 +107,112 @@ const TourFilters = () => {
                         max={200}
                         valueLabelDisplay="auto"
                         disableSwap
-                        sx={{ color: "#00aa6c" }}
+                        sx={{ color: "#00aa6c", ml: 1 }}
                     />
                 </Box>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14medium>Price without VAT</Typographyf14medium>} />
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Price with VAT</Typographyf14light>} />
                 </FormGroup>
+                <Grid container direction={'column'}>
+                    <Grid container>
+                        <Grid item xs={4} display="flex" sx={{ marginTop: "auto", marginBottom: "auto" }}>
+                            <PeopleAltSharpIcon />
+                            <Box sx={{ margin: "auto" }}>
+                                <Typographyf14light>Adults</Typographyf14light>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} display="flex" justifyContent="space-between" sx={{ border: "1px solid", borderColor: grey[600], borderRadius: "7px" }}>
+                            <Button
+                                onClick={(event) => adultNum >= 2 ? setAdultNum(adultNum - 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[800],
+                                    borderColor: grey[600],
+                                    border: "none",
+                                    borderRight: `0.5px solid`,
+                                    bordeRadius: "0px !important",
+                                    '&:hover': {
+                                        border: "none",
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                            <Box sx={{ margin: "auto" }}>
+                                <Typographyf14light>{adultNum}</Typographyf14light>
+                            </Box>
+                            <Button
+                                onClick={(event) => adultNum <= 6 ? setAdultNum(adultNum + 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[800],
+                                    borderColor: grey[600],
+                                    border: "none",
+                                    borderLeft: `0.5px solid`,
+                                    bordeRadius: "0px !important",
+                                    '&:hover': {
+                                        border: "none",
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography>
+                            </Button>
+
+
+                        </Grid>
+                    </Grid>
+                    <Grid container sx={{ mt: 1 }}>
+                        <Grid item xs={4} display="flex" sx={{ marginTop: "auto", marginBottom: "auto" }}>
+                            <ChildCareSharpIcon sx={{ ml: "-3px", fontSize: "30px" }} />
+                            <Box sx={{ margin: "auto" }}>
+                                <Typographyf14light>Children</Typographyf14light>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} display="flex" justifyContent="space-between" sx={{ border: "1px solid", borderColor: grey[600], borderRadius: "7px" }}>
+                            <Button
+                                onClick={(event) => childNum >= 1 ? setChildNum(childNum - 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[800],
+                                    borderColor: grey[600],
+                                    border: "none",
+                                    borderRight: `0.5px solid`,
+                                    bordeRadius: "0px !important",
+                                    '&:hover': {
+                                        border: "none",
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                            <Box sx={{ margin: "auto" }}>
+                                <Typographyf14light>{childNum}</Typographyf14light>
+                            </Box>
+                            <Button
+                                onClick={(event) => childNum <= 2 ? setChildNum(childNum + 1) : 0}
+                                variant="outlined" size="small" sx={{
+                                    minHeight: 0,
+                                    minWidth: 0,
+                                    color: grey[800],
+                                    borderColor: grey[600],
+                                    border: "none",
+                                    borderLeft: `0.5px solid`,
+                                    bordeRadius: "0px !important",
+                                    '&:hover': {
+                                        border: "none",
+                                        backgroundColor: grey[500],
+                                        color: grey[800],
+                                        borderColor: grey[600]
+                                    },
+                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </Box>
             <LineBreak />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>

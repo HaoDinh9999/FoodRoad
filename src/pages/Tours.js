@@ -109,7 +109,7 @@ export default function Tours() {
 		<div className="">
 			<Container fluid sx={{ mb: 2 }}>
 				<Box display="flex">
-					<HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+					<HomeIcon sx={{ mr: 0.5, marginTop: "auto", marginBottom: "auto" }} fontSize="inherit" />
 
 					<Breadcrumbs
 						separator={<NavigateNextIcon fontSize="small" />}
@@ -129,22 +129,19 @@ export default function Tours() {
 					</Breadcrumbs>
 				</Box>
 				<Tourheader />
+				{!matchesLg && (<DropDownTourFilter />)}
 			</Container>
 			<Box style={{ backgroundColor: "#F6F9FC", height: "100%" }}>
 				<Container fluid>
 					<Grid container style={{ justifyContent: "space-between" }}>
 						<div data-aos="fade-up" data-aos-duration={1000}>
-							{matchesLg ? (
+							{matchesLg && (
 								<Grid item xs={4} md={4} lg={4} sx={{ pb: 2 }}>
 									<TourFilters />
 								</Grid>
-							) : (
-								<Grid item xs={12} md={4} lg={4} sx={{ pb: 2 }}>
-									<DropDownTourFilter />
-								</Grid>
 							)}
 						</div>
-						<Grid item xs={12} md={10} lg={8} sx={{ mb: 2 }}>
+						<Grid item xs={12} md={12} lg={8} sx={{ mb: 2 }}>
 							{/* Tour banner */}
 							<div data-aos="fade-up" data-aos-duration={1000}>
 								<Box sx={{ backgroundColor: "white", p: 2, m: "7px 0 7px 0", borderRadius: "7px" }}>
@@ -152,7 +149,7 @@ export default function Tours() {
 										<LocalOfferIcon />
 										<Typography variant="h6" component="h2" fontSize="18px" fontWeight="medium" color={red[600]} sx={{ ml: 2, mr: 2 }}>Hot deals</Typography>
 										<Box sx={{ ml: 2 }}>
-											<TypographyMod fontSize="1rem" >We offers varieyy of Food Tours which are suitable for everyone</TypographyMod>
+											<TypographyMod fontSize="1rem" fontWeight="light">We offers variety of Food Tours which are suitable for everyone</TypographyMod>
 										</Box>
 									</Box>
 								</Box>
