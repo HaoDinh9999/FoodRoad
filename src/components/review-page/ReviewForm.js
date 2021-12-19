@@ -59,7 +59,7 @@ const Input = styled("input")({
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
-const ReviewForm = () => {
+const ReviewForm = (props) => {
   const [status, setStatus] = React.useState("");
   const submitFormHandler = async (event) => {
     event.preventDefault();
@@ -73,8 +73,8 @@ const ReviewForm = () => {
     }
   }, [status]);
   return (
-    <>
-      <Stack spacing={2} mt={4}>
+    <form onSubmit={submitFormHandler}>
+      <Stack spacing={2} mt={props.notMT ? 0 : 4}>
         <Box>
           <Typography variant="subtitle1">Rate Your Experience</Typography>
         </Box>
@@ -136,100 +136,122 @@ const ReviewForm = () => {
             ))}
           </TextField>
         </Stack>
-        <Stack spacing={1}>
-          <Typography component="p" variant="subtitle2" color="text.secondary">
-            Who was with you?{" "}
-            <Typography component="span" variant="body2">
-              (required)
-            </Typography>
-          </Typography>
-          <TextField
-            size="small"
-            required
-            id="title"
-            select
-            variant="outlined"
-            placeholder="Select one"
-          >
-            {withWhom.map((x, index) => (
-              <MenuItem id={index} value={x}>
-                {x}
-              </MenuItem>
-            ))}
-          </TextField>
-        </Stack>
-        <Typography component="p" variant="subtitle1" fontWeight="600">
-          Could you say a little more about it?{" "}
-          <Typography
-            component="span"
-            color="text.secondary"
-            variant="subtitle2"
-          >
-            (optional)
-          </Typography>
-        </Typography>
-        <Divider />
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <Typography
-              color="text.secondary"
-              variant="subtitle2"
-              component="p"
-            >
-              Did the tour company require{" "}
-              <Typography color="primary" variant="subtitle2" component="span">
-                temperature checks for tour participants
-              </Typography>{" "}
-              upon arrival?
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Stack justifyContent="flex-end" direction="row">
-              <CustomRad />
+        {!props.notSingleReview ? (
+          <>
+            {" "}
+            <Stack spacing={1}>
+              <Typography
+                component="p"
+                variant="subtitle2"
+                color="text.secondary"
+              >
+                Who was with you?{" "}
+                <Typography component="span" variant="body2">
+                  (required)
+                </Typography>
+              </Typography>
+              <TextField
+                size="small"
+                required
+                id="title"
+                select
+                variant="outlined"
+                placeholder="Select one"
+              >
+                {withWhom.map((x, index) => (
+                  <MenuItem id={index} value={x}>
+                    {x}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Stack>
-          </Grid>
-        </Grid>
-
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <Typography
-              color="text.secondary"
-              variant="subtitle2"
-              component="p"
-            >
-              Were{" "}
-              <Typography color="primary" variant="subtitle2" component="span">
-                face masks provided
-              </Typography>{" "}
-              for tour participants?
+            <Typography component="p" variant="subtitle1" fontWeight="600">
+              Could you say a little more about it?{" "}
+              <Typography
+                component="span"
+                color="text.secondary"
+                variant="subtitle2"
+              >
+                (optional)
+              </Typography>
             </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Stack justifyContent="flex-end" direction="row">
-              <CustomRad />
-            </Stack>
-          </Grid>
-        </Grid>
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <Typography
-              color="text.secondary"
-              variant="subtitle2"
-              component="p"
-            >
-              Was{" "}
-              <Typography color="primary" variant="subtitle2" component="span">
-                hand sanitizer readily available
-              </Typography>{" "}
-              to tour guests and staff?
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Stack justifyContent="flex-end" direction="row">
-              <CustomRad />
-            </Stack>
-          </Grid>
-        </Grid>
+            <Divider />
+            <Grid container>
+              <Grid item xs={12} md={6}>
+                <Typography
+                  color="text.secondary"
+                  variant="subtitle2"
+                  component="p"
+                >
+                  Did the tour company require{" "}
+                  <Typography
+                    color="primary"
+                    variant="subtitle2"
+                    component="span"
+                  >
+                    temperature checks for tour participants
+                  </Typography>{" "}
+                  upon arrival?
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Stack justifyContent="flex-end" direction="row">
+                  <CustomRad />
+                </Stack>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12} md={6}>
+                <Typography
+                  color="text.secondary"
+                  variant="subtitle2"
+                  component="p"
+                >
+                  Were{" "}
+                  <Typography
+                    color="primary"
+                    variant="subtitle2"
+                    component="span"
+                  >
+                    face masks provided
+                  </Typography>{" "}
+                  for tour participants?
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Stack justifyContent="flex-end" direction="row">
+                  <CustomRad />
+                </Stack>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12} md={6}>
+                <Typography
+                  color="text.secondary"
+                  variant="subtitle2"
+                  component="p"
+                >
+                  Was{" "}
+                  <Typography
+                    color="primary"
+                    variant="subtitle2"
+                    component="span"
+                  >
+                    hand sanitizer readily available
+                  </Typography>{" "}
+                  to tour guests and staff?
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Stack justifyContent="flex-end" direction="row">
+                  <CustomRad />
+                </Stack>
+              </Grid>
+            </Grid>{" "}
+          </>
+        ) : (
+          <></>
+        )}
         <Divider />
         <Typography component="p" variant="subtitle2" color="text.secondary">
           Upload a photo
@@ -285,7 +307,7 @@ const ReviewForm = () => {
         </Stack>
 
         <Button
-          onClick={submitFormHandler}
+          type="submit"
           variant="contained"
           sx={{ textTranform: "unset" }}
           fullWidth
@@ -295,7 +317,7 @@ const ReviewForm = () => {
         </Button>
       </Stack>
       {status === "loading" && <LinearProgress />}
-    </>
+    </form>
   );
 };
 function HoverRating() {

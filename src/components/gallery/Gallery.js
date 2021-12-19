@@ -37,14 +37,17 @@ const Gallery = () => {
               {"&"}
               instagram:
             </Typography>
-            <Typography color="#677788" variant="body1">
-              -Facebook: www.facebook.com/saigonfoodtour
+            <Typography color="#677788" variant="body1" component="p">
+              {"-Facebook: "}
+              <a href="https://www.facebook.com/saigonfoodtour">
+                www.facebook.com/saigonfoodtour
+              </a>
             </Typography>
             <Typography color="#677788" variant="body1">
-              -Instagram: www.instagram.com/saigonfoodtour
-            </Typography>
-            <Typography color="#677788" variant="body1">
-              -Flickr: www.flickr.com/135187854@N08
+              -Instagram:{" "}
+              <a href="https://www.instagram.com/saigonfoodtour">
+                www.instagram.com/saigonfoodtour
+              </a>
             </Typography>
           </Stack>
         </Paper>

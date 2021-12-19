@@ -83,7 +83,7 @@ function App() {
           <Route path="/news">
             <News />
           </Route>
-          <Route path="/allreviews">
+          <Route path="/all-reviews">
             <AllReview />
           </Route>
           <Route path="*">
