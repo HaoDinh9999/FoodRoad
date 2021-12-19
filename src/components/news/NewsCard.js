@@ -16,7 +16,7 @@ const NewsCard = (props) => {
   return (
     <a style={{ textDecoration: "none" }} href="#">
       <Card
-        sx={{ display: "flex" }}
+        sx={{ display: "flex" , flexDirection: {xs: "column", sm: "column", md: "row"}}}
         style={{ boxShadow: "none" }}
         onMouseEnter={() =>
           setState({ color: "#1976D2", textDecoration: "underline" })
@@ -27,7 +27,7 @@ const NewsCard = (props) => {
       >
         <CardMedia
           component="img"
-          sx={{ width: 300 }}
+          sx={{ width: { xs: "100%", sm: "100%", md: 300} }}
           image={props.image}
           alt="image"
         />

@@ -37,8 +37,8 @@ const News = () => {
             </Typography>
           </Breadcrumbs>
 
-          <Grid container sm={12}>
-            <Grid item sm={9}>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={9}>
               <Box
                 mt={2}
                 border={1}
@@ -102,8 +102,7 @@ const News = () => {
                 </Stack>
               </Box>
             </Grid>
-            <Grid item sm={0.3}></Grid>
-            <Grid item sm={2.7}>
+            <Grid item xs={12} sm={12} md={3}>
               <NewsRight></NewsRight>
             </Grid>
           </Grid>
