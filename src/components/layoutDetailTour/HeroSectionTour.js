@@ -189,50 +189,59 @@ const HeroSectionTour = () => {
               },
             }}
           >
-            <TextField
-              id="datetime-local"
-              type="datetime-local"
-              defaultValue="2021-11-08T10:30"
-              variant="outlined"
-              sx={{
-                width: "270px",
-                // border: 2,
-                ".MuiOutlinedInput-root": {
+            <Box display="flex">
+              <TextField
+                id="datetime-local"
+                type="datetime-local"
+                defaultValue="2021-11-08T10:30"
+                variant="outlined"
+                fullWidth
+                sx={{
+                  // border: 2,
+                  ".MuiOutlinedInput-root": {
+                    borderRadius: 10,
+                  },
+
+                  borderColor: "#c5c5c5",
+                }}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+
+              <IconButton
+                aria-describedby={id}
+                variant="contained"
+                onClick={handleClick}
+                aria-label="delete"
+                sx={{
+                  justifyContent: "space-around",
+                  marginLeft: "10px",
+                  color: "#000000",
                   borderRadius: 10,
-                },
-
-                borderColor: "#c5c5c5",
-              }}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-
-            <IconButton
-              aria-describedby={id}
-              variant="contained"
-              onClick={handleClick}
-              aria-label="delete"
-              sx={{
-                justifyContent: "space-around",
-                marginLeft: "10px",
-                color: "#000000",
-                borderRadius: 10,
-                border: 2,
-                borderColor: "#c5c5c5",
-                height: "60px",
-                width: "23%",
-              }}
-            >
-              <PeopleOutlineIcon sx={{ color: "#00000", fontSize: "25px" }} />
-              <Typography
-                variant="h6"
-                component="h2"
-                style={{ fontSize: "18px", fontWeight: "bold" }}
+                  border: 2,
+                  borderColor: "#c5c5c5",
+                  height: "60px",
+                }}
+                item
+                component={Grid}
+                display={{ xs: "none", sm: "flex" }}
               >
-                2
-              </Typography>
-            </IconButton>
+                <PeopleOutlineIcon sx={{ color: "#00000", fontSize: "25px" }} />
+                <Typography
+                  variant="h6"
+                  component="h2"
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    marginLeft: "20px",
+                  }}
+                >
+                  2
+                </Typography>
+              </IconButton>
+            </Box>
+
             <Popover
               id={id}
               open={open}
@@ -245,13 +254,7 @@ const HeroSectionTour = () => {
               style={{ top: "12px", border: 10 }}
               sx={{ borderRadius: 15, border: 1 }}
             >
-              <Grid
-                container
-                sm={12}
-                xs={12}
-                padding="30px 40px "
-                width="450px"
-              >
+              <Grid container sm={12} xs={12} padding="30px 40px ">
                 <Grid item sm={8}>
                   <Typography
                     variant="h6"

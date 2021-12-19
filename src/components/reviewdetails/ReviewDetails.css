@@ -153,15 +153,15 @@
 }
 
 .div3-mobile {
-  margin-left: 20px;
+  margin-left: 10px;
   font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
   margin-bottom: 10px;
-  width: 590px;
+  width: 464px;
   background-color: white;
 }
 
 .div3-mobile:hover {
-  /*box-shadow: 1px 1px 20px 1px grey;*/
+  box-shadow: 1px 1px 20px 1px grey;
 }
 
 .div3c1,
@@ -179,10 +179,10 @@
 .div3c1-mobile,
 .div3c2-mobile,
 .div3c3-mobile {
-  margin-left: 20px;
+  margin-left: 10px;
   font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
   margin-bottom: 10px;
-  width: 590px;
+  width: 464px;
   height: 580px;
   background-color: white;
 }
@@ -191,13 +191,13 @@
 .div3c1:hover,
 .div3c2:hover,
 .div3c3:hover {
-  /* box-shadow: 1px 1px 20px 1px grey;*/
+  box-shadow: 1px 1px 20px 1px grey;
 }
 
 .div3c1-mobile:hover,
 .div3c2-mobile:hover,
 .div3c3-mobile:hover {
-  /* box-shadow: 1px 1px 20px 1px grey;*/
+  box-shadow: 1px 1px 20px 1px grey;
 }
 
 h1,
@@ -332,7 +332,8 @@ input.review:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
   font: 700 18px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
-  width: 280px;
+  width: 200px;
+  white-space: nowrap;
 }
 
 a.locationName-mobile:link {
@@ -345,9 +346,12 @@ a.locationName-mobile:visited {
   color: rgb(8, 99, 134);
 }
 
-a.locationName-mobile:link {
+a.locationName:link {
   text-decoration: none;
   color: rgb(8, 99, 134);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 a.locationName:visited {
@@ -377,7 +381,7 @@ a.locationName:visited {
   font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
   letter-spacing: 0.2px;
   color: #666;
-  width: 320px;
+  width: 200px;
 }
 
 .locationRating {
@@ -388,6 +392,17 @@ a.locationName:visited {
   white-space: nowrap;
   font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
   color: rgb(12, 141, 102);
+}
+
+.locationRating-mobile {
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  color: rgb(12, 141, 102);
+  display: block;
 }
 
 .primaryButton {
@@ -484,4 +499,10 @@ a.locationName:visited {
 .verify-ckbx {
   width: 12px;
   height: 12px;
+}
+
+.rating-mobile {
+  display: block;
+  position: absolute;
+  margin-top: 44px;
 }

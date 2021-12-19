@@ -86,7 +86,7 @@ const Header = (props) => {
           }}
         >
           Food Road
-          <i className="fab fa-typo3" />
+          <i style={{ marginLeft: "4px" }} className="fab fa-typo3" />
         </Typography>
       </Toolbar>
 
@@ -227,7 +227,7 @@ const Header = (props) => {
                   }}
                 >
                   Food Road
-                  <i className="fab fa-typo3" />
+                  <i style={{ marginLeft: "4px" }} className="fab fa-typo3" />
                 </Typography>
               </Stack>
               <Box display="flex" alignItems="center">

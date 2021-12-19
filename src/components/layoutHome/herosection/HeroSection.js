@@ -96,28 +96,28 @@ const HeroSection = () => {
               <Grid item xs={12} sm={6} md={5}>
                 <img
                   alt="img"
-                  src="https://i.guim.co.uk/img/media/bd7ceb011f9b92bf53fb95080e49b459fac46746/0_174_3872_2323/master/3872.jpg?width=1200&quality=85&auto=format&fit=max&s=ef789b013e08d2fb585064c562323f91"
+                  src="https://www.risenta.co.uk/upl/images/522516.jpg"
                   className={classes["hero-img"]}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={7}>
                 <img
                   alt="img"
-                  src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/09_2019/food-tour-hai-phong-11.jpg"
+                  src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2020%2F11%2F02%2Fthe-beet-toast.jpg"
                   className={classes["hero-img"]}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={7}>
                 <img
                   alt="img"
-                  src="https://media.ex-cdn.com/EXP/media.vntravellive.com/files/news/2020/11/05/food-tour-ha-noi-ngay-tro-gio-161620.jpg"
+                  src="https://www.crazymasalafood.com/wp-content/images/Masoor-Dal-4-square-scaled.jpg"
                   className={classes["hero-img"]}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={5}>
                 <img
                   alt="img"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6X1tyqKNkLPul5YX9dYmkc3xIJ2biFR_eQQ&usqp=CAU"
+                  src="https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                   className={classes["hero-img"]}
                 />
               </Grid>
