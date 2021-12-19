@@ -107,6 +107,7 @@ const AllCardTours = () => {
               },
             }}
             endIcon={<UilMessage />}
+            href="/tours"
           >
             View More
           </Button>

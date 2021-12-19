@@ -51,7 +51,7 @@ const AllOurServices = () => {
             <Typography
               variant="h6"
               component="h2"
-              zIndex="tooltip"
+              zIndex="1000"
               style={{ color: "#fff", fontSize: "37px", fontWeight: "bold" }}
             >
               OUR SERVICES
@@ -79,6 +79,7 @@ const AllOurServices = () => {
               text="Information about us including membership, product introduction, our services."
               color1="#1BBC9B"
               icon={UilCommentInfo}
+              href="/about"
             ></CardService>
           </Grid>
           <Grid item sm={4}>
@@ -87,6 +88,7 @@ const AllOurServices = () => {
               text="Displays a list of food tours, and supports advanced filters for easy search. "
               color1="#ff6868"
               icon={UilRestaurant}
+              href="/tours"
             ></CardService>
           </Grid>
           <Grid item sm={4}>
@@ -95,6 +97,7 @@ const AllOurServices = () => {
               text="Common questions will be answered here or you can send your questions to us ."
               color1="#14b9d5"
               icon={UilCloudQuestion}
+              href="/faqs"
             ></CardService>
           </Grid>
 
@@ -106,6 +109,7 @@ const AllOurServices = () => {
               text="You can contact us here, including address, phone number, other communication. "
               color1="#f3a46b"
               icon={UilPhoneVolume}
+              href="/contact"
             ></CardService>
           </Grid>
           <Grid item sm={4}>
@@ -122,6 +126,7 @@ const AllOurServices = () => {
               text="News, blogs about food, delicious dishes, sharing experiences about food tours."
               color1="#ff6868"
               icon={UilBookOpen}
+              href="/news"
             ></CardService>
           </Grid>
         </Grid>

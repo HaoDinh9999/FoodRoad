@@ -87,7 +87,7 @@ const CardTourItem = (props) => {
         </Grid>
       </Grid>
       <Box backgroundColor="#fff" onClick={handleClickOpen}>
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex" justifyContent="space-between" marginTop="5px">
           <Box>
             <Link
               underline="none"
@@ -97,6 +97,7 @@ const CardTourItem = (props) => {
               sx={{
                 "&:hover": {
                   color: "#c89300",
+                  cursor: "pointer",
                 },
               }}
             >
