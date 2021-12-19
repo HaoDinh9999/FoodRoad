@@ -9,6 +9,7 @@ import Slide from '@mui/material/Slide';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
+import Swal from 'sweetalert2';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -19,10 +20,66 @@ export default function FormDialog(props) {
   const [open, setOpen] = React.useState(true);
   const [checked, setChecked] = React.useState(false);
   
+  const [username, setUsername] = React.useState(null);
+  const [usernameValidate, setUsernameValidate] = React.useState(null);
+  const [email, setEmail] = React.useState(null);
+  const [emailValidate, setEmailValidate] = React.useState(null);
+  const [password, setPassword] = React.useState(null);
+  const [passwordValidate, setPasswordValidate] = React.useState(null);
+
+  React.useEffect(() => {
+    if (username == null) {
+      setUsernameValidate(true);
+      return;
+    }
+    if (
+      String(username).length > 0
+    ) 
+      setUsernameValidate(true);
+    else setUsernameValidate(false);
+  }, [username])
+
+  React.useEffect(() => {
+    if (password == null) {
+      setPasswordValidate(true);
+      return;
+    }
+    if (
+      String(password).length >= 6 &&
+      String(password).length <= 20
+    ) 
+      setPasswordValidate(true);
+    else setPasswordValidate(false);
+  }, [password])
+  React.useEffect(() => {
+    if (email == null) {
+      setEmailValidate(true);
+      return;
+    }
+    if (
+      email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+    )
+      setEmailValidate(true);
+    else setEmailValidate(false);
+  }, [email])
+
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
 
+
+
+  function HandleClick() {
+    Swal.fire({
+      position: 'mid-center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
   return (
       <Dialog
@@ -83,7 +140,17 @@ export default function FormDialog(props) {
           >
             Username
           </Typography>
-          <input class="signupinput" type="text" id="username" name="Username" placeholder="foodroad8000"></input>
+          <input class="signupinput" type="text" id="username" name="Username" placeholder="foodroad8000"
+          value = {username}
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
+          ></input>
+          {usernameValidate==false &&
+            <Box pt={1}>
+              <Typography fontSize={15} color="red">Username cannot be blank!</Typography>
+            </Box>
+          }
           </div>
 
           <div class="textinput">
@@ -100,7 +167,17 @@ export default function FormDialog(props) {
           >
             E-mail
           </Typography>
-          <input class="signupinput" type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"></input>
+          <input class="signupinput" type="email" id="Email" name="Email" placeholder="foodroad@gmail.com"
+          value = {email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          ></input>
+          {emailValidate==false &&
+            <Box pt={1}>
+              <Typography fontSize={15} color="red">Example: Foodroad@gmail.com</Typography>
+            </Box>
+          }
           </div>
 
           <div class="textinput">
@@ -109,7 +186,17 @@ export default function FormDialog(props) {
           >
             Password
           </Typography>
-          <input class="signupinput" type="password" id="Password" name="Password" placeholder="Enter a password"></input>
+          <input class="signupinput" type="password" id="Password" name="Password" placeholder="Enter a password"
+          value = {password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+          ></input>
+          {passwordValidate==false &&
+            <Box pt={1}>
+              <Typography fontSize={15} color="red">Password must be between 6-20 characters</Typography>
+            </Box>
+          }
           </div>
           <Box pt={1}>
             <FormControlLabel  
@@ -132,7 +219,22 @@ export default function FormDialog(props) {
               <Button
                 variant="contained" 
                 fullWidth
-                onClick={props.onClose}
+                onClick={() =>
+                  {
+                    if (emailValidate && passwordValidate && usernameValidate && email != null && password != null && username != null)
+                    {
+                      props.onClose();
+                      Swal.fire({
+                        title: 'SUCCESS',
+                        text: 'Your account has been created.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false,
+                      });
+                    }
+                  }
+                }
+               
                 style={{height:'50px', textTransform: 'none', fontSize: '20px', fontWeight: 'bold', borderRadius: "24px", backgroundColor: "#42b72a"}}
                 >
                 Sign Up
