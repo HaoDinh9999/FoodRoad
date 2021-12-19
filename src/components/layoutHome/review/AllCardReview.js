@@ -94,7 +94,7 @@ const AllCardReview = () => {
   };
   return (
     <Container fixed>
-      <Box marginTop="20px" padding="0px 0px 0px 5px">
+      <Box marginTop="20px" marginBottom="40px" padding="0px 0px 0px 5px">
         <Grid container sm={12} justifyContent="center">
           <Typography
             variant="h6"
