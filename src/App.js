@@ -94,7 +94,7 @@ function App() {
             <DetailTour />
           </Route> */}
         </Switch>
-        {/* <Footer></Footer> */}
+        <Footer />
         {/*<MessengerCustomerChat
           pageId="109031571600773"
           appId="291000409568661"

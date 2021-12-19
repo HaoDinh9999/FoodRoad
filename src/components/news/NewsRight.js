@@ -55,6 +55,12 @@ const NewsRight = () => {
                 title="How Sticky Rice Cake..."
                 date="2/11/2021"
               />
+              <RecentCard
+                image="https://i.guim.co.uk/img/media/31ca1bf89bdb7b5714dadb6b406cd62604d784b4/0_324_5853_3512/master/5853.jpg?width=1020&quality=45&auto=format&fit=max&dpr=2&s=725a4e993c024df2a41d277cc0a592c0"
+                alt="Europe on a plate: foodie holiday itineraries in France, Spain and Belgium"
+                title="Europe on a plate..."
+                date="2/11/2021"
+              />
             </Stack>
           </Box>
         </Box>
@@ -73,6 +79,14 @@ const NewsRight = () => {
             <FeatureCard
               title="How Sticky Rice Cake (Bánh Chưng) Becomes an Iconic Symbol of New Year Day in Vietnam"
               image="https://i.ytimg.com/vi/ZGs59VEu3hQ/maxresdefault.jpg"
+            ></FeatureCard>
+            <FeatureCard
+              title="How will consumers prepare holiday meals in 2021?"
+              image="https://orders.nuggetmarkets.net/media/06/26/contemporary-meal-group-2020-10.jpg"
+            ></FeatureCard>
+            <FeatureCard
+              title="15 of the best food and drink experiences in Northern Ireland"
+              image="https://i.guim.co.uk/img/media/9d3655cbf1183b7c15f64d02df0a6e2821941efa/0_192_5760_3456/master/5760.jpg?width=1020&quality=45&auto=format&fit=max&dpr=2&s=11b88c7a794941c7b861f74a87b3fb0b"
             ></FeatureCard>
           </Stack>
         </Box>

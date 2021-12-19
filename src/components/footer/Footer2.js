@@ -144,30 +144,33 @@ function Footer2() {
                     </Box>
                 </Grid>
                 
-                <Grid item xs={12} sm={6}>
-                    <Box pt="30px">
-                        <Stack direction="row" spacing="20px">
+                <Grid item xs={12} sm={3}>
+                    <Box sx={{ pt: {xs: 0, sm: 5}, height: "90%",width: "100%"}}>
                             <a href="">
-                                <img src="https://i.imgur.com/L1iu1b2.png" height="80px" width="260px"></img>
+                                <img src="https://i.imgur.com/L1iu1b2.png" height="100%" width="100%"></img>
                             </a>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={3}>
+                    <Box sx={{ pt: {xs: 0, sm: 5}, height: "90%",width: "100%"}}>
                             <a href="">
-                                <img src="https://i.imgur.com/ii8CndV.png" height="80px" width="250px"></img>
+                                <img src="https://i.imgur.com/ii8CndV.png" height="100%" width="100%"></img>
                             </a>
-                        </Stack>
                     </Box>
                 </Grid>
 
                 <Grid item xs={6} sm={6}>
                     <Box sx={{pr:0}} >
-                        <Stack spacing="5px" style={{width: "100%"}}>
+                        <Stack spacing="5px">
                             <Box display="flex" flexDirection="row" sx={{pt: 0}} >
-                                <Box sx={{pr: 15}}>
-                                <Typography color="#808080" fontSize="18px">Call us:</Typography>
+                                <Box sx={{pr: "20%"}}>
+                                    <Typography color="#808080" fontSize="18px">Call us:</Typography>
                                     <Typography fontSize="22px" fontWeight="bold">+84 905137051</Typography>
                                 </Box>
-                                <Box>
+                                <Box maxWidth="100%">
                                     <Typography color="#808080" fontSize="18px">E-mail us:</Typography>
-                                    <Typography fontSize="22px" fontWeight="bold">foodroad@gmail.com</Typography>
+                                    <Typography fontSize="22px" fontWeight="bold" style={{ wordWrap: "break-word" }}>foodroad@gmail.com</Typography>
                                 </Box>
                             </Box>
                                 <Box display="flex" sx={{pt: 3}}>
