@@ -55,7 +55,7 @@ const Tour = (props) => {
     const { image, name, properties, reviewNum, tags, salePrice, price, rating } = props
     return (
         <Grid container sx={{ backgroundColor: "white", borderRadius: "7px" }}>
-            <Grid item xs={12} md={3} lg={4} sx={{ position: "relative" }}>
+            <Grid item xs={12} sm={5} md={3} lg={4} sx={{ position: "relative" }}>
                 <img src={image} alt="tour"
                     style={{
                         width: "100%",
@@ -103,15 +103,15 @@ const Tour = (props) => {
                     )
                 })}
             </Grid>
-            <Grid xs={12} md={8} lg={7}>
+            <Grid xs={12} sm={7} md={8} lg={7}>
                 <Grid container>
                     <Grid item xs={12} md={12} lg={12}>
-                        <Box sx={{ ml: 3, mb: 0 }}>
+                        <Box sx={{ ml: 1, mb: 0 }}>
                             <TypographyMod fontSize="20px">{name}</TypographyMod>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12} >
-                        <Box sx={{ ml: 3 }} display="flex"  >
+                        <Box sx={{ ml: 1 }} display="flex"  >
                             <StyledRating
                                 name="customized-color"
                                 defaultValue={5}
@@ -128,12 +128,12 @@ const Tour = (props) => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid container sx={{ ml: 3, mb: 1 }} style={{
+                    <Grid container sx={{ ml: 1, mb: 1 }} style={{
                         '@media(minWidth: 1108px)': {
                             marginLeft: "0px"
                         }
                     }}>
-                        <Grid item xs={3} md={3} lg={3}>
+                        <Grid item xs={4.5} sm={4.5} md={3} lg={4}>
                             <Box sx={{ marginTop: "5px" }}>
                                 {/* Rating */}
 
@@ -141,9 +141,9 @@ const Tour = (props) => {
                                 <TypographyMod sx={{ fontSize: "1.2rem" }}>{price} USD</TypographyMod>
                             </Box>
                         </Grid>
-                        <Grid item xs={9} md={9} lg={9}>
+                        <Grid item xs={7.5} sm={8} md={8} lg={8}>
 
-                            <Box sx={{ mt: 1, ml: 5 }}>
+                            <Box sx={{ mt: 1 }}>
                                 {
                                     properties.map((property, index) => {
                                         return (<Box display="flex" key={index}>
@@ -156,25 +156,27 @@ const Tour = (props) => {
                         </Grid>
                         <Grid item xs={12} md={12} lg={8} sx={{ display: "flex", justifyContent: "space-between" }}>
                             <Grid container>
-                                <Grid item xs={5.5} md={6} lg={6}>
+                                <Grid item xs={4.5} sm={5} md={3} lg={6}>
                                     <Button component={Link} to="/booking" variant="contained" sx={{
                                         backgroundColor: yellow[800],
                                         '&:hover': {
                                             backgroundColor: yellow[900],
-                                        }, mt: "9px",
-                                    }}  >
+                                        }, mt: "9px"
+                                    }}
+                                    >
                                         Order Now
                                     </Button>
 
                                 </Grid>
-                                <Grid item xs={6} md={6} lg={6}>
+                                <Grid item xs={5} sm={6} md={6} lg={6}>
                                     <Button component={Link} to="/" variant="contained" sx={{
                                         backgroundColor: yellow[800],
                                         '&:hover': {
                                             backgroundColor: yellow[900],
                                             textDecoration: "underline"
                                         }, mt: "9px"
-                                    }} >
+                                    }}
+                                    >
                                         View Detail <CallMadeIcon sx={{ fontSize: `${matchesXs ? "11px" : "14px"}` }} />
                                     </Button>
                                 </Grid>

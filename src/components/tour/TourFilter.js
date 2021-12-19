@@ -3,7 +3,8 @@ import { Box } from '@mui/system';
 import {
     FormControlLabel,
     FormGroup, Rating, Grid,
-    Button, Slider, Checkbox, Typography
+    Button, Slider, Checkbox, Typography,
+    Divider
 } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { IconButton } from '@mui/material';
@@ -50,11 +51,7 @@ const labels = {
     4: 'Very Good',
     5: 'Excellent',
 };
-const LineBreak = () => {
-    return (
-        <hr style={{ marginLeft: "0.9rem", marginRight: "0.9rem", color: "E5E5E5" }} />
-    )
-}
+
 const TourFilters = () => {
     const [price, setPrice] = useState([40, 100])
     const [stars, setStars] = useState(4);
@@ -77,7 +74,7 @@ const TourFilters = () => {
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Because of Covid-19,you must wear mask except for eating</TypographyMod>
             </Box>
-            <LineBreak />
+            <Divider />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Deals</TypographyMod>
                 <FormGroup>
@@ -90,7 +87,7 @@ const TourFilters = () => {
                     <FormControlLabel control={<Checkbox />} label={<Typographyf14light>Properties with special offers</Typographyf14light>} />
                 </FormGroup>
             </Box>
-            <LineBreak />
+            <Divider />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Price</TypographyMod>
                 <Box textAlign="center">
@@ -214,7 +211,7 @@ const TourFilters = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <LineBreak />
+            <Divider />
             <Box sx={{ m: 1, ml: 2, mr: 2 }}>
                 <TypographyMod fontSize="14px">Popular</TypographyMod>
                 <Box textAlign="center">
