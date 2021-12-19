@@ -73,28 +73,19 @@ const Tourheader = () => {
                     />
                 </div>
             </Grid>
-            <Grid item xs={12} md={12} lg={8} style={{ marginLeft: "-94px" }}>
+
+            <Grid item xs={12} md={12} lg={8}  >
                 <div data-aos="fade-up" data-aos-duration={1000}>
-                    <Box sx={{ mb: 4, mt: 3, ml: 11 }}>
-                        <Typography
-                            variant="h5"
-                            sx={{ fontWeight: "medium", fontSize: "30px" }}
-                        >
-                            Check out the best Food Tours of SaiGon
-                        </Typography>
-                    </Box>
-                    <Grid
-                        container
-                        sx={{ ml: 12, pb: 1 }}
-                        style={{
-                            justifyContent: `${!matchesLg ? "flex-end" : "space-between"}`,
-                        }}
-                        rowSpacing={{ xs: 5 }}
-                    >
-                        <Grid item xs={7} md={6} lg={7}>
-                            <Box
-                                style={{ justifyContent: `${!matchesLg ? "flex-end" : ""}` }}
-                            >
+                    <Grid item xs={12}>
+                        <Box sx={{ mb: 4, mt: 3 }}>
+                            <Typography variant="h5" sx={{ fontWeight: "medium", fontSize: "30px", margin: "auto" }}>
+                                Check out the best Food Tours of SaiGon
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid container sx={{ pb: 1 }} style={{}} rowSpacing={{ xs: 5 }}>
+                        <Grid item xs={12} sm={8} md={6} lg={8}>
+                            <Box >
                                 <LocalizationProvider dateAdapter={DateAdapter}>
                                     <DateRangePicker
                                         displayStaticWrapperAs="desktop"
@@ -106,67 +97,35 @@ const Tourheader = () => {
                                             setDate(newValue);
                                         }}
                                         sx={{
-                                            "& Mui-selected": {
+                                            '& Mui-selected': {
                                                 backgroundColor: "green",
-                                                color: "green",
-                                            },
+                                                color: "green"
+                                            }
                                         }}
                                         renderInput={(startProps, endProps) => (
                                             <React.Fragment>
-                                                <Box
-                                                    sx={{
-                                                        display: "block",
-                                                        height: "42px",
-                                                        width: "200px",
-                                                        borderRadius: "5px",
-                                                        padding: "0 0",
-                                                        marginRight: "0px",
-                                                    }}
-                                                >
-                                                    <TextField
-                                                        variant="outlined"
-                                                        {...startProps}
-                                                        InputProps={{
-                                                            endAdornment: (
-                                                                <InputAdornment position="start">
-                                                                    <IconButton
-                                                                        edge="end"
-                                                                        onClick={() => setOpenDate(true)}
-                                                                    >
-                                                                        <EventIcon />
-                                                                    </IconButton>
-                                                                </InputAdornment>
-                                                            ),
-                                                        }}
-                                                    />
+                                                <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: "0px" }}>
+                                                    <TextField variant="outlined" {...startProps} InputProps={{
+                                                        endAdornment: (
+                                                            <InputAdornment position="start">
+                                                                <IconButton edge="end" onClick={() => setOpenDate(true)}>
+                                                                    <EventIcon />
+                                                                </IconButton>
+                                                            </InputAdornment>
+                                                        ),
+                                                    }} />
                                                 </Box>
-                                                <Box sx={{ ml: 2, mr: 2 }}> to </Box>
-                                                <Box
-                                                    sx={{
-                                                        display: "block",
-                                                        height: "42px",
-                                                        width: "200px",
-                                                        borderRadius: "5px",
-                                                        padding: "0 0",
-                                                        marginRight: 2,
-                                                    }}
-                                                >
-                                                    <TextField
-                                                        variant="outlined"
-                                                        {...endProps}
-                                                        InputProps={{
-                                                            endAdornment: (
-                                                                <InputAdornment position="start">
-                                                                    <IconButton
-                                                                        edge="end"
-                                                                        onClick={() => setOpenDate(true)}
-                                                                    >
-                                                                        <EventIcon />
-                                                                    </IconButton>
-                                                                </InputAdornment>
-                                                            ),
-                                                        }}
-                                                    />
+                                                <Box sx={{ ml: 2, mr: 2 }} > to </Box>
+                                                <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: 2 }}>
+                                                    <TextField variant="outlined"  {...endProps} InputProps={{
+                                                        endAdornment: (
+                                                            <InputAdornment position="start">
+                                                                <IconButton edge="end" onClick={() => setOpenDate(true)}>
+                                                                    <EventIcon />
+                                                                </IconButton>
+                                                            </InputAdornment>
+                                                        ),
+                                                    }} />
                                                 </Box>
                                             </React.Fragment>
                                         )}
@@ -174,94 +133,32 @@ const Tourheader = () => {
                                 </LocalizationProvider>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={12} lg={8} style={{ marginLeft: "-94px" }} >
-                            <div data-aos="fade-up" data-aos-duration={1000}>
-                                <Grid item xs={12}>
-                                    <Box sx={{ mb: 4, mt: 3, ml: 10 }}>
-                                        <Typography variant="h5" sx={{ fontWeight: "medium", fontSize: "30px", margin: "auto" }}>
-                                            Check out the best Food Tours of SaiGon
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                                <Grid container sx={{ ml: 12, pb: 1 }} style={{}} rowSpacing={{ xs: 5 }}>
-                                    <Grid item xs={12} sm={8} md={6} lg={7}>
-                                        <Box >
-                                            <LocalizationProvider dateAdapter={DateAdapter}>
-                                                <DateRangePicker
-                                                    displayStaticWrapperAs="desktop"
-                                                    value={date}
-                                                    open={openDate}
-                                                    onOpen={() => setOpenDate(true)}
-                                                    onClose={() => setOpenDate(false)}
-                                                    onChange={(newValue) => {
-                                                        setDate(newValue);
-                                                    }}
-                                                    sx={{
-                                                        '& Mui-selected': {
-                                                            backgroundColor: "green",
-                                                            color: "green"
-                                                        }
-                                                    }}
-                                                    renderInput={(startProps, endProps) => (
-                                                        <React.Fragment>
-                                                            <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: "0px" }}>
-                                                                <TextField variant="outlined" {...startProps} InputProps={{
-                                                                    endAdornment: (
-                                                                        <InputAdornment position="start">
-                                                                            <IconButton edge="end" onClick={() => setOpenDate(true)}>
-                                                                                <EventIcon />
-                                                                            </IconButton>
-                                                                        </InputAdornment>
-                                                                    ),
-                                                                }} />
-                                                            </Box>
-                                                            <Box sx={{ ml: 2, mr: 2 }} > to </Box>
-                                                            <Box sx={{ display: "block", height: "42px", width: "200px", borderRadius: "5px", padding: "0 0", marginRight: 2 }}>
-                                                                <TextField variant="outlined"  {...endProps} InputProps={{
-                                                                    endAdornment: (
-                                                                        <InputAdornment position="start">
-                                                                            <IconButton edge="end" onClick={() => setOpenDate(true)}>
-                                                                                <EventIcon />
-                                                                            </IconButton>
-                                                                        </InputAdornment>
-                                                                    ),
-                                                                }} />
-                                                            </Box>
-                                                        </React.Fragment>
-                                                    )}
-                                                />
-                                            </LocalizationProvider>
-                                        </Box>
-                                    </Grid>
-                                    <Grid item sm={4} xs={12} md={4} lg={4} >
-                                        <FormControl fullWidth>
-                                            <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
-                                            <Select
-                                                labelId="demo-simple-select-label"
-                                                id="demo-simple-select"
-                                                label="Sort by"
-                                                value={sortType}
-                                                onChange={handleChange}
-                                                onClick={handleToggle}
-                                            // labelWidth
-                                            >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={1} >Best choice</MenuItem>
-                                                <MenuItem value={2} >Price from low to high</MenuItem>
-                                                <MenuItem value={3} >Price from high to low</MenuItem>
-                                                <MenuItem value={4} >Shortest Distance</MenuItem>
-                                            </Select>
-                                        </FormControl>
+                        <Grid item sm={4} xs={12} md={4} lg={4} >
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    label="Sort by"
+                                    value={sortType}
+                                    onChange={handleChange}
+                                    onClick={handleToggle}
+                                // labelWidth
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={1} >Best choice</MenuItem>
+                                    <MenuItem value={2} >Price from low to high</MenuItem>
+                                    <MenuItem value={3} >Price from high to low</MenuItem>
+                                    <MenuItem value={4} >Shortest Distance</MenuItem>
+                                </Select>
+                            </FormControl>
 
-                                    </Grid>
-
-
-
-                                </Grid>
-                            </div>
                         </Grid>
+
+
+
                     </Grid>
                 </div>
             </Grid>
