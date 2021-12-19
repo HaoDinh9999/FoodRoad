@@ -533,8 +533,9 @@ const HeroSectionTour = () => {
                 height: "50px",
                 marginTop: "20px",
               }}
+              href="/booking"
             >
-              Check availability
+              Order now
             </Button>
             <Typography
               variant="h6"

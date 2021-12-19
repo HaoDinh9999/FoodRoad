@@ -56,36 +56,35 @@ const AllCardReview = () => {
   // </Box>
 
   //);
-  var settings = {
+  const settings = {
     dots: true,
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    className: "sliders",
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 900,
+        breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          //   initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -95,7 +94,7 @@ const AllCardReview = () => {
   };
   return (
     <Container fixed>
-      <Box marginLeft="0px" padding="0px 0px 0px 5px">
+      <Box marginTop="20px" padding="0px 0px 0px 5px">
         <Grid container sm={12} justifyContent="center">
           <Typography
             variant="h6"
@@ -106,63 +105,46 @@ const AllCardReview = () => {
               fontWeight: "Medium",
             }}
           >
-            MULTIPLE REVIEWS INCLUDED
+            MULTIPLE RATE INCLUDED
           </Typography>
-        </Grid>
-        <Grid
-          container
-          item
-          sm={12}
-          justifyContent="center"
-          marginBottom="-19px"
-          zIndex="1000"
-        >
-          <Typography
-            variant="h6"
-            component="h2"
-            style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+          <Grid
+            container
+            item
+            sm={12}
+            justifyContent="center"
+            zIndex="1000"
+            marginLeft="20px"
           >
-            CUSTOMER RATE
-          </Typography>
+            <Typography
+              variant="h6"
+              component="h2"
+              style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+            >
+              CUSTOMER RATE
+            </Typography>
+          </Grid>
+          <Box
+            sx={{
+              margin: "-19px 0px 10px 230px",
+              position: "position",
+              width: 90,
+              height: 5,
+              backgroundColor: "#1976d2",
+              "&:hover": {
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          />
         </Grid>
 
-        <Box
-          sx={{
-            margin: "0 0px 10px 610px",
-            position: "position",
-            width: 130,
-            height: 5,
-            backgroundColor: "#1976d2",
-            "&:hover": {
-              opacity: [0.9, 0.8, 0.7],
-            },
-          }}
-        />
         <Slider {...settings}>
-          <CardReview
-            url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"
-            title="Tiger Sugar"
-            address="212 Lien Tinh 5, P. 6, District 8, HCM city"
-            price="10"
-          ></CardReview>
-          <CardReview
-            url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"
-            title="Tiger Sugar"
-            address="212 Lien Tinh 5, P. 6, District 8, HCM city"
-            price="10"
-          ></CardReview>
-          <CardReview
-            url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"
-            title="Tiger Sugar"
-            address="212 Lien Tinh 5, P. 6, District 8, HCM city"
-            price="10"
-          ></CardReview>
-          <CardReview
-            url="https://images.foody.vn/res/g105/1048978/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200930170601.jpg"
-            title="Tiger Sugar"
-            address="212 Lien Tinh 5, P. 6, District 8, HCM city"
-            price="10"
-          ></CardReview>
+          <CardReview />
+          <CardReview />
+          <CardReview />
+          <CardReview />
+          <CardReview />
+          <CardReview />
+          <CardReview />
         </Slider>
       </Box>
     </Container>

@@ -83,6 +83,7 @@ const CardService = (props) => {
           }}
           variant="contained"
           endIcon={<UilMessage />}
+          href={props.href}
         >
           View More
         </Button>

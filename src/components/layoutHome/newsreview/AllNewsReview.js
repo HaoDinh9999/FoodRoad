@@ -16,9 +16,10 @@ import Container from "@mui/material/Container";
 import CardNews from "./CardNews";
 import CardNewRight from "./CardNewRight";
 import zIndex from "@mui/material/styles/zIndex";
+
 const AllNewsReview = () => {
   return (
-    <Box paddingBottom="40px">
+    <Box marginLeft="-10px" paddingBottom="40px">
       <Container fixed>
         <Grid
           container
@@ -28,7 +29,7 @@ const AllNewsReview = () => {
           marginTop="60px"
           justifyContent="center"
         >
-          <Grid container item sm={12} justifyContent="center">
+          <Grid container sm={12} justifyContent="center">
             <Typography
               variant="h6"
               component="h2"
@@ -40,38 +41,45 @@ const AllNewsReview = () => {
             >
               FROM THE BLOG
             </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            sm={12}
-            justifyContent="center"
-            marginBottom="-19px"
-            zIndex="1000"
-          >
-            <Typography
-              variant="h6"
-              component="h2"
-              style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+            <Grid
+              container
+              item
+              sm={12}
+              justifyContent="center"
+              zIndex="1000"
+              marginLeft="20px"
             >
-              ARTICLES & NEWS
-            </Typography>
+              <Typography
+                variant="h6"
+                component="h2"
+                style={{ color: "#000", fontSize: "35px", fontWeight: "bold" }}
+              >
+                ARTICLE & NEWS
+              </Typography>
+            </Grid>
+            <Box
+              sx={{
+                margin: "-19px 0px 10px 210px",
+                position: "position",
+                width: 100,
+                height: 5,
+                backgroundColor: "#1976d2",
+                "&:hover": {
+                  opacity: [0.9, 0.8, 0.7],
+                },
+              }}
+            />
           </Grid>
-          <Box
-            sx={{
-              margin: "0 0px 10px 210px",
-              position: "position",
-              width: 105,
-              height: 5,
-              backgroundColor: "#1976d2",
-              "&:hover": {
-                opacity: [0.9, 0.8, 0.7],
-              },
-            }}
-          />
         </Grid>
-        <Grid container sm={12} xs={12} display="flex" marginLeft="10px">
-          <Grid item sm={5.7} xs={12}>
+        <Grid
+          container
+          columnSpacing={2}
+          sm={12}
+          xs={12}
+          display="flex"
+          marginLeft="10px"
+        >
+          <Grid item sm={6} xs={12}>
             <CardNews
               color1="#fff"
               fontcolor1="#999"
@@ -80,8 +88,7 @@ const AllNewsReview = () => {
               url="https://amthucvietnam.com.vn/wp-content/uploads/2021/04/cm_Anh_Ga_1.jpg"
             ></CardNews>
           </Grid>
-          <Box item sm={0.5} xs={12} width="30px"></Box>
-          <Grid item sm={5.7} xs={12}>
+          <Grid item sm={6} xs={12}>
             <CardNews
               color1="#1bbc9b"
               fontcolor1="#fbfeff"
@@ -93,22 +100,23 @@ const AllNewsReview = () => {
         </Grid>
         <Grid
           container
+          columnSpacing={2}
           sm={12}
           xs={12}
           display="flex"
           marginTop="-45px"
           marginLeft="10px"
         >
-          <Grid item sm={5.7} xs={12}>
+          <Grid item sm={6} xs={12}>
             <CardNewRight
               color1="#14b9d5"
               fontcolor1="#fbfeff"
               title1="#fff"
               colorbutton="#fff"
+              url="https://cookingchew.com/wp-content/uploads/2020/09/Blue-Foods-CO662-Pin-15.jpg.webp"
             ></CardNewRight>
           </Grid>
-          <Box item sm={0.5} xs={12} width="30px"></Box>
-          <Grid item sm={5.7} xs={12}>
+          <Grid item sm={6} xs={12}>
             <CardNews
               color1="#fff"
               fontcolor1="#999"

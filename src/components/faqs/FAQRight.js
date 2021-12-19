@@ -48,7 +48,7 @@ const FAQRight = () => {
     setOpen(true);
   };
   const RedditTextField = styled((props) => (
-    <TextField InputProps={{ disableUnderline: true }} {...props} />
+    <TextField InputProps={{ disableUnderline: true }} {...props} required />
   ))(({ theme }) => ({
     "& .MuiFilledInput-root": {
       border: "1px solid #e2e2e1",
@@ -109,6 +109,7 @@ const FAQRight = () => {
             id="email-input"
             variant="filled"
             style={{ marginTop: 11 }}
+            required
           />
           <RedditTextField
             label="Name"

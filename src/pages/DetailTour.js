@@ -37,8 +37,6 @@ const DetailTour = () => {
       <div data-aos="fade-up" data-aos-duration={900}>
         <CardTourCarousel></CardTourCarousel>
       </div>
-
-      <Footer></Footer>
     </Grid>
   );
 };

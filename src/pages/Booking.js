@@ -12,8 +12,18 @@ import BookingCard from "../components/booking/BookingCard";
 import CustomerInfoForm from "../components/booking/CustomerInfoForm";
 import { useHistory } from "react-router-dom";
 import BenefitSection from "../components/booking/BenefitSection";
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 const Booking = () => {
   const history = useHistory();
+  const [status, setStatus] = React.useState(false);
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    setStatus("loading");
+    await sleep(3000);
+    setStatus("completed");
+  };
   return (
     <Container sx={{ paddingTop: "40px", paddingBottom: "40px" }}>
       <Box mb={2} display="flex" alignItems="center">
@@ -33,14 +43,16 @@ const Booking = () => {
           <Typography color="text.primary">Checkout</Typography>
         </Breadcrumbs>
       </Box>
-      <Grid container spacing={2}>
-        <Grid item md={8} xs={12}>
-          <CustomerInfoForm />
+      <form onSubmit={submitHandler}>
+        <Grid container spacing={2}>
+          <Grid item md={8} xs={12}>
+            <CustomerInfoForm />
+          </Grid>
+          <Grid item md={4} xs={12}>
+            <BookingCard status={status} />
+          </Grid>
         </Grid>
-        <Grid item md={4} xs={12}>
-          <BookingCard />
-        </Grid>
-      </Grid>
+      </form>
       <BenefitSection />
     </Container>
   );

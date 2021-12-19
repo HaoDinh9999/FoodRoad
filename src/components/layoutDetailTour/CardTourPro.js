@@ -54,7 +54,7 @@ const CardTourPro = (props) => {
         </Grid>
       </Grid>
 
-      <Box backgroundColor="#fff">
+      <Box backgroundColor="#fff" marginTop="5px">
         <Link
           href="/tours/detailtour"
           underline="none"
