@@ -13,7 +13,7 @@ import { LinearProgress } from "@mui/material";
 import SignupPopup from "./SignupPopup";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import Swal from 'sweetalert2';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -207,7 +207,13 @@ export default function FormDialog(props) {
         open={openSignup}
         onClose={() => {
           setOpenSignup(false);
-          // setOpenSnackbar(true);
+          Swal.fire({
+            title: 'SUCCESS',
+            text: 'Your account has been created.',
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false,
+          });
         }}
       />
       <Snackbar open={openSnackbar} autoHideDuration={2000} onClose={handleClose}>

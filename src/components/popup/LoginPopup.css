@@ -48,3 +48,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.swal2-container {
+    z-index: 20000 !important;
+  }

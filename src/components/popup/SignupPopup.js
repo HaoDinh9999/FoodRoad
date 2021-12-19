@@ -9,6 +9,7 @@ import Slide from '@mui/material/Slide';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
+import Swal from 'sweetalert2';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -23,6 +24,15 @@ export default function FormDialog(props) {
     setChecked(event.target.checked);
   };
 
+  function HandleClick() {
+    Swal.fire({
+      position: 'mid-center',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
   return (
       <Dialog
