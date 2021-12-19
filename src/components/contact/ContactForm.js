@@ -7,7 +7,28 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import ReCAPTCHA from "react-google-recaptcha";
+import swal from "sweetalert";
+import { CircularProgress } from "@mui/material";
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 const ContactForm = () => {
+  const [status, setStatus] = React.useState("");
+  const submitFormHandler = async (event) => {
+    event.preventDefault();
+    setStatus("loading");
+    await sleep(3000);
+    setStatus("completed");
+  };
+  React.useEffect(() => {
+    if (status === "completed") {
+      swal(
+        "Success!",
+        "We'll get back to you in 1-2 business days.!",
+        "success"
+      );
+    }
+  }, [status]);
   return (
     <Box>
       <form>
@@ -56,6 +77,7 @@ const ContactForm = () => {
           <Grid item xs={12}>
             <div data-aos="fade-up" data-aos-duration={700}>
               <Button
+                onClick={submitFormHandler}
                 sx={{
                   boxShadow: "rgb(140 152 164 / 10%) 0px 12px 15px",
                   textTransform: "none",
@@ -63,7 +85,11 @@ const ContactForm = () => {
                 }}
                 variant="contained"
                 size="large"
+                disabled={status === "loading"}
               >
+                {status === "loading" && (
+                  <CircularProgress sx={{ mr: 1, color: "#fff" }} size={24} />
+                )}
                 Submit
               </Button>
             </div>
