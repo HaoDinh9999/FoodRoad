@@ -229,9 +229,9 @@ function Footer2() {
           </Grid>
 
           <Grid item xs={6} sm={6}>
-            <Box sx={{ pr: 0 }}>
+            <Box>
               <Stack spacing="5px">
-                <Box display="flex" flexDirection="row" sx={{ pt: 0 }}>
+                <Box display="flex" flexDirection="row">
                   <Box sx={{ pr: "20%" }}>
                     <Typography color="#808080" fontSize="18px">
                       Call us:
@@ -247,7 +247,7 @@ function Footer2() {
                     <Typography
                       fontSize="22px"
                       fontWeight="bold"
-                      style={{ wordWrap: "break-word" }}
+                      style={{ wordWrap: "anywhere" }}
                     >
                       foodroad@gmail.com
                     </Typography>
