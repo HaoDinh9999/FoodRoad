@@ -77,7 +77,7 @@ function App() {
           <Route path="/contact">
             <Contact />
           </Route>
-          <Route path="/review">
+          <Route path="/detail/review">
             <Review />
           </Route>
           <Route path="/news">

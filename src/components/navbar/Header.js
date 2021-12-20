@@ -387,7 +387,7 @@ const Header = (props) => {
                             style={{ marginRight: "8px" }}
                             class="far fa-edit"
                           ></i>
-                          Write review
+                          Write Review
                         </Button>
                         <Button
                           onClick={() => {
@@ -444,19 +444,22 @@ const Header = (props) => {
         </Drawer>
       </Box>
       <Box sx={{ height: "64px" }} />
-      {openLogin &&
-      <LoginPopup
-        open={openLogin}
-        onClose={() => {
-          setOpenLogin(false);
-        }}
-      />}
-      {openSignup && <SignupPopup
-        open={openSignup}
-        onClose={() => {
-          setOpenSignup(false);
-        }}
-      />}
+      {openLogin && (
+        <LoginPopup
+          open={openLogin}
+          onClose={() => {
+            setOpenLogin(false);
+          }}
+        />
+      )}
+      {openSignup && (
+        <SignupPopup
+          open={openSignup}
+          onClose={() => {
+            setOpenSignup(false);
+          }}
+        />
+      )}
     </ScopedCssBaseline>
   );
 };
