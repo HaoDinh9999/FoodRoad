@@ -369,10 +369,10 @@ const Header = (props) => {
                           History
                         </Button>
                         <Button
-                          href="/order"
+                          href="/all-reviews"
                           onClick={(event) => {
                             event.preventDefault();
-                            history.push("/write-review");
+                            history.push("/all-reviews");
                           }}
                           variant="text"
                           sx={{
