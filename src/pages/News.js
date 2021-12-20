@@ -21,22 +21,22 @@ const News = () => {
         <Container fixed sx={{ margin: "40px auto" }}>
           <Box mb={3}>
             <Breadcrumbs aria-label="breadcrumb">
-            <Link
-              underline="hover"
-              sx={{ display: "flex", alignItems: "center" }}
-              color="inherit"
-              href="/"
-            >
-              <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-              Home
-            </Link>
-            <Typography
-              sx={{ display: "flex", alignItems: "center" }}
-              color="text.primary"
-            >
-              News
-            </Typography>
-          </Breadcrumbs>
+              <Link
+                underline="hover"
+                sx={{ display: "flex", alignItems: "center" }}
+                color="inherit"
+                href="/"
+              >
+                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                Home
+              </Link>
+              <Typography
+                sx={{ display: "flex", alignItems: "center" }}
+                color="text.primary"
+              >
+                News
+              </Typography>
+            </Breadcrumbs>
           </Box>
 
           <Grid container>
@@ -135,7 +135,6 @@ const News = () => {
             </Grid>
           </Grid>
         </Container>
-        <Footer></Footer>
       </Grid>
     </div>
   );
