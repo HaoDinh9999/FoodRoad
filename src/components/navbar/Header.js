@@ -296,7 +296,11 @@ const Header = (props) => {
                       >
                         Login
                       </Button>
-                      <Button href="/sign-up" variant="contained">
+                      <Button
+                        onClick={() => {
+                          setOpenSignup(true);
+                        }}
+                        variant="contained">
                         Sign up
                       </Button>
                     </Stack>
