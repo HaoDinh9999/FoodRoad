@@ -29,7 +29,7 @@ import Order from "./pages/Order";
 import AllReview from "./pages/AllReview";
 import Footer from "./components/footer/Footer2";
 import ButtonScrollTop from "./components/buttonscroll/ButtonScrollTop";
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+import MessengerCustomerChat from "react-messenger-customer-chat";
 const theme = createTheme({
   typography: {
     fontFamily: "Inter, Roboto, san-serif",

@@ -17,7 +17,7 @@ const Contact = () => {
     Aos.refresh();
   }, []);
   return (
-    <Container fixed>
+    <Container sx={{ overflow: "hidden" }} fixed>
       <Grid container>
         <Grid item xs={12} md={6}>
           <Box sx={{ padding: "64px 16px" }}>

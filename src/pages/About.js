@@ -13,7 +13,7 @@ export default function About() {
     Aos.refresh();
   }, []);
   return (
-    <>
+    <Box sx={{ overflow: "hidden" }}>
       <HeroAbout />
       <Container fixed sx={{ paddingTop: 20, paddingBottom: 10 }}>
         <Grid container spacing={3}>
@@ -95,6 +95,6 @@ export default function About() {
         </Grid>
       </Container>
       <TeamSection />
-    </>
+    </Box>
   );
 }

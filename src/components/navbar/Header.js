@@ -300,7 +300,8 @@ const Header = (props) => {
                         onClick={() => {
                           setOpenSignup(true);
                         }}
-                        variant="contained">
+                        variant="contained"
+                      >
                         Sign up
                       </Button>
                     </Stack>
@@ -437,7 +438,7 @@ const Header = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", md: "none" },
+            display: { xs: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
