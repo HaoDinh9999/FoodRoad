@@ -58,12 +58,15 @@ const CardHero = () => {
             container
             item
             sm={12}
+            md={12}
+            xs={12}
             padding="10px 0px 0px 0px"
             justifyContent="space-around"
             marginTop="-60px"
             sx={{ backgroundColor: "#fff", width: "100%", borderRadius: 1 }}
           >
-            <Box display="flex">
+            <Grid item md={0.2}></Grid>
+            <Grid item md={3.8} sm={12} xs={12} display="flex">
               <StyledBadge
                 overlap="rectangular"
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -127,8 +130,8 @@ const CardHero = () => {
                   />
                 </AvatarGroup>
               </Box>
-            </Box>
-            <Box>
+            </Grid>
+            <Grid item md={2} sm={4}>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
                 Reviews
               </Typography>
@@ -141,8 +144,8 @@ const CardHero = () => {
               >
                 0
               </Typography>
-            </Box>
-            <Box>
+            </Grid>
+            <Grid item md={2} sm={4}>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
                 Tour Joined
               </Typography>
@@ -155,8 +158,8 @@ const CardHero = () => {
               >
                 0
               </Typography>
-            </Box>
-            <Box>
+            </Grid>
+            <Grid item md={2} sm={4}>
               <Typography sx={{ fontSize: "20px", fontWeight: "bold" }}>
                 Favorite
               </Typography>
@@ -169,8 +172,12 @@ const CardHero = () => {
               >
                 0
               </Typography>
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+              item
+              md={2}
+              sm={12}
+              xs={12}
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -186,7 +193,7 @@ const CardHero = () => {
               >
                 Edit profile
               </Button>
-            </Box>
+            </Grid>
           </Grid>
           <Grid item sm={12} xs={12} backgroundColor="#fff">
             <Box sx={{ width: "100%", typography: "body1" }}>

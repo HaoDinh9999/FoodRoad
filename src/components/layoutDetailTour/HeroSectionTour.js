@@ -44,10 +44,11 @@ const HeroSectionTour = () => {
 
   return (
     <Box margin="">
-      <Grid container sm={12} xs={12} display="flex">
+      <Grid container sm={12} xs={12} md={12} display="flex">
         <Grid
           item
-          sm={6}
+          md={6}
+          sm={12}
           xs={12}
           display="flex"
           alignItems="center"
@@ -61,7 +62,14 @@ const HeroSectionTour = () => {
             {breadcrumbs}
           </Breadcrumbs>
         </Grid>
-        <Grid item sm={6} xs={12} display="flex" justifyContent="flex-end">
+        <Grid
+          item
+          md={6}
+          sm={12}
+          xs={12}
+          display="flex"
+          justifyContent="flex-end"
+        >
           <Typography
             variant="h6"
             component="h2"
@@ -70,7 +78,7 @@ const HeroSectionTour = () => {
             Saigon Food Tour on Scooter at Night provided by Saigon Food Tour
           </Typography>
         </Grid>
-        <Grid item sm={10} xs={12}>
+        <Grid item md={10} sm={12} xs={12}>
           <Typography
             variant="h6"
             component="h2"
@@ -83,7 +91,8 @@ const HeroSectionTour = () => {
         <Grid
           container
           item
-          sm={2}
+          md={2}
+          sm={12}
           xs={12}
           justifyContent="flex-end"
           alignItems="center"
@@ -119,7 +128,7 @@ const HeroSectionTour = () => {
           </IconButton>
         </Grid>
       </Grid>
-      <Grid container sm={12} xs={12} marginTop="10px">
+      <Grid container sm={12} xs={12} md={12} marginTop="10px">
         <IconButton
           aria-label="delete"
           sx={{
@@ -177,8 +186,8 @@ const HeroSectionTour = () => {
           {" By SaiGon  FoodRoad"}
         </Link>
       </Grid>
-      <Grid container sm={12} xs={12} marginTop="30px">
-        <Grid item sm={4} xs={12}>
+      <Grid container sm={12} xs={12} md={12} marginTop="30px">
+        <Grid item md={4} sm={12} xs={12}>
           <Box
             padding="30px 10px 20px 10px"
             sx={{
@@ -473,7 +482,14 @@ const HeroSectionTour = () => {
                 </Grid>
               </Grid>
             </Popover>
-            <Grid container display="flex" marginTop="20px" sm={12} xs={12}>
+            <Grid
+              container
+              display="flex"
+              marginTop="20px"
+              sm={12}
+              xs={12}
+              md={12}
+            >
               <Grid item sm={6} xs={6}>
                 <Typography
                   variant="h6"
@@ -565,7 +581,8 @@ const HeroSectionTour = () => {
         <Grid
           container
           item
-          sm={7.8}
+          md={7.8}
+          sm={12}
           xs={12}
           sx={{
             height: 500,

@@ -76,10 +76,11 @@ const AllNewsReview = () => {
           columnSpacing={2}
           sm={12}
           xs={12}
+          md={12}
           display="flex"
           marginLeft="10px"
         >
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={12} xs={12} md={6}>
             <CardNews
               color1="#fff"
               fontcolor1="#999"
@@ -88,7 +89,7 @@ const AllNewsReview = () => {
               url="https://amthucvietnam.com.vn/wp-content/uploads/2021/04/cm_Anh_Ga_1.jpg"
             ></CardNews>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={12} xs={12} md={6}>
             <CardNews
               color1="#1bbc9b"
               fontcolor1="#fbfeff"
@@ -103,11 +104,12 @@ const AllNewsReview = () => {
           columnSpacing={2}
           sm={12}
           xs={12}
+          md={12}
           display="flex"
           marginTop="-45px"
           marginLeft="10px"
         >
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={12} xs={12} md={6}>
             <CardNewRight
               color1="#14b9d5"
               fontcolor1="#fbfeff"
@@ -116,7 +118,7 @@ const AllNewsReview = () => {
               url="https://cookingchew.com/wp-content/uploads/2020/09/Blue-Foods-CO662-Pin-15.jpg.webp"
             ></CardNewRight>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item sm={12} xs={12} md={6}>
             <CardNews
               color1="#fff"
               fontcolor1="#999"

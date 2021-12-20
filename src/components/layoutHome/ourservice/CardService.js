@@ -12,7 +12,7 @@ const CardService = (props) => {
     <Grid
       sx={{
         "&:hover": {
-          transform: "translateY(-10px)",
+          transform: "translateY(-5px)",
           transition: "transform linear 0.5s",
         },
       }}

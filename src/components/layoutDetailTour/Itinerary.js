@@ -31,6 +31,7 @@ const Itinerary = () => {
   const [show, setShow] = React.useState("none");
   const [show2, setShow2] = React.useState("none");
   const [show3, setShow3] = React.useState("none");
+  const [show4, setShow4] = React.useState("none");
 
   const [text, setText] = React.useState("See details & photo");
 
@@ -44,8 +45,8 @@ const Itinerary = () => {
   };
   return (
     <Box marginTop="50px" marginBottom="70px">
-      <Grid container sm={12} xs={12}>
-        <Grid item sm={4} xs={12}>
+      <Grid container sm={12} xs={12} md={12}>
+        <Grid item sm={12} xs={12} md={4}>
           <Box display="flex">
             <Box>
               <IconButton
@@ -574,6 +575,7 @@ const Itinerary = () => {
               </IconButton>
               <li style={{ marginLeft: "20px" }}></li>
               <li style={{ marginLeft: "20px" }}></li>
+              <li style={{ marginLeft: "20px" }}></li>
             </Box>
             <Box>
               <Typography
@@ -590,8 +592,128 @@ const Itinerary = () => {
               >
                 Stop: 15 minutes
               </Typography>
-              <Link href="#" color="#636363" fontSize="18px">
-                See details & photo
+              <Box
+                width="90%"
+                display={show4 === "none" && text === "4" ? "block" : "none"}
+              >
+                <Box display="flex" alignItems="center">
+                  <IconButton
+                    aria-label="delete"
+                    sx={{
+                      marginRight: "2px",
+                      backgroundColor: "#00aa6c",
+                      borderRadius: 8,
+                      height: "10px",
+                      width: "10px",
+                    }}
+                  ></IconButton>
+                  <IconButton
+                    aria-label="delete"
+                    sx={{
+                      marginRight: "2px",
+                      backgroundColor: "#00aa6c",
+                      borderRadius: 8,
+                      height: "10px",
+                      width: "10px",
+                    }}
+                  ></IconButton>
+                  <IconButton
+                    aria-label="delete"
+                    sx={{
+                      marginRight: "2px",
+                      backgroundColor: "#00aa6c",
+                      borderRadius: 8,
+                      height: "10px",
+                      width: "10px",
+                    }}
+                  ></IconButton>
+                  <IconButton
+                    aria-label="delete"
+                    sx={{
+                      marginRight: "2px",
+                      backgroundColor: "#00aa6c",
+                      borderRadius: 8,
+                      height: "10px",
+                      width: "10px",
+                    }}
+                  ></IconButton>
+                  <IconButton
+                    aria-label="delete"
+                    sx={{
+                      marginRight: "10px",
+                      backgroundColor: "#00aa6c",
+                      borderRadius: 8,
+                      height: "10px",
+                      width: "10px",
+                    }}
+                  ></IconButton>
+                  <Typography
+                    variant="h6"
+                    component="h2"
+                    sx={{ fontSize: "16px", fontWeight: "light" }}
+                  >
+                    1250
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    height: "150px",
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    backgroundImage: `url(${"/images/Food1.jpg"})`,
+                    backgroundSize: " cover",
+                    backgroundColor: "#f99",
+                    backgroundPosition: "center",
+
+                    "&:hover": {
+                      backgroundColor: "#ff6868",
+                      opacity: [0.9, 0.8, 0.7],
+                    },
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  component="h2"
+                  sx={{
+                    fontSize: "13px",
+                    fontWeight: "light",
+                    marginTop: "10px",
+                  }}
+                >
+                  Meet & Greet Your personal English speaking tour guide will be
+                  waiting at your hotel lobby to meet and greet. And hang on
+                  tight, let's the journey begin!
+                </Typography>
+                <Button
+                  sx={{
+                    color: "#000",
+                    backgroundColor: "#fff",
+                    width: "100%",
+                    borderRadius: 10,
+                    marginTop: "10px",
+                    marginBottom: "10px",
+                    border: 2,
+                    fontSize: "13px",
+                  }}
+                >
+                  More about Saigon Food Tour
+                </Button>
+              </Box>
+
+              <Link
+                onClick={() => {
+                  setText("4");
+                  show4 === "none" && text === "4"
+                    ? setShow4("block")
+                    : setShow4("none");
+                }}
+                color="#636363"
+                fontSize="18px"
+                style={{ cursor: "pointer", marginBottom: "10px" }}
+              >
+                {show4 === "none" && text === "4"
+                  ? "See less"
+                  : "See details & photo"}
               </Link>
             </Box>
           </Box>
@@ -620,7 +742,7 @@ const Itinerary = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item sm={8} xs={12}>
+        <Grid item sm={12} xs={12} md={8}>
           <Map
             containerElement={
               <Box sx={{ width: "100%", height: "100%", minHeight: "500px" }} />

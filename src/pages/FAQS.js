@@ -22,12 +22,12 @@ const FAQS = () => {
         <FAQImage> </FAQImage>
       </div>
       <Container fixed sx={{ margin: "40px auto" }}>
-        <Grid container sm={12}>
-          <Grid item sm={8}>
+        <Grid container sm={12} xs={12} md={12}>
+          <Grid item sm={12} md={8} marginBottom="40px">
             <FAQAccordion></FAQAccordion>
           </Grid>
-          <Grid item sm={0.3}></Grid>
-          <Grid item sm={3.7}>
+          <Grid item md={0.3}></Grid>
+          <Grid item md={3.7}>
             <FAQRight></FAQRight>
           </Grid>
         </Grid>

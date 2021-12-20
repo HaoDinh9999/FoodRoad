@@ -18,7 +18,14 @@ const AllOurServices = () => {
   return (
     <section style={{ backgroundColor: "#555555", width: "100%" }}>
       <Container fixed>
-        <Grid container sm={12} padding="30px 00px 30px 0px" marginLeft="25px">
+        <Grid
+          container
+          sm={12}
+          xs={12}
+          md={12}
+          padding="30px 00px 30px 0px"
+          marginLeft="25px"
+        >
           <Grid
             container
             item
@@ -73,7 +80,7 @@ const AllOurServices = () => {
 
           <Grid item sm={12} height="40px"></Grid>
 
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4}>
             <CardService
               title="About"
               text="Information about us including membership, product introduction, our services."
@@ -82,7 +89,7 @@ const AllOurServices = () => {
               href="/about"
             ></CardService>
           </Grid>
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4}>
             <CardService
               title="Tours Food"
               text="Displays a list of food tours, and supports advanced filters for easy search. "
@@ -91,7 +98,7 @@ const AllOurServices = () => {
               href="/tours"
             ></CardService>
           </Grid>
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4}>
             <CardService
               title="FAQs Included"
               text="Common questions will be answered here or you can send your questions to us ."
@@ -101,9 +108,9 @@ const AllOurServices = () => {
             ></CardService>
           </Grid>
 
-          <Grid item sm={12} height="55px"></Grid>
+          <Grid item sm={12} height="20px"></Grid>
 
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4} paddingBottom="10px">
             <CardService
               title="Contact"
               text="You can contact us here, including address, phone number, other communication. "
@@ -112,7 +119,7 @@ const AllOurServices = () => {
               href="/contact"
             ></CardService>
           </Grid>
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4}>
             <CardService
               title="Customer Care"
               text="Lorem ipsum dolor sit amet conse ctetur adip iscing elit Proin rhonc us urna dictum."
@@ -120,7 +127,7 @@ const AllOurServices = () => {
               icon={UilUserCheck}
             ></CardService>
           </Grid>
-          <Grid item sm={4}>
+          <Grid item sm={12} xs={12} md={4}>
             <CardService
               title="Blog news"
               text="News, blogs about food, delicious dishes, sharing experiences about food tours."
