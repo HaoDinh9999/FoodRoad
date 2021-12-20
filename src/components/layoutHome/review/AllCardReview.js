@@ -138,13 +138,13 @@ const AllCardReview = () => {
         </Grid>
 
         <Slider {...settings}>
-          <CardReview />
-          <CardReview />
-          <CardReview />
-          <CardReview />
-          <CardReview />
-          <CardReview />
-          <CardReview />
+          <CardReview urlAnh="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.6435-9/41034329_1526350610843581_1879003489980383232_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=KK5syj9TV-oAX_wSGXO&_nc_ht=scontent.fsgn2-2.fna&oh=00_AT9oHHeRuK7SUs9DNldnSE7ZNkbR4xFaCJ-8kgPkPP8BhA&oe=61E539AA" />
+          <CardReview urlAnh="https://image.thanhnien.vn/460x306/Uploaded/2021/lxwpcqjwp/2021_03_14/av-02_ayrt.jpeg" />
+          <CardReview urlAnh="https://mui.com/static/images/avatar/2.jpg" />
+          <CardReview urlAnh="https://mui.com/static/images/avatar/3.jpg" />
+          <CardReview urlAnh="https://mui.com/static/images/avatar/1.jpg" />
+          <CardReview urlAnh="https://mui.com/static/images/avatar/2.jpg" />
+          <CardReview urlAnh="https://mui.com/static/images/avatar/3.jpg" />
         </Slider>
       </Box>
     </Container>

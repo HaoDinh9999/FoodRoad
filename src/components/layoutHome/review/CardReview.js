@@ -37,7 +37,7 @@ const CardReview = (props) => {
       <Box display="flex" justifyContent="space-between">
         <Avatar
           alt="Remy Sharp"
-          src="https://mui.com/static/images/avatar/1.jpg"
+          src={props.urlAnh}
           sx={{
             marginLeft: "20px",
             width: "60px",
