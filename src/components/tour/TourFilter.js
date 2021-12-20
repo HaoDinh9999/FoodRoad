@@ -136,7 +136,11 @@ const TourFilters = () => {
                                         color: grey[800],
                                         borderColor: grey[600]
                                     },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                                }}
+                                style={{
+                                    borderRadius: 0
+                                }}
+                            ><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
                             <Box sx={{ margin: "auto" }}>
                                 <Typographyf14light>{adultNum}</Typographyf14light>
                             </Box>
@@ -156,7 +160,11 @@ const TourFilters = () => {
                                         color: grey[800],
                                         borderColor: grey[600]
                                     },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography>
+                                }}
+                                style={{
+                                    borderRadius: 0
+                                }}
+                            ><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography>
                             </Button>
 
 
@@ -186,7 +194,11 @@ const TourFilters = () => {
                                         color: grey[800],
                                         borderColor: grey[600]
                                     },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
+                                }}
+                                style={{
+                                    borderRadius: 0
+                                }}
+                            ><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="remove-outline" ></ion-icon></Typography></Button>
                             <Box sx={{ margin: "auto" }}>
                                 <Typographyf14light>{childNum}</Typographyf14light>
                             </Box>
@@ -199,14 +211,17 @@ const TourFilters = () => {
                                     borderColor: grey[600],
                                     border: "none",
                                     borderLeft: `0.5px solid`,
-                                    bordeRadius: "0px !important",
                                     '&:hover': {
                                         border: "none",
                                         backgroundColor: grey[500],
                                         color: grey[800],
                                         borderColor: grey[600]
                                     },
-                                }}><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
+                                }}
+                                style={{
+                                    borderRadius: 0
+                                }}
+                            ><Typography sx={{ "fontSize": "18px", mt: "5px" }}><ion-icon name="add-outline" ></ion-icon></Typography></Button>
                         </Grid>
                     </Grid>
                 </Grid>
