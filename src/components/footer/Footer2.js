@@ -247,7 +247,7 @@ function Footer2() {
                     <Typography
                       fontSize="22px"
                       fontWeight="bold"
-                      style={{ wordWrap: "anywhere" }}
+                      sx={{ wordWrap: { xs: "break-word", sm: "anywhere"} }}
                     >
                       foodroad@gmail.com
                     </Typography>
