@@ -1,0 +1,22 @@
+.container {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.back-to-top {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  font-size: 30px;
+  bottom: 100px;
+  right: 27px;
+  background: #1976d2;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.back-to-top:hover {
+  background: #7bb4ed;
+}

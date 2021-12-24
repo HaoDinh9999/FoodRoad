@@ -1,0 +1,42 @@
+.sale-home {
+  font-family: "Roboto", sans-serif;
+}
+.sale-home h2,
+.sale-home h3,
+.sale-home h6,
+.sale-home p,
+.sale-home a {
+  font-family: "Roboto", sans-serif;
+}
+.sale-time {
+  font-family: "Roboto", sans-serif;
+
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+}
+.sale-unit {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+.sale-link {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  color: #f3a46b;
+  padding: 15px 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 14px;
+}

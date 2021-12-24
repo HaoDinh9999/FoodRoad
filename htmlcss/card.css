@@ -1,0 +1,179 @@
+html{
+    font-family: 'SVN-Avo';
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    border:0;
+}
+body{
+background: #f2f2f2;
+font-family: 'SVN-Avo';
+font-size: 14px;
+}
+
+img {max-width:100%;}
+
+a,a:hover,a:focus {
+text-decoration: none;
+color: #000;
+}
+/* a:hover,a:focus {
+opacity:.8;
+} */
+.card{
+    margin-top: 20px;
+    position: relative;
+    max-width: 450px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    margin-left: 180px;
+    margin-right: -80px;
+}
+
+.btnyellow{
+background: #f6ee31;
+}
+.btndefault
+{
+/*border:3px solid #fff;*/
+border-radius: 5px;
+display: inline-block;
+text-transform: uppercase;
+}
+
+.btnwelcome{
+padding: 10px 40px 10px 40px;
+text-align: center;
+color: #000;
+font-family: 'SVN-Avobold';
+font-size: 20px;
+}
+.welcome_content{
+text-align: left;
+margin-top: 50px;
+margin-left: 0;
+margin-right: 0;
+}
+.boxcontent{
+background: #fff ;
+padding-top: 10px;
+padding-bottom: 10px;
+/* opacity: 0.8; */
+/*text-align: justify;*/
+line-height: 30px;
+margin-top: -20px;
+}
+#tours{
+text-align: center;
+margin-bottom: 20px;
+}
+#tours .flex-control-nav{
+display: none;
+}
+#tours .btnwelcome{
+margin-bottom: 30px;
+}
+/* .flexslider .tour_item{
+position: relative!important;
+}
+.flexslider .tour_item .special img{
+zoom:0.6;
+}
+.flexslider .special{
+top: 0!important;
+right: 0!important;
+} */
+.tour_item
+{
+    margin-top: 10px;
+/* text-align: left; */
+/* background: #fff; */
+/* -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+-moz-box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+-o-box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+box-shadow: 5px 5px 5px rgba(0,0,0,.1); */
+/* margin: 10px 10px; */
+/* float: left; */
+
+}
+.tour_item .title{
+font-family: "Vinhan";
+font-size: 20px;
+padding: 12px 15px;
+}
+.tour_item .description{
+padding: 0 15px;
+
+}
+.tour_item .date{
+border-top: 1px solid #d7d7d7;
+margin-top: 30px;
+float: left;
+width: 100%;
+
+}
+.tour_item .fa-clock-o{
+color: #3daec1;
+}
+.tour_item .date_time{
+border-right: 1px solid #d7d7d7;
+padding-bottom: 16px;
+padding-left: 0;
+padding-right: 0;
+text-align: center;
+float: left;
+padding-top: 18px;
+}
+.img {
+    background: no-repeat center;
+    background-size: cover !important;
+}
+.tour_item .date_book{
+padding-left: 0; padding-right: 0;
+text-align: center;
+}
+.tour_img{
+position: relative;
+border-bottom: 2px solid #3daec1;
+}
+.tour_item .price{
+position: absolute;
+right: 0;
+z-index: 10;
+background: #ddd;
+width: 165px;
+bottom: 0;
+padding-top: 2px;
+color: #000;
+
+}
+
+.tour_item .price_number{
+font-family: 'Vinhan';
+font-size: 28px;
+color: #f04f5f;
+padding-left: 10px;
+float: left;
+}
+.tour_item .booknow
+{
+background: #f04f5f;
+text-transform: uppercase;
+font-size: 18px;
+color: #fff;
+padding: 5px 15px;
+/*float: left;*/
+display: inline-block;
+text-align: center;
+margin-left: 45px;
+position: absolute;
+margin-top: 10px;
+border-radius: 20px;
+}
+
+.special
+{
+position: absolute;
+right: 0px;
+top: 0px;
+}

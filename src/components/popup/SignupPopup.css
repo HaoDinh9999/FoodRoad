@@ -1,0 +1,38 @@
+.textinput {
+    padding: 12px;
+}
+
+.nameinput {
+    max-width: 45%;
+}
+
+.signupinput {
+    font-size: 17px;
+    width: 100%;
+    height: 45px;
+    border-radius: 20px;
+    border-color: #808080;
+    border-width: 2px;
+    border-style: solid;
+    padding: 15px;
+    background-color: white;
+}
+
+.signupinput::-webkit-input-placeholder {
+    font-size: 17px;
+}  
+
+.signupinput:focus {
+    border:5px #808080;
+    box-shadow: 0 0 5px #808080;
+}
+
+
+::placeholder {
+    color: #808080;
+    font-size: 14px;
+}
+
+.swal2-container {
+    z-index: 20000 !important;
+  }

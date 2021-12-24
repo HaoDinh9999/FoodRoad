@@ -1,0 +1,19 @@
+.logo {
+  cursor: "pointer";
+  color: #1e2022;
+  /* color: white; */
+}
+
+.link {
+  text-decoration: none;
+  color: #1e2022;
+  font-weight: 400;
+
+  /* color: "white"; */
+}
+.link:hover {
+  text-decoration: none;
+}
+.link--active {
+  font-weight: 700;
+}

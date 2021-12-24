@@ -1,0 +1,508 @@
+#VacationRental,
+#Airline,
+#Cruise {
+  text-align: center;
+  cursor: pointer;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+#VacationRental::before {
+  block-size: 14px;
+  border-block-end-color: rgb(44, 44, 44);
+  border-block-start-color: rgb(44, 44, 44);
+  border-inline-end-color: rgb(44, 44, 44);
+  border-inline-start-color: rgb(44, 44, 44);
+  bottom: 0px;
+  caret-color: rgb(44, 44, 44);
+  color: rgb(44, 44, 44);
+  column-rule-color: rgb(44, 44, 44);
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  inline-size: 14px;
+  inset-block-end: 0px;
+  inset-block-start: -2px;
+  inset-inline-end: 100.344px;
+  inset-inline-start: -18px;
+  left: -18px;
+  perspective-origin: 7px 7px;
+  position: absolute;
+  right: 100.344px;
+  text-align: center;
+  text-decoration: none solid rgb(44, 44, 44);
+  top: -2px;
+  transform-origin: 7px 7px;
+  width: 14px;
+  background: rgba(0, 0, 0, 0)
+    url("https://www.tripadvisor.com/img2/userreview/lander/icon_VR.png")
+    no-repeat scroll 0% 0% / auto padding-box border-box;
+  border: 0px none rgb(44, 44, 44);
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  outline: rgb(44, 44, 44) none 0px;
+}
+
+#Airline::before {
+  block-size: 14px;
+  border-block-end-color: rgb(44, 44, 44);
+  border-block-start-color: rgb(44, 44, 44);
+  border-inline-end-color: rgb(44, 44, 44);
+  border-inline-start-color: rgb(44, 44, 44);
+  bottom: 0px;
+  caret-color: rgb(44, 44, 44);
+  color: rgb(44, 44, 44);
+  column-rule-color: rgb(44, 44, 44);
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  inline-size: 13px;
+  inset-block-end: 0px;
+  inset-block-start: -2px;
+  inset-inline-end: 48.5625px;
+  inset-inline-start: -18px;
+  left: -18px;
+  perspective-origin: 6.5px 7px;
+  position: absolute;
+  right: 48.5625px;
+  text-align: center;
+  text-decoration: none solid rgb(44, 44, 44);
+  top: -2px;
+  transform-origin: 6.5px 7px;
+  width: 13px;
+  background: rgba(0, 0, 0, 0)
+    url("https://www.tripadvisor.com/img2/userreview/lander/icon_airlines.png")
+    no-repeat scroll 0% 0% / 13px 14px padding-box border-box;
+  border: 0px none rgb(44, 44, 44);
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  outline: rgb(44, 44, 44) none 0px;
+}
+
+#Cruise::before {
+  block-size: 14px;
+  border-block-end-color: rgb(44, 44, 44);
+  border-block-start-color: rgb(44, 44, 44);
+  border-inline-end-color: rgb(44, 44, 44);
+  border-inline-start-color: rgb(44, 44, 44);
+  bottom: 0px;
+  caret-color: rgb(44, 44, 44);
+  color: rgb(44, 44, 44);
+  column-rule-color: rgb(44, 44, 44);
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  inline-size: 13px;
+  inset-block-end: 0px;
+  inset-block-start: -2px;
+  inset-inline-end: 49.0781px;
+  inset-inline-start: -18px;
+  left: -18px;
+  perspective-origin: 6.5px 7px;
+  position: absolute;
+  right: 49.0781px;
+  text-align: center;
+  text-decoration: none solid rgb(44, 44, 44);
+  top: -2px;
+  transform-origin: 6.5px 7px;
+  width: 13px;
+  background: rgba(0, 0, 0, 0)
+    url("https://www.tripadvisor.com/img2/userreview/lander/icon_cruises.png")
+    no-repeat scroll 0% 0% / 13px 14px padding-box border-box;
+  border: 0px none rgb(44, 44, 44);
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  outline: rgb(44, 44, 44) none 0px;
+}
+
+.mobile {
+  width: auto;
+}
+
+.div-main {
+  text-align: center;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.div1 {
+  text-align: center;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.div2 {
+  margin-left: 200px;
+  margin-bottom: 10px;
+  margin-right: 190px;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+
+.div2-mobile {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  font-weight: normal;
+}
+
+.div3 {
+  margin-left: 200px;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  margin-bottom: 10px;
+  margin-right: 190px;
+  width: 965px;
+  background-color: white;
+}
+
+.div3-mobile {
+  margin-left: 10px;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  margin-bottom: 10px;
+  width: 464px;
+  background-color: white;
+}
+
+.div3-mobile:hover {
+  box-shadow: 1px 1px 20px 1px grey;
+}
+
+.div3c1,
+.div3c2,
+.div3c3 {
+  margin-left: 200px;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  margin-bottom: 10px;
+  margin-right: 190px;
+  width: 965px;
+  height: 500px;
+  background-color: white;
+}
+
+.div3c1-mobile,
+.div3c2-mobile,
+.div3c3-mobile {
+  margin-left: 10px;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  margin-bottom: 10px;
+  width: 464px;
+  height: 580px;
+  background-color: white;
+}
+
+.div3:hover,
+.div3c1:hover,
+.div3c2:hover,
+.div3c3:hover {
+  box-shadow: 1px 1px 20px 1px grey;
+}
+
+.div3c1-mobile:hover,
+.div3c2-mobile:hover,
+.div3c3-mobile:hover {
+  box-shadow: 1px 1px 20px 1px grey;
+}
+
+h1,
+h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: normal;
+}
+
+form,
+.fauxInput {
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+}
+
+.fauxInput.where::before,
+.fauxInput.what::before {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.fauxInput.where::before {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: inherit;
+  line-height: 1;
+  font-family: "TripAdvisor_Regular" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.whereError {
+  position: absolute;
+  background: #f4f3f0;
+  line-height: 42px;
+  color: #cc0f15;
+  font-size: 14px;
+  text-align: center;
+  border: solid 1px #d80007;
+  top: -42px;
+  visibility: hidden;
+  width: 300px;
+}
+
+input.review {
+  color: #666;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  margin-right: 2px;
+  padding-left: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 375px;
+  font-size: 15px;
+  vertical-align: middle;
+  height: 38px;
+  line-height: 38px;
+  font-weight: normal;
+  background-color: white;
+  border: 1px solid rgb(219, 210, 210);
+  box-shadow: 0.5px 0.5px 5px 0.5px rgb(206, 201, 201);
+  border-radius: 3px;
+}
+
+.suggList {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.suggList li:hover {
+  background-color: rgb(12, 141, 102);
+  color: white;
+}
+
+input.review:focus {
+  border: 2px solid rgb(12, 141, 102);
+}
+
+.image {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  font-weight: normal;
+}
+
+.vr,
+.al,
+.sh,
+.ora {
+  position: relative;
+  margin: 0 12px;
+  display: inline-block;
+}
+
+.locationPhoto {
+  position: relative;
+  display: inline-block;
+}
+
+.locationContent {
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  position: absolute;
+  display: inline-block;
+  height: 197px;
+  width: 725px;
+  padding-left: 20px;
+}
+
+.locationName {
+  margin-top: 10px;
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 700 18px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.locationName-mobile {
+  margin-top: 10px;
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 700 18px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  width: 200px;
+  white-space: nowrap;
+}
+
+a.locationName-mobile:link {
+  text-decoration: none;
+  color: rgb(8, 99, 134);
+}
+
+a.locationName-mobile:visited {
+  text-decoration: none;
+  color: rgb(8, 99, 134);
+}
+
+a.locationName:link {
+  text-decoration: none;
+  color: rgb(8, 99, 134);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.locationName:visited {
+  text-decoration: none;
+  color: rgb(8, 99, 134);
+}
+
+.locationAddress {
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: lighter;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  letter-spacing: 0.2px;
+  color: #666;
+}
+
+.locationAddress-mobile {
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: lighter;
+  font: 700 12px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  letter-spacing: 0.2px;
+  color: #666;
+  width: 200px;
+}
+
+.locationRating {
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  color: rgb(12, 141, 102);
+}
+
+.locationRating-mobile {
+  margin-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  font: 700 16px "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  color: rgb(12, 141, 102);
+  display: block;
+}
+
+.primaryButton {
+  background: linear-gradient(180deg, #56953d 0, #2d592a);
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.finishButton {
+  width: 120px;
+  height: 35px;
+}
+
+.ui_button {
+  border-color: #000;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  height: 35px;
+  width: 85px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+}
+
+.ui_button:hover {
+  background: #666;
+}
+
+.submit-form {
+  position: absolute;
+  padding-bottom: 100px;
+  padding-top: 10px;
+}
+
+.submit-form-mobile {
+  position: absolute;
+  padding-bottom: 100px;
+  padding-top: 10px;
+  top: 90px;
+  left: -100px;
+}
+
+.inner {
+  position: relative;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.terms {
+  margin-left: 5px;
+  display: inline;
+  font-size: 12px;
+  color: rgb(81, 82, 83);
+  font-weight: lighter;
+}
+
+.review-form {
+  height: 16px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: rgb(41, 42, 43);
+}
+
+.primary_button {
+  margin-top: 10px;
+}
+
+.required {
+  font: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+}
+
+.formInput {
+  background-color: white;
+  color: black;
+  border-radius: 0%;
+  border: 1px solid rgb(82, 80, 80);
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.formInput:focus {
+  border: 2px solid rgb(12, 141, 102);
+  outline: none;
+}
+
+.verify-ckbx {
+  width: 12px;
+  height: 12px;
+}
+
+.rating-mobile {
+  display: block;
+  position: absolute;
+  margin-top: 44px;
+}

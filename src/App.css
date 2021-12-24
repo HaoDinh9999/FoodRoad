@@ -41,9 +41,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: inherit;
 }
-
+html {
+  font-family: "Roboto", sans-serif;
+}
 .home,
 .about,
 .tours,
@@ -57,7 +59,7 @@
 }
 
 .about {
-  background-image: url('/images/img-2.jpg');
+  background-image: url("./assets/img/img-2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,7 +68,7 @@
 }
 
 .tours {
-  background-image: url('/images/img-1.jpg');
+  background-image: url("./assets/img/img-1.jpg");
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -75,7 +77,7 @@
 }
 
 .sign-up {
-  background-image: url('/images/img-9.jpg');
+  background-image: url("./assets/img/img-9.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,10 +85,13 @@
   font-size: 100px;
 }
 .sign-in {
-  background-image: url('/images/img-8.jpg');
+  background-image: url("./assets/img/img-8.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color:var(--main-bg);
+  color: var(--main-bg);
   font-size: 100px;
+}
+legend {
+  float: none;
 }
