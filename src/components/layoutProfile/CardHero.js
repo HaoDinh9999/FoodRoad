@@ -206,7 +206,6 @@ const CardHero = () => {
                     <Tab label="Trips" value="1" />
                     <Tab label="Photos" value="2" />
                     <Tab label="Reviews" value="3" />
-                    <Tab label="Forums" value="4" />
                   </TabList>
                 </Box>
               </TabContext>
@@ -411,6 +410,7 @@ const CardHero = () => {
                     sx={{ width: "20px", height: "20px" }}
                   />
                 }
+                href="/all-reviews"
               >
                 <Typography
                   cursor="pointer"
